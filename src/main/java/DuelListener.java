@@ -34,12 +34,14 @@ public class DuelListener extends ListenerAdapter {
             event.respondWith("Дуэль отменена, участники забанены! (шутка) BibleThump");
         }
         else if (message.equalsIgnoreCase("!стат дуэль")) {
-            int value = Statistics.getStats().receiveStat(nickname, Statistics.DUEL);
-            event.respondWith(String.format("%s победил в дуэлях %d раз(а) PogChamp", nickname, value));
+//            int value = Statistics.getStats().receiveStat(nickname, Statistics.DUEL);
+//            event.respondWith(String.format("%s победил в дуэлях %d раз(а) PogChamp", nickname, value));
+            event.respondWith("Статистика временно недоступна!");
         }
         else if (message.equalsIgnoreCase("!топ дуэль")) {
-            String s = Statistics.getStats().top(Statistics.DUEL);
-            event.respondWith(s);
+//            String s = Statistics.getStats().top(Statistics.DUEL);
+//            event.respondWith(s);
+            event.respondWith("Статистика временно недоступна!");
         }
     }
 
