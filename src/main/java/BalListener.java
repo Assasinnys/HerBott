@@ -14,7 +14,7 @@ public class BalListener extends ListenerAdapter {
     private volatile boolean timeout;
 
     @Override
-    public void onMessage(MessageEvent event) {
+    public void onMessage(MessageEvent event) throws Exception {
         String message = event.getMessage().toLowerCase();
         String user = event.getUser().getNick();
 
@@ -25,6 +25,10 @@ public class BalListener extends ListenerAdapter {
             Random random = new Random();
             event.respondChannel(user + " " + answers[random.nextInt(answers.length)]);
         }
+        else if (message.startsWith("db")) {
+            DBHelper.readDB();
+            System.out.println("Reading complete!");
+        }
     }
 
     class TimeOuter extends Thread {
@@ -34,8 +38,9 @@ public class BalListener extends ListenerAdapter {
                 TimeUnit.SECONDS.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            } finally {
+                timeout = false;
             }
-            timeout = false;
         }
     }
 }
