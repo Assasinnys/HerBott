@@ -23,19 +23,19 @@ public class DBHelper {
     public static void readDB() throws Exception {
         Statement statement = getConnection().createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM stats");
-        while (rs.next()) {
-            System.out.println("Read nick: " + rs.getString("nick"));
-            System.out.println("Read from DB: " + rs.getString("duel"));
-            System.out.println("Read tryapka: " + rs.getString("tryapka"));
-        }
-        statement.executeUpdate("UPDATE stats SET duel = duel + 1, tryapka = 1 WHERE nick = 'assasinnys';");
-        System.out.println("And again!");
-        rs = statement.executeQuery("SELECT * FROM stats");
-        while (rs.next()) {
-            System.out.println("Read nick: " + rs.getString("nick"));
-            System.out.println("Read from DB: " + rs.getString("duel"));
-            System.out.println("Read tryapka: " + rs.getString("tryapka"));
-        }
+//        while (rs.next()) {
+//            System.out.println("Read nick: " + rs.getString("nick"));
+//            System.out.println("Read from DB: " + rs.getString("duel"));
+//            System.out.println("Read tryapka: " + rs.getString("tryapka"));
+//        }
+//        statement.executeUpdate("UPDATE stats SET duel = duel + 1, tryapka = 1 WHERE nick = 'assasinnys';");
+//        System.out.println("And again!");
+//        rs = statement.executeQuery("SELECT * FROM stats");
+//        while (rs.next()) {
+//            System.out.println("Read nick: " + rs.getString("nick"));
+//            System.out.println("Read from DB: " + rs.getString("duel"));
+//            System.out.println("Read tryapka: " + rs.getString("tryapka"));
+//        }
     }
 
 }

@@ -25,10 +25,10 @@ public class BalListener extends ListenerAdapter {
             Random random = new Random();
             event.respondChannel(user + " " + answers[random.nextInt(answers.length)]);
         }
-        else if (message.startsWith("db")) {
-            DBHelper.readDB();
-            System.out.println("Reading complete!");
-        }
+//        else if (message.startsWith("db")) {
+//            DBHelper.readDB();
+//            System.out.println("Reading complete!");
+//        }
     }
 
     class TimeOuter extends Thread {
