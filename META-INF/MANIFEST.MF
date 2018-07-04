@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Main-Class: Main
 
+=======
+Manifest-Version: 1.0
+Main-Class: Main
+
+>>>>>>> 29a7e92ec4d72b8641f1052c96614bb058c9be9e
