@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 Manifest-Version: 1.0
 Implementation-Title: Gradle Jar File Example
 Implementation-Version: 1.0-SNAPSHOT
 Main-Class: Main
 
-=======
-Manifest-Version: 1.0
-Implementation-Title: Gradle Jar File Example
-Implementation-Version: 1.0-SNAPSHOT
-Main-Class: Main
-
->>>>>>> 29a7e92ec4d72b8641f1052c96614bb058c9be9e
