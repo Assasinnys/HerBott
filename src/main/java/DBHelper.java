@@ -72,6 +72,7 @@ public class DBHelper {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(String.format("SELECT %s FROM stats WHERE nick = '%s'", column, nick));
+            rs.next();
             result = rs.getInt(column);
             connection.close();
         } catch (Exception e) {
