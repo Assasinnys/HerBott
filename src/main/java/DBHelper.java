@@ -88,7 +88,7 @@ public class DBHelper {
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(String.format("SELECT nick, %s FROM stats", column));
             while (rs.next()) {
-                map.put(rs.getString(DBHelper.NICK), rs.getInt(column));
+                if (rs.getInt(column) != 0) map.put(rs.getString(DBHelper.NICK), rs.getInt(column));
             }
             connection.close();
         } catch (Exception e) {
