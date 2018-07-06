@@ -34,14 +34,14 @@ public class DuelListener extends ListenerAdapter {
             event.respondWith("Дуэль отменена, участники забанены! (шутка) BibleThump");
         }
         else if (message.equalsIgnoreCase("!стат дуэль")) {
-//            int value = Statistics.getStats().receiveStat(nickname, Statistics.DUEL);
-//            event.respondWith(String.format("%s победил в дуэлях %d раз(а) PogChamp", nickname, value));
-            event.respondWith("Статистика временно недоступна!");
+            int value = Statistics.getStats().receiveStat(nickname, DBHelper.DUEL);
+            event.respondWith(String.format("%s победил в дуэлях %d раз(а) PogChamp", nickname, value));
+//            event.respondWith("Статистика временно недоступна!");
         }
         else if (message.equalsIgnoreCase("!топ дуэль")) {
-//            String s = Statistics.getStats().top(Statistics.DUEL);
-//            event.respondWith(s);
-            event.respondWith("Статистика временно недоступна!");
+            String s = Statistics.getStats().top(Statistics.DUEL);
+            event.respondWith(s);
+//            event.respondWith("Статистика временно недоступна!");
         }
     }
 
@@ -52,12 +52,12 @@ public class DuelListener extends ListenerAdapter {
         event.respondWith(String.format("%s выбрасывает %d очков VS %d очков %s", firstPlayer, f, s, secondPlayer));
         delay();
         if (f > s) {
-            Statistics.getStats().sendStat(firstPlayer, Statistics.DUEL);
+            Statistics.getStats().sendStat(firstPlayer, DBHelper.DUEL);
             event.respondWith(String.format("%s побеждает в дуэли, а для %s дуэль оказалась последней! BloodTrail", firstPlayer, secondPlayer));
             delay();
             event.respondWith(String.format("/timeout %s %d", secondPlayer, 35));
         } else if (s > f) {
-            Statistics.getStats().sendStat(secondPlayer, Statistics.DUEL);
+            Statistics.getStats().sendStat(secondPlayer, DBHelper.DUEL);
             event.respondWith(String.format("%s побеждает в дуэли, а для %s дуэль оказалась последней! BloodTrail", secondPlayer, firstPlayer));
             delay();
             event.respondWith(String.format("/timeout %s %d", firstPlayer, 35));

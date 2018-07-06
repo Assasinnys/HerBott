@@ -135,7 +135,7 @@ public class Bot extends ListenerAdapter {
 						event.respondWith("и получил мутом по губам LUL");
 						event.respondWith(String.format("/timeout %s %d", user, 120));
 					}
-					Statistics.getStats().sendStat(nick, Statistics.TRAP);
+					Statistics.getStats().sendStat(nick, DBHelper.TRYAPKA);
 					break;
 				}
 			}
@@ -150,14 +150,14 @@ public class Bot extends ListenerAdapter {
 			event.respondWith("@" + user + " " + guess(message));
 		}
 		else if (message.equalsIgnoreCase("!стат тряпка")) {
-//			int num = Statistics.getStats().receiveStat(user, Statistics.TRAP);
-//			event.respondWith(String.format("%s , по тебе попали %d раз(а) сцаной тряпкой. DansGame", user, num));
-            event.respondWith("Статистика временно недоступна!");
+			int num = Statistics.getStats().receiveStat(user, DBHelper.TRYAPKA);
+			event.respondWith(String.format("%s , по тебе попали %d раз(а) сцаной тряпкой. DansGame", user, num));
+//            event.respondWith("Статистика временно недоступна!");
 		}
 		else if (message.equalsIgnoreCase("!топ тряпка")) {
-//            String s = Statistics.getStats().top(Statistics.TRAP);
-//            event.respondWith(s);
-            event.respondWith("Статистика временно недоступна!");
+            String s = Statistics.getStats().top(Statistics.TRAP);
+            event.respondWith(s);
+//            event.respondWith("Статистика временно недоступна!");
         }
 		else if (message.equalsIgnoreCase("!команды")) {
 			event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать, !стат тряпка, !стат битва, !стат дуэль," +

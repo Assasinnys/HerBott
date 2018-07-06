@@ -8,64 +8,27 @@ public class Statistics {
     public static final int DUEL = 2;
 
     private static Statistics stats = new Statistics();
-    private File fileT;
-    private File fileB;
-    private File fileD;
 
-    private Map<String, Integer> statB;
-    private Map<String, Integer> statT;
-    private Map<String, Integer> statD;
+    private ArrayList<String> nicks;
 
     public static Statistics getStats() {
         return stats;
     }
 
     private Statistics() {
-        fileB = new File("statsB.txt");
-        fileT = new File("statsT.txt");
-        fileD = new File("statsD.txt");
-        statB = new HashMap<>();
-        statT = new HashMap<>();
-        statD = new HashMap<>();
-        if (!fileB.exists()) {
-            try {
-                //noinspection ResultOfMethodCallIgnored
-                fileB.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        if (!fileT.exists()) {
-            try {
-                //noinspection ResultOfMethodCallIgnored
-                fileT.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        if (!fileD.exists()) {
-            try {
-                //noinspection ResultOfMethodCallIgnored
-                fileD.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        readFromFile(fileB, statB);
-        readFromFile(fileT, statT);
-        readFromFile(fileD, statD);
+        nicks = DBHelper.readNicks();
     }
 
     public String top(int flag) {
         String result = "";
         if (flag == BATTLE) {
-            result = find(statB, "Топ битв: ");
+            result = find(DBHelper.getTopMap(DBHelper.BATTLE), "Топ битвы: ");
         }
         else if (flag == TRAP) {
-            result = find(statT, "Топ тряпок: ");
+            result = find(DBHelper.getTopMap(DBHelper.TRYAPKA), "Топ тряпок: ");
         }
         else if (flag == DUEL) {
-            result = find(statD, "Топ дуэлей: ");
+            result = find(DBHelper.getTopMap(DBHelper.DUEL), "Топ дуэлей: ");
         }
         return result;
     }
@@ -89,48 +52,20 @@ public class Statistics {
         return builder.toString();
     }
 
-    public void sendStat(String nick, int flag) {
-        if (flag == BATTLE) {
-            if (statB.containsKey(nick)) {
-                int value = statB.get(nick) + 1;
-                statB.put(nick, value);
-                DBHelper.updateData(nick, "battle");
-            } else {
-                statB.put(nick, 1);
-                DBHelper.addNewData(nick, "battle");
-            }
-//            writeToFile(fileB, statB);
-        }
-        else if (flag == TRAP) {
-            if (statT.containsKey(nick)) {
-                int value = statT.get(nick) + 1;
-                statT.put(nick, value);
-            } else statT.put(nick, 1);
-            writeToFile(fileT, statT);
-        }
-        else if (flag == DUEL) {
-            if (statD.containsKey(nick)) {
-                int value = statD.get(nick) + 1;
-                statD.put(nick, value);
-            } else statD.put(nick, 1);
-            writeToFile(fileD, statD);
+    public void sendStat(String nick, String column) {
+        if (nicks.contains(nick))
+            DBHelper.updateData(nick, column);
+        else {
+            DBHelper.addNewData(nick, column);
+            nicks.add(nick);
         }
     }
 
-    public int receiveStat(String nick, int flag) {
-        int result = 0;
-        if (flag == BATTLE) {
-            result = statB.getOrDefault(nick, 0);
-        }
-        else if (flag == TRAP) {
-            result = statT.getOrDefault(nick, 0);
-        }
-        else if (flag == DUEL) {
-            result = statD.getOrDefault(nick, 0);
-        }
-        return result;
+    public int receiveStat(String nick, String column) {
+        return nicks.contains(nick)? DBHelper.receiveData(nick, column) : 0;
     }
 
+    @Deprecated
     private void writeToFile(File file, Map<String, Integer> map) {
         StringBuilder builder = new StringBuilder();
         for (String nick : map.keySet()) {
@@ -146,22 +81,6 @@ public class Statistics {
             writer.close();
         } catch (IOException i) {
             i.printStackTrace();
-        }
-    }
-
-    private void readFromFile(File file, Map<String, Integer> map) {
-        String[] buffer;
-        String line;
-        Scanner scanner;
-        try {
-            scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                line = scanner.nextLine();
-                buffer = line.split(" ");
-                map.put(buffer[0], Integer.parseInt(buffer[1]));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
     }
 

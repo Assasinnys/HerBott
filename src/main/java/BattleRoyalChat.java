@@ -107,7 +107,7 @@ public class BattleRoyalChat extends ListenerAdapter {
                 shooter = players.get(0);
                 timeout = true;
                 endGame(10);
-                Statistics.getStats().sendStat(shooter, Statistics.BATTLE);
+                Statistics.getStats().sendStat(shooter, DBHelper.BATTLE);
                 event.respondWith(shooter + " ПОБЕЖДАЕТ В МАТЧЕ!!! HSWP");
             }
         }
@@ -123,17 +123,17 @@ public class BattleRoyalChat extends ListenerAdapter {
             event.respondWith("Игра остановлена");
         }
         else if (message.equalsIgnoreCase("!стат битва")) {
-//            int num = Statistics.getStats().receiveStat(shooter, Statistics.BATTLE);
-//            event.respondWith(String.format("%s ты занял топчик %d раз(а) PogChamp", shooter, num));
-            event.respondWith("Статистика временно недоступна!");
+            int num = Statistics.getStats().receiveStat(shooter, DBHelper.BATTLE);
+            event.respondWith(String.format("%s ты занял топчик %d раз(а) PogChamp", shooter, num));
+//            event.respondWith("Статистика временно недоступна!");
         }
         else if (message.equalsIgnoreCase("!команды битва")) {
             event.respondWith("Особые команды битвы: !пиу - выстрел, !хп - очевидно, !список - список живых.");
         }
         else if (message.equalsIgnoreCase("!топ битва")) {
-//            String s = Statistics.getStats().top(Statistics.BATTLE);
-//            event.respondWith(s);
-            event.respondWith("Статистика временно недоступна!");
+            String s = Statistics.getStats().top(Statistics.BATTLE);
+            event.respondWith(s);
+//            event.respondWith("Статистика временно недоступна!");
         }
     }
 
