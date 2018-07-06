@@ -86,7 +86,8 @@ public class DBHelper {
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery(String.format("SELECT nick, %s FROM stats", column));
+            ResultSet rs = st.executeQuery(String.format("SELECT nick, %s FROM stats WHERE %s > 0 ORDER BY %s DESC LIMIT 10",
+                    column, column, column));
             while (rs.next()) {
                 if (rs.getInt(column) != 0) map.put(rs.getString(DBHelper.NICK), rs.getInt(column));
             }

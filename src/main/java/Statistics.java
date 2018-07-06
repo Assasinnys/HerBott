@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class Statistics {
@@ -65,34 +64,16 @@ public class Statistics {
         return nicks.contains(nick)? DBHelper.receiveData(nick, column) : 0;
     }
 
-    @Deprecated
-    private void writeToFile(File file, Map<String, Integer> map) {
-        StringBuilder builder = new StringBuilder();
-        for (String nick : map.keySet()) {
-            builder.append(nick)
-                    .append(" ")
-                    .append(map.get(nick))
-                    .append("\n");
-        }
-        try {
-            FileWriter writer = new FileWriter(file, false);
-            writer.write(builder.toString());
-            writer.flush();
-            writer.close();
-        } catch (IOException i) {
-            i.printStackTrace();
-        }
-    }
-
     class ValueComparator implements Comparator<String> {
         Map<String, Integer> base;
 
-        public ValueComparator(Map<String, Integer> base) {
+        ValueComparator(Map<String, Integer> base) {
             this.base = base;
         }
 
         // Note: this comparator imposes orderings that are inconsistent with
         // equals.
+        @SuppressWarnings("ComparatorMethodParameterNotUsed")
         public int compare(String a, String b) {
             if (base.get(a) >= base.get(b)) {
                 return -1;
