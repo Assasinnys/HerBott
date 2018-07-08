@@ -61,24 +61,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ActivityListener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/ActivityListener.java">
+      <file leaf-file-name="PhrasesListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Statistics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -526,6 +516,7 @@
         <option value="$PROJECT_DIR$/src/main/java/other/TestRequests.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/ActivityListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" />
       </list>
     </option>
   </component>
@@ -874,13 +865,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$JAVA_HOME$/jdk1.8.0_141/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="904" column="23" lean-forward="true" selection-start-line="904" selection-start-column="23" selection-end-line="904" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Test.java" />
     <entry file="file://$PROJECT_DIR$/build/libs/start.bat">
       <provider selected="true" editor-type-id="text-editor">
@@ -1079,16 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/AllListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
@@ -1186,7 +1160,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1199,6 +1173,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/ActivityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1207,10 +1191,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/ActivityListener.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.pircbotx/pircbotx/2.1/fb64ee53c136e8c73b384d16830abb7296c714ae/pircbotx-2.1-sources.jar!/org/pircbotx/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="217" column="18" lean-forward="false" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
+          <folding>
+            <element signature="e#6142#6143#0" expanded="true" />
+            <element signature="e#6169#6170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
