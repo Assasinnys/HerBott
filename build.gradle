@@ -11,7 +11,7 @@ targetCompatibility = 1.8
 
 jar {
     manifest {
-        attributes 'Main-class': 'Main'
+        attributes 'Main-class': '.herbott.Main'
     }
 }
 
@@ -19,7 +19,7 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
                 'Implementation-Version': version,
-                'Main-Class': 'Main'
+                'Main-Class': 'herbott.Main'
     }
     baseName = project.name + '-correctJar'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
