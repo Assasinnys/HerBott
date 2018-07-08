@@ -1,5 +1,6 @@
 package herbott.listeners;
 
+import herbott.Main;
 import herbott.Statistics;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
@@ -16,9 +17,9 @@ public class ActivityListener extends ListenerAdapter {
         String message = event.getMessage();
 
         if (!(message.length() < 2))
-            activity.put(nick, activity.getOrDefault(nick, 1));
+            activity.put(nick, activity.getOrDefault(nick, 0) + 1);
 
-        if (message.equalsIgnoreCase("!топ активных")) {
+        if (message.equalsIgnoreCase("!топ активных") && (nick.equalsIgnoreCase(Main.CREATOR))) {
             event.respondChannel(Statistics.getStats().find(activity, "Топ активных в чате: "));
         }
     }
