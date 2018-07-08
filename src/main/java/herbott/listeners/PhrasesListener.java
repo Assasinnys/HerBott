@@ -13,7 +13,7 @@ public class PhrasesListener extends ListenerAdapter {
         String message = event.getMessage().toLowerCase();
 
         if (message.matches("(.*)кусь(.*)")) {
-            event.respondChannel("КУСЬ КУСЬ КУСЬ КУСЬ");
+            event.respondChannel("КУСЬ SMOrc КУСЬ SMOrc КУСЬ SMOrc КУСЬ");
         } else if (message.matches("(.*)фыр(.*)")) {
             event.respondChannel("ФЫР-ФЫР-ФЫР-ФЫР!!!");
         }
