@@ -595,7 +595,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$USER_HOME$/gradle-getting-started/build.gradle" />
+    <property name="last_opened_file_path" value="$USER_HOME$/gradle-getting-started" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -617,7 +617,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Gradle.TwitchBot [build]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -790,10 +790,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Test" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.TwitchBot [fatJar]" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestBase" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.TwitchBot [build]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.TwitchBot [build]" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.TwitchBot [fatJar]" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestBase" />
         <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
