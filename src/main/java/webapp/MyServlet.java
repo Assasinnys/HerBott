@@ -1,4 +1,4 @@
-package web;
+package webapp;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +13,6 @@ public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
-        out.print("<h1>HI HI HI!!!</h1>");
+
     }
 }

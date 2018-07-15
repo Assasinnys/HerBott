@@ -9,12 +9,6 @@ compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-jar {
-    manifest {
-        attributes 'Main-class': '.herbott.Main'
-    }
-}
-
 task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
@@ -25,18 +19,6 @@ task fatJar(type: Jar) {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
-
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
-    }
-}
-
-apply plugin: 'com.github.johnrengelman.shadow'
 
 repositories {
     mavenCentral()
@@ -51,4 +33,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.8'
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.8'
+    compile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.8'
+    compile group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '9.0.8'
+    compile group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '9.0.8'
 }
