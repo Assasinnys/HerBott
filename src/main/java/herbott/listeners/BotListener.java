@@ -77,7 +77,7 @@ public class BotListener extends ListenerAdapter {
 		String user = event.getUser().getNick();
 		System.out.println(">>>> " + user + ": " + message);
 		if (message.equalsIgnoreCase("бот")) {
-			event.respondWith("@" + user + " herbott.listeners.BotListener online! Ready to work");
+			event.respondWith("@" + user + " Bot online! Ready to work");
 		}
 		else if (message.equalsIgnoreCase("!best")) {
 			event.respondWith("Лучший в этом чате - " + oneOfAllChat() + " Kappa");
