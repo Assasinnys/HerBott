@@ -15,6 +15,7 @@ public class DBHelper {
     public static final String DUEL = "duel";
     public static final String TRYAPKA = "tryapka";
     public static final String NICK = "nick";
+//    public static ArrayList<String> banlist = new ArrayList<>();
 
     private static Connection getConnection() throws URISyntaxException, SQLException {
         System.out.println("Starting to create connection!");

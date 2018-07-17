@@ -14,25 +14,10 @@
     <orderEntry type="library" name="Gradle: com.google.guava:guava:19.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-slf4j-impl:2.11.0" level="project" />
     <orderEntry type="library" name="Gradle: org.postgresql:postgresql:42.2.2" level="project" />
-    <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-jasper:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-jasper:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-jasper-el:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-jsp-api:9.0.8" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.8.0-alpha2" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-core:2.11.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-annotations-api:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jdt:ecj:3.13.102" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-util-scan:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-api:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-servlet-api:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-util:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-juli:9.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-el-api:9.0.8" level="project" />
   </component>
 </module>

@@ -20,6 +20,8 @@ public class BalListener extends ListenerAdapter {
         String message = event.getMessage().toLowerCase();
         String user = event.getUser().getNick();
 
+        if (BotListener.banlist.contains(user)) return;
+
         if (message.startsWith("бот, стоит ли") || message.startsWith("бот стоит ли") || message.startsWith("!бот")) {
             if (timeout || BattleRoyalChat.isAlive()) return;
             timeout = true;

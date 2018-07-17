@@ -12,6 +12,8 @@ public class PhrasesListener extends ListenerAdapter {
         String nick = Objects.requireNonNull(event.getUser()).getNick();
         String message = event.getMessage().toLowerCase();
 
+        if (BotListener.banlist.contains(nick)) return;
+
         if (message.matches("(.*)кусь(.*)")) {
             event.respondChannel("КУСЬ SMOrc КУСЬ SMOrc КУСЬ SMOrc КУСЬ");
         } else if (message.matches("(.*)фыр(.*)")) {

@@ -32,10 +32,4 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.11.0'
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
-    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
-    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.8'
-    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.8'
-    compile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.8'
-    compile group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '9.0.8'
-    compile group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '9.0.8'
 }
