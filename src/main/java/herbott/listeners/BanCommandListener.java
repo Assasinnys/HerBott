@@ -14,7 +14,8 @@ public class BanCommandListener extends ListenerAdapter {
         String nick = Objects.requireNonNull(event.getUser()).getNick();
         String message = event.getMessage();
 
-        if (message.startsWith("!ban") && nick.equalsIgnoreCase(Main.CREATOR)) {
+        if (message.startsWith("!ban") && (nick.equalsIgnoreCase(Main.CREATOR) ||
+                event.getTags().get("user-type").equalsIgnoreCase("mod"))) {
             try {
                 event.respondChannel(Statistics.getStats().addBan(message.split(" ")[1]));
             } catch (ArrayIndexOutOfBoundsException e) {
