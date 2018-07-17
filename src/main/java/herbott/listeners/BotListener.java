@@ -27,7 +27,6 @@ public class BotListener extends ListenerAdapter {
 		bots.add("nightbot");
 		bots.add("electricalskateboard");
 		bots.add("commanderroot");
-//		banlist.add("snobold_220");
 	}
 
 	private String oneOfAllChat() {

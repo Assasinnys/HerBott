@@ -76,7 +76,8 @@ public class Statistics {
     public String deleteBan(String nick) {
         if (banlist.contains(nick)) {
             DBHelper.deleteBan(nick);
-            return String.format("/me разрешил команды для %s", nick);
+            banlist.remove(nick);
+            return String.format("/me разрешил команды для пользователя %s", nick);
         }
         return String.format("/me не обнаружил %s в банлисте.", nick);
     }

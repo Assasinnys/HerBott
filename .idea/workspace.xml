@@ -60,7 +60,34 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/other/TestBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Statistics.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="79" column="71" lean-forward="false" selection-start-line="79" selection-start-column="71" selection-end-line="79" selection-end-column="71" />
+              <folding>
+                <element signature="e#358#359#0" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#2775#2776#0" expanded="true" />
+                <element signature="e#2805#2806#0" expanded="true" />
+                <marker date="1531865525271" expanded="false" signature="3121:3174" ph="/ComparatorMethodParameterNotUsed/" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -484,16 +511,16 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/MyServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BanCommandListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BalListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BattleRoyalChat.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
       </list>
     </option>
   </component>
@@ -560,6 +587,14 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="herbott" type="462c0819:PsiDirectoryNode" />
               <item name="listeners" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitchBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitchBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="other" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -811,6 +846,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -984,36 +1020,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="86" lean-forward="false" selection-start-line="40" selection-start-column="86" selection-end-line="40" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-          <folding>
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#2728#2729#0" expanded="true" />
-            <element signature="e#2758#2759#0" expanded="true" />
-            <marker date="1531863900489" expanded="false" signature="3074:3127" ph="/ComparatorMethodParameterNotUsed/" />
           </folding>
         </state>
       </provider>
@@ -1034,16 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BanCommandListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BalListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1056,14 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="79" column="46" lean-forward="false" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1097,6 +1091,46 @@
         <state relative-caret-position="272">
           <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BanCommandListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="79" column="71" lean-forward="false" selection-start-line="79" selection-start-column="71" selection-end-line="79" selection-end-column="71" />
+          <folding>
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#2775#2776#0" expanded="true" />
+            <element signature="e#2805#2806#0" expanded="true" />
+            <marker date="1531865525271" expanded="false" signature="3121:3174" ph="/ComparatorMethodParameterNotUsed/" />
+          </folding>
         </state>
       </provider>
     </entry>
