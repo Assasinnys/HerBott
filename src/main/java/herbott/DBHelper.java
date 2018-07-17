@@ -15,7 +15,9 @@ public class DBHelper {
     public static final String DUEL = "duel";
     public static final String TRYAPKA = "tryapka";
     public static final String NICK = "nick";
-//    public static ArrayList<String> banlist = new ArrayList<>();
+
+    public static final String BANLIST_TABLE = "banlist";
+    public static final String STATS_TABLE = "stats";
 
     private static Connection getConnection() throws URISyntaxException, SQLException {
         System.out.println("Starting to create connection!");
@@ -53,12 +55,34 @@ public class DBHelper {
         }
     }
 
-    public static ArrayList<String> readNicks() {
+    public static void addNewBan(String nick) {
+        try {
+            Connection connection = getConnection();
+            Statement st = connection.createStatement();
+            st.executeUpdate(String.format("INSERT INTO %s (%s) VALUES ('%s');",BANLIST_TABLE, NICK, nick));
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteBan(String nick) {
+        try {
+            Connection connection = getConnection();
+            Statement st = connection.createStatement();
+            st.executeUpdate(String.format("DELETE FROM %s WHERE %s = '%s';",BANLIST_TABLE, NICK, nick));
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static ArrayList<String> readNickMap(String tableName) {
         ArrayList<String> nicks = new ArrayList<>();
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery("SELECT nick FROM stats");
+            ResultSet rs = st.executeQuery(String.format("SELECT nick FROM %s", tableName));
             while (rs.next()) {
                 nicks.add(rs.getString("nick"));
             }

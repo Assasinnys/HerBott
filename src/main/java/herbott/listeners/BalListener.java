@@ -1,5 +1,6 @@
 package herbott.listeners;
 
+import herbott.Statistics;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
 
@@ -20,7 +21,7 @@ public class BalListener extends ListenerAdapter {
         String message = event.getMessage().toLowerCase();
         String user = event.getUser().getNick();
 
-        if (BotListener.banlist.contains(user)) return;
+        if (Statistics.getStats().getBanlist().contains(user)) return;
 
         if (message.startsWith("бот, стоит ли") || message.startsWith("бот стоит ли") || message.startsWith("!бот")) {
             if (timeout || BattleRoyalChat.isAlive()) return;

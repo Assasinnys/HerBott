@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 public class BotListener extends ListenerAdapter {
 
 	public static List<String> bots = new ArrayList<>();
-	public static List<String> banlist = new ArrayList<>();
 	private int guess;
 	private boolean guessGame;
 	private boolean timeout;
@@ -28,7 +27,7 @@ public class BotListener extends ListenerAdapter {
 		bots.add("nightbot");
 		bots.add("electricalskateboard");
 		bots.add("commanderroot");
-		banlist.add("snobold_220");
+//		banlist.add("snobold_220");
 	}
 
 	private String oneOfAllChat() {
@@ -78,7 +77,7 @@ public class BotListener extends ListenerAdapter {
 		String message = event.getMessage();
 		String user = event.getUser().getNick().toLowerCase();
 
-		if (banlist.contains(user)) return;
+		if (Statistics.getStats().getBanlist().contains(user)) return;
 
 			System.out.println(">>>> " + user + ": " + message);
 		if (message.equalsIgnoreCase("бот")) {

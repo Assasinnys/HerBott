@@ -92,7 +92,7 @@ public class BattleRoyalChat extends ListenerAdapter {
     public void onGenericMessage(GenericMessageEvent event) {
         String message = event.getMessage().toLowerCase();
         String shooter = event.getUser().getNick();
-        if (BotListener.banlist.contains(shooter)) return;
+        if (Statistics.getStats().getBanlist().contains(shooter)) return;
         if (message.equalsIgnoreCase("!battle") && !gameStatus && shooter.equalsIgnoreCase("assasinnys")) {
             event.respondWith("GAME STARTED! Зарегистрировано игроков: " + startBattle());
         }
