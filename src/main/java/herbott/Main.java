@@ -39,6 +39,7 @@ public class Main {
                                                 .addListener(new UserNoticeListener())
 												.addListener(new ActivityListener())
 												.addListener(new BanCommandListener())
+												.addListener(new TotalControl())
 												.buildConfiguration();
 
 		bot = new PircBotX(config);

@@ -12,7 +12,10 @@ public class BanCommandListener extends ListenerAdapter {
     @Override
     public void onMessage(MessageEvent event) {
         String nick = Objects.requireNonNull(event.getUser()).getNick();
-        String message = event.getMessage();
+        String message = event.getMessage().toLowerCase();
+        if (message.contains("@")) {
+            message = message.replace("@", "");
+        }
 
         if (message.startsWith("!ban") && (nick.equalsIgnoreCase(Main.CREATOR) ||
                 event.getTags().get("user-type").equalsIgnoreCase("mod"))) {
@@ -21,7 +24,8 @@ public class BanCommandListener extends ListenerAdapter {
             } catch (ArrayIndexOutOfBoundsException e) {
                 event.respondChannel("Неверный синтаксис команды");
             }
-        } else if (message.startsWith("!unban") && nick.equalsIgnoreCase(Main.CREATOR)) {
+        } else if (message.startsWith("!unban") && (nick.equalsIgnoreCase(Main.CREATOR) ||
+                event.getTags().get("user-type").equalsIgnoreCase("mod"))) {
             try {
                 event.respondChannel(Statistics.getStats().deleteBan(message.split(" ")[1]));
             } catch (ArrayIndexOutOfBoundsException e) {
