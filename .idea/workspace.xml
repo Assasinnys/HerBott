@@ -61,7 +61,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TotalControl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TotalControl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -69,6 +69,30 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Statistics.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+              <folding>
+                <element signature="e#2928#2929#0" expanded="true" />
+                <element signature="e#2968#2969#0" expanded="true" />
+                <marker date="1531939316480" expanded="false" signature="3076:3129" ph="/ComparatorMethodParameterNotUsed/" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DuelListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-187">
+              <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -502,11 +526,11 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/connection/WebConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BanCommandListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
       </list>
     </option>
   </component>
@@ -1047,13 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1066,20 +1083,6 @@
         <state relative-caret-position="289">
           <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="79" column="71" lean-forward="false" selection-start-line="79" selection-start-column="71" selection-end-line="79" selection-end-column="71" />
-          <folding>
-            <element signature="e#358#359#0" expanded="false" />
-            <element signature="e#386#387#0" expanded="false" />
-            <element signature="e#2775#2776#0" expanded="false" />
-            <element signature="e#2805#2806#0" expanded="false" />
-            <marker date="1531865525271" expanded="false" signature="3121:3174" ph="/ComparatorMethodParameterNotUsed/" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,12 +1113,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="e#2928#2929#0" expanded="true" />
+            <element signature="e#2968#2969#0" expanded="true" />
+            <marker date="1531939316480" expanded="false" signature="3076:3129" ph="/ComparatorMethodParameterNotUsed/" />
           </folding>
         </state>
       </provider>

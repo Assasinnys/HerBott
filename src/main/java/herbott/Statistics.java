@@ -38,13 +38,13 @@ public class Statistics {
     }
 
     public String find(Map<String, Integer> map, String start) {
-//        HashMap<String, Integer> temp = new HashMap<>(map);
+        HashMap<String, Integer> temp = new HashMap<>(map);
         StringBuilder builder = new StringBuilder(start);
-//        ValueComparator bvs = new ValueComparator(temp);
-//        TreeMap<String, Integer> sort = new TreeMap<>(bvs);
-//        sort.putAll(map);
+        ValueComparator bvs = new ValueComparator(temp);
+        TreeMap<String, Integer> sort = new TreeMap<>(bvs);
+        sort.putAll(map);
         int counter = 0;
-        for (String nick : /*sort.navigableKeySet()*/ map.keySet()) {
+        for (String nick : sort.navigableKeySet()) {
             builder.append(++counter)
                     .append(". ")
                     .append(nick)
@@ -90,23 +90,23 @@ public class Statistics {
         return banlist;
     }
 
-//    class ValueComparator implements Comparator<String> {
-//        Map<String, Integer> base;
-//
-//        ValueComparator(Map<String, Integer> base) {
-//            this.base = base;
-//        }
-//
-//        // Note: this comparator imposes orderings that are inconsistent with
-//        // equals.
-//        @SuppressWarnings("ComparatorMethodParameterNotUsed")
-//        public int compare(String a, String b) {
-//            if (base.get(a) >= base.get(b)) {
-//                return -1;
-//            } else {
-//                return 1;
-//            } // returning 0 would merge keys
-//        }
-//    }
+    class ValueComparator implements Comparator<String> {
+        Map<String, Integer> base;
+
+        ValueComparator(Map<String, Integer> base) {
+            this.base = base;
+        }
+
+        // Note: this comparator imposes orderings that are inconsistent with
+        // equals.
+        @SuppressWarnings("ComparatorMethodParameterNotUsed")
+        public int compare(String a, String b) {
+            if (base.get(a) >= base.get(b)) {
+                return -1;
+            } else {
+                return 1;
+            } // returning 0 would merge keys
+        }
+    }
 }
 
