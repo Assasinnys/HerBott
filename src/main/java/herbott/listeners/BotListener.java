@@ -74,7 +74,7 @@ public class BotListener extends ListenerAdapter {
 	@Override
 	public void onMessage(MessageEvent event) throws Exception {
 		String message = event.getMessage();
-		String user = event.getUser().getNick().toLowerCase();
+		String user = event.getUser().getNick();
 
 		if (Statistics.getStats().getBanlist().contains(user)) return;
 
@@ -93,7 +93,7 @@ public class BotListener extends ListenerAdapter {
 			event.respondWith("Зрителей: " + json.getString("chatter_count"));
 		}
 		else if (message.equalsIgnoreCase("всем привет")) {
-			event.respondWith("@" + user + ", привет!");
+			event.respondWith(user + ", привет!");
 		}
 		else if (message.equalsIgnoreCase("!тряпка") && !timeout) {
 			timeout = true;

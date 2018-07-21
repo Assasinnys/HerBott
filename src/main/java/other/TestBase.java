@@ -1,5 +1,7 @@
 package other;
 
+import herbott.DBHelper;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
@@ -12,13 +14,19 @@ public class TestBase {
         Scanner scanner = new Scanner(System.in);
         Statement st = getConnection().createStatement();
         ResultSet rs;
+
         while(true) {
             String command = scanner.nextLine();
             if (command.equalsIgnoreCase("stop")) break;
             if (command.split(" ")[0].equalsIgnoreCase("select")) {
                 rs = st.executeQuery(command);
+                int counter = 1;
                 while (rs.next()) {
-                    System.out.println(rs.getArray(1).toString());
+//                    System.out.println(rs.getArray(1).toString());
+                    System.out.print(counter++ + ". " + rs.getString(DBHelper.NICK) + " - ");
+                    System.out.print(rs.getInt(DBHelper.TRYAPKA) + " - ");
+                    System.out.print(rs.getInt(DBHelper.BATTLE) + " - ");
+                    System.out.println(rs.getInt(DBHelper.DUEL));
                 }
             } else
                 System.out.println("Выполнение запроса: " + st.execute(command));

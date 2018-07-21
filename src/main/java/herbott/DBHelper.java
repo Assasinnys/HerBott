@@ -48,8 +48,9 @@ public class DBHelper {
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            st.executeUpdate(String.format("INSERT INTO stats (nick, %s) VALUES ('%s', 1);", column, nick));
+            st.executeUpdate(String.format("INSERT INTO stats (nick, tryapka, battle, duel) VALUES ('%s', 0, 0, 0);", nick));
             connection.close();
+            updateData(nick, column);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,7 +60,7 @@ public class DBHelper {
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            st.executeUpdate(String.format("INSERT INTO %s (%s) VALUES ('%s');",BANLIST_TABLE, NICK, nick));
+            st.executeUpdate(String.format("INSERT INTO %s (%s) VALUES ('%s');", BANLIST_TABLE, NICK, nick));
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,23 +125,4 @@ public class DBHelper {
         }
         return map;
     }
-
-    /*public static void readDB() throws Exception {
-        Statement statement = getConnection().createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM stats");
-        while (rs.next()) {
-            System.out.println("Read nick: " + rs.getString("nick"));
-            System.out.println("Read from DB: " + rs.getString("duel"));
-            System.out.println("Read tryapka: " + rs.getString("tryapka"));
-        }
-        statement.executeUpdate("UPDATE stats SET duel = duel + 1, tryapka = 1 WHERE nick = 'assasinnys';");
-        System.out.println("And again!");
-        rs = statement.executeQuery("SELECT * FROM stats");
-        while (rs.next()) {
-            System.out.println("Read nick: " + rs.getString("nick"));
-            System.out.println("Read from DB: " + rs.getString("duel"));
-            System.out.println("Read tryapka: " + rs.getString("tryapka"));
-        }
-    }*/
-
 }
