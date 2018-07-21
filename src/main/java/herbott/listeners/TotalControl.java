@@ -8,7 +8,7 @@ public class TotalControl extends ListenerAdapter {
 
     @Override
     public void onMessage(MessageEvent event) {
-        if (event.getMessage().startsWith("execute") && event.getUser().getNick().equalsIgnoreCase(Main.CREATOR)) {
+        if (event.getMessage().startsWith("ex") && event.getUser().getNick().equalsIgnoreCase(Main.CREATOR)) {
             event.respondWith(event.getMessage().split(":")[1]);
         }
     }

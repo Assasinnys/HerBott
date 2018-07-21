@@ -37,7 +37,6 @@ public class Main {
                                                 .addListener(new BalListener())
 												.addListener(new PhrasesListener())
                                                 .addListener(new UserNoticeListener())
-												.addListener(new ActivityListener())
 												.addListener(new BanCommandListener())
 												.addListener(new TotalControl())
 												.buildConfiguration();

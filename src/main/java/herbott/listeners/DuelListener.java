@@ -2,6 +2,7 @@ package herbott.listeners;
 
 import herbott.*;
 import org.pircbotx.hooks.ListenerAdapter;
+import org.pircbotx.hooks.events.MessageEvent;
 import org.pircbotx.hooks.types.GenericMessageEvent;
 
 import java.util.Random;
@@ -15,7 +16,7 @@ public class DuelListener extends ListenerAdapter {
     private volatile boolean timeout;
 
     @Override
-    public void onGenericMessage(GenericMessageEvent event) {
+    public void onMessage(MessageEvent event) {
         String message = event.getMessage();
         String nickname = event.getUser().getNick();
 
@@ -28,7 +29,7 @@ public class DuelListener extends ListenerAdapter {
             } else if (secondPlayer.equalsIgnoreCase("") && !nickname.equalsIgnoreCase(firstPlayer)) {
                 gameStatus = true;
                 secondPlayer = nickname;
-                event.respondWith(String.format("%s принял дуэль", nickname));
+                event.respondWith(String.format("%s принял дуэль!", nickname));
                 game(event);
             }
         }
@@ -36,11 +37,11 @@ public class DuelListener extends ListenerAdapter {
             firstPlayer = "";
             secondPlayer = "";
             gameStatus = false;
-            event.respondWith("Дуэль отменена, участники забанены! (шутка) BibleThump");
+            event.respondWith("Дуэль отменена, участники забанены! BibleThump");
         }
         else if (message.equalsIgnoreCase("!стат дуэль")) {
             int value = Statistics.getStats().receiveStat(nickname, DBHelper.DUEL);
-            event.respondWith(String.format("%s победил в дуэлях %d раз(а) PogChamp", nickname, value));
+            event.respondWith(String.format("%s победил(a) в дуэлях %d раз(а) PogChamp", nickname, value));
 //            event.respondWith("Статистика временно недоступна!");
         }
         else if (message.equalsIgnoreCase("!топ дуэль")) {
@@ -54,7 +55,7 @@ public class DuelListener extends ListenerAdapter {
         Random random = new Random();
         int f = random.nextInt(11);
         int s = random.nextInt(11);
-        event.respondWith(String.format("%s выбрасывает %d очков VS %d очков %s", firstPlayer, f, s, secondPlayer));
+        event.respondWith(String.format("%s : %d VS %d : %s", firstPlayer, f, s, secondPlayer));
         delay();
         if (f > s) {
             Statistics.getStats().sendStat(firstPlayer, DBHelper.DUEL);
