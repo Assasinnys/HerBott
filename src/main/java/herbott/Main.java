@@ -9,7 +9,7 @@ public class Main {
 
 	public static final String BOTNAME = "HerBott";
 	public static final String OAUTH = "oauth:ey9jn438m1cxaw9dencqqnx5jorq49";
-	public static final String CHANNEL = "roboher42";
+	public static final String CHANNEL = "roblife42";
 	public static final String CREATOR = "assasinnys";
 
 	public static PircBotX bot;

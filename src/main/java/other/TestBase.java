@@ -6,10 +6,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     private static String testUri = "postgres://mnsoxvtbrehooy:e9a599094f305fe3aa11597b3f0fe41585b841696e3d4d806564ec590d8b01f3@ec2-23-23-245-89.compute-1.amazonaws.com:5432/dfrmmh0htm27sa";
-
+    private static volatile boolean b = true;
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         Statement st = getConnection().createStatement();
@@ -22,7 +23,6 @@ public class TestBase {
                 rs = st.executeQuery(command);
                 int counter = 1;
                 while (rs.next()) {
-//                    System.out.println(rs.getArray(1).toString());
                     System.out.print(counter++ + ". " + rs.getString(DBHelper.NICK) + " - ");
                     System.out.print(rs.getInt(DBHelper.TRYAPKA) + " - ");
                     System.out.print(rs.getInt(DBHelper.BATTLE) + " - ");
