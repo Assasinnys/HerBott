@@ -16,18 +16,15 @@ public class SubLottery extends ListenerAdapter {
 
     public SubLottery() {
         factor = DBHelper.getActivityMap();
-        System.out.println("activate");
     }
 
     @Override
     public void onMessage(MessageEvent event) throws Exception {
-        System.out.println("Method start");
         final double add = 0.01d;
         final int limit = 7;
         UpdateExecutor executor = new UpdateExecutor();
         String message = event.getMessage();
         String username = Objects.requireNonNull(event.getUser()).getNick();
-        System.out.println("message = " + message + ", user = " + username);
         if (username.equalsIgnoreCase(Main.CHANNEL) || username.equalsIgnoreCase(Main.CREATOR)) {
             if (message.equalsIgnoreCase("!саб 1")) {
                 event.respondChannel("И победителем стааал [барабанная дробь] ...");
@@ -57,6 +54,7 @@ public class SubLottery extends ListenerAdapter {
             if (!executor.isAlive()) {
                 executor = new UpdateExecutor();
                 executor.start();
+                System.out.println("Starting thread");
             }
             System.out.println("Taking message to activity");
         } else {

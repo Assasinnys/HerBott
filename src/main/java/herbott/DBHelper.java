@@ -157,6 +157,7 @@ public class DBHelper {
                             ACTIVITY_TABLE, NICK, ACT, nick, map.get(nick)));
                 }
             }
+            st.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
