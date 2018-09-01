@@ -46,7 +46,9 @@ public class SubLottery extends ListenerAdapter {
                 TimeUnit.SECONDS.sleep(2);
                 event.respondChannel("И победителем становится... " + randomizeTop3(finalists) + " HSWP CoolCat");
             }
-        } else if (message.length() >= limit) {
+        }
+
+        if (message.length() >= limit) {
             if (factor.containsKey(username)) {
                 factor.put(username, factor.get(username) + add);
             } else {
