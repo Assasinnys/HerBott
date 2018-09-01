@@ -14,7 +14,8 @@ public class SubLottery extends ListenerAdapter {
 
     private Map<String, Double> factor;
     private UpdateExecutor executor = new UpdateExecutor();
-    private boolean chance = false;
+    private WinnerTimer timer = new WinnerTimer();
+    private volatile boolean chance = false;
     private String winnerName = "";
 
     public SubLottery() {
@@ -32,6 +33,7 @@ public class SubLottery extends ListenerAdapter {
             event.respondChannel("@" + Main.CHANNEL + " , победитель подтверждён!");
             chance = false;
             winnerName = "";
+            timer.interrupt();
         }
 
         if (username.equalsIgnoreCase(Main.CHANNEL) || username.equalsIgnoreCase(Main.CREATOR)) {
@@ -41,7 +43,7 @@ public class SubLottery extends ListenerAdapter {
                 winnerName = randomizeAll();
                 event.respondChannel( winnerName + " PogChamp PogChamp PogChamp . У тебя есть минута, чтобы появиться в чате");
                 chance = true;
-                WinnerTimer timer = new WinnerTimer();
+                timer = new WinnerTimer();
                 timer.start();
             } else if (message.equalsIgnoreCase("!саб 2")) {
                 List<String> finalists = getTop3InChat();
@@ -58,7 +60,7 @@ public class SubLottery extends ListenerAdapter {
                 event.respondChannel("И победителем становится... " + winnerName + " HSWP CoolCat");
                 event.respondChannel("Подтверди своё присутствие в течении минуты...");
                 chance = true;
-                WinnerTimer timer = new WinnerTimer();
+                timer = new WinnerTimer();
                 timer.start();
             }
         }
