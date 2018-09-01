@@ -16,6 +16,7 @@ public class SubLottery extends ListenerAdapter {
 
     public SubLottery() {
         factor = DBHelper.getActivityMap();
+        System.out.println("activate");
     }
 
     @Override

@@ -30,7 +30,7 @@ public class Main {
 		listeners.add(new BanCommandListener());
 		listeners.add(new TotalControl());
 		listeners.add(new SubLottery());
-		
+
 		Configuration config = new Configuration.Builder()
 												.setAutoNickChange(false)
 												.setOnJoinWhoEnabled(false)
