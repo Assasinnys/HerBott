@@ -53,6 +53,7 @@ public class SubLottery extends ListenerAdapter {
                 executor = new UpdateExecutor();
                 executor.start();
             }
+            System.out.println("Taking message to activity");
         }
 
     }

@@ -23,9 +23,10 @@ public class TestBase {
                 int counter = 1;
                 while (rs.next()) {
                     System.out.print(counter++ + ". " + rs.getString(DBHelper.NICK) + " - ");
-                    System.out.print(rs.getInt(DBHelper.TRYAPKA) + " - ");
-                    System.out.print(rs.getInt(DBHelper.BATTLE) + " - ");
-                    System.out.println(rs.getInt(DBHelper.DUEL));
+//                    System.out.print(rs.getInt(DBHelper.TRYAPKA) + " - ");
+//                    System.out.print(rs.getInt(DBHelper.BATTLE) + " - ");
+//                    System.out.println(rs.getInt(DBHelper.DUEL));
+                    System.out.println(rs.getDouble("act"));
                 }
             } else
                 System.out.println("Выполнение запроса: " + st.execute(command));
