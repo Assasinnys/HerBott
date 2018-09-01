@@ -38,7 +38,7 @@ public class SubLottery extends ListenerAdapter {
 
         if (username.equalsIgnoreCase(Main.CHANNEL) || username.equalsIgnoreCase(Main.CREATOR)) {
             if (message.equalsIgnoreCase("!саб 1")) {
-                event.respondChannel("И победителем стааал [барабанная дробь] ...");
+                event.respondChannel("И победителем становится [барабанная дробь] ...");
                 TimeUnit.SECONDS.sleep(5);
                 winnerName = randomizeAll();
                 event.respondChannel( winnerName + " PogChamp PogChamp PogChamp . У тебя есть минута, чтобы появиться в чате");
@@ -52,7 +52,7 @@ public class SubLottery extends ListenerAdapter {
                 Iterator<String> iterator = finalists.iterator();
                 StringBuilder builder = new StringBuilder("Эти счастливчики: ");
                 while (iterator.hasNext()) {
-                    builder.append(iterator.next()).append(" ");
+                    builder.append(iterator.next()).append(" | ");
                 }
                 event.respondChannel(builder.toString().trim());
                 TimeUnit.SECONDS.sleep(2);
@@ -139,7 +139,7 @@ public class SubLottery extends ListenerAdapter {
                 chance = false;
                 winnerName = "";
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Thread interrupted");
             }
         }
     }
