@@ -4,6 +4,10 @@ import herbott.listeners.*;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 import org.pircbotx.cap.EnableCapHandler;
+import org.pircbotx.hooks.Listener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -15,6 +19,18 @@ public class Main {
 	public static PircBotX bot;
 
 	public static void main(String[] args) throws Exception {
+		List<Listener> listeners = new ArrayList<>();
+		listeners.add(new BotListener());
+		listeners.add(new BattleRoyalChat());
+		listeners.add(new DuelListener());
+		listeners.add(new VoteListener());
+		listeners.add(new BalListener());
+		listeners.add(new PhrasesListener());
+		listeners.add(new UserNoticeListener());
+		listeners.add(new BanCommandListener());
+		listeners.add(new TotalControl());
+		listeners.add(new SubLottery());
+		
 		Configuration config = new Configuration.Builder()
 												.setAutoNickChange(false)
 												.setOnJoinWhoEnabled(false)
@@ -30,16 +46,7 @@ public class Main {
 												.setAutoReconnectAttempts(10)
 												.setAutoReconnectDelay(2000)
 												.setBotFactory(new HerBottFactory())
-												.addListener(new BotListener())
-												.addListener(new BattleRoyalChat())
-												.addListener(new DuelListener())
-                                                .addListener(new VoteListener())
-                                                .addListener(new BalListener())
-												.addListener(new PhrasesListener())
-                                                .addListener(new UserNoticeListener())
-												.addListener(new BanCommandListener())
-												.addListener(new TotalControl())
-												.addListener(new SubLottery())
+												.addListeners(listeners)
 												.buildConfiguration();
 
 		bot = new PircBotX(config);
