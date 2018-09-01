@@ -14,6 +14,8 @@ public class SubLottery extends ListenerAdapter {
 
     private Map<String, Double> factor;
     private UpdateExecutor executor = new UpdateExecutor();
+    private boolean chance = false;
+    private String winnerName = "";
 
     public SubLottery() {
         factor = DBHelper.getActivityMap();
@@ -25,11 +27,22 @@ public class SubLottery extends ListenerAdapter {
         final int limit = 7;
         String message = event.getMessage();
         String username = Objects.requireNonNull(event.getUser()).getNick();
+
+        if (chance && username.equalsIgnoreCase(winnerName)) {
+            event.respondChannel("@" + Main.CHANNEL + " , победитель подтверждён!");
+            chance = false;
+            winnerName = "";
+        }
+
         if (username.equalsIgnoreCase(Main.CHANNEL) || username.equalsIgnoreCase(Main.CREATOR)) {
             if (message.equalsIgnoreCase("!саб 1")) {
                 event.respondChannel("И победителем стааал [барабанная дробь] ...");
-                TimeUnit.SECONDS.sleep(1);
-                event.respondChannel(randomizeAll().toUpperCase() + " PogChamp PogChamp PogChamp");
+                TimeUnit.SECONDS.sleep(5);
+                winnerName = randomizeAll();
+                event.respondChannel( winnerName + " PogChamp PogChamp PogChamp . У тебя есть минута, чтобы появиться в чате");
+                chance = true;
+                WinnerTimer timer = new WinnerTimer();
+                timer.start();
             } else if (message.equalsIgnoreCase("!саб 2")) {
                 List<String> finalists = getTop3InChat();
                 event.respondChannel("Розыгрывается саб среди " + finalists.size() + "х самых активных и присутствующих в чате...");
@@ -41,7 +54,12 @@ public class SubLottery extends ListenerAdapter {
                 }
                 event.respondChannel(builder.toString().trim());
                 TimeUnit.SECONDS.sleep(2);
-                event.respondChannel("И победителем становится... " + randomizeTop3(finalists) + " HSWP CoolCat");
+                winnerName = randomizeTop3(finalists);
+                event.respondChannel("И победителем становится... " + winnerName + " HSWP CoolCat");
+                event.respondChannel("Подтверди своё присутствие в течении минуты...");
+                chance = true;
+                WinnerTimer timer = new WinnerTimer();
+                timer.start();
             }
         }
 
@@ -104,6 +122,20 @@ public class SubLottery extends ListenerAdapter {
                 TimeUnit.MINUTES.sleep(1);
                 System.out.println("Updating Activity...");
                 DBHelper.updateActivity(factor);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private class WinnerTimer extends Thread {
+
+        @Override
+        public void run() {
+            try {
+                TimeUnit.MINUTES.sleep(1);
+                chance = false;
+                winnerName = "";
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
