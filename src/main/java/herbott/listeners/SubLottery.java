@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class SubLottery extends ListenerAdapter {
 
     private Map<String, Double> factor;
-    private UpdateExecutor executor;
+    private UpdateExecutor executor = new UpdateExecutor();
 
     public SubLottery() {
         factor = DBHelper.getActivityMap();
@@ -51,7 +51,7 @@ public class SubLottery extends ListenerAdapter {
             } else {
                 factor.put(username, add);
             }
-            if (!executor.isAlive() || executor == null) {
+            if (!executor.isAlive()) {
                 System.out.println("Starting thread = " + !executor.isAlive());
                 executor = new UpdateExecutor();
                 executor.start();
