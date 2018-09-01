@@ -51,10 +51,10 @@ public class SubLottery extends ListenerAdapter {
             } else {
                 factor.put(username, add);
             }
-            if (executor.isAlive()) {
+            if (!executor.isAlive()) {
+                System.out.println("Starting thread = " + !executor.isAlive());
                 executor = new UpdateExecutor();
                 executor.start();
-                System.out.println("Starting thread");
             }
             System.out.println("Taking message to activity");
         } else {
