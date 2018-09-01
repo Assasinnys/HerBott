@@ -1,5 +1,7 @@
 package herbott;
 
+import herbott.utils.IntValueComparator;
+
 import java.util.*;
 
 public class Statistics {
@@ -37,10 +39,10 @@ public class Statistics {
         return result;
     }
 
-    public String find(Map<String, Integer> map, String start) {
+    private String find(Map<String, Integer> map, String start) {
         HashMap<String, Integer> temp = new HashMap<>(map);
         StringBuilder builder = new StringBuilder(start);
-        ValueComparator bvs = new ValueComparator(temp);
+        IntValueComparator bvs = new IntValueComparator(temp);
         TreeMap<String, Integer> sort = new TreeMap<>(bvs);
         sort.putAll(map);
         int counter = 0;
@@ -88,25 +90,6 @@ public class Statistics {
 
     public ArrayList<String> getBanlist() {
         return banlist;
-    }
-
-    class ValueComparator implements Comparator<String> {
-        Map<String, Integer> base;
-
-        ValueComparator(Map<String, Integer> base) {
-            this.base = base;
-        }
-
-        // Note: this comparator imposes orderings that are inconsistent with
-        // equals.
-        @SuppressWarnings("ComparatorMethodParameterNotUsed")
-        public int compare(String a, String b) {
-            if (base.get(a) >= base.get(b)) {
-                return -1;
-            } else {
-                return 1;
-            } // returning 0 would merge keys
-        }
     }
 }
 

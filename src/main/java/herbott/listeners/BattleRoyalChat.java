@@ -8,13 +8,13 @@ import org.pircbotx.hooks.types.GenericMessageEvent;
 import herbott.*;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class BattleRoyalChat extends ListenerAdapter {
 
     private Map<String, Integer> playersStatus = new HashMap<>();
     private List<String> players = new ArrayList<>();
-    private Random random = new Random();
     private static boolean gameStatus;
     private static boolean regStatus;
     private volatile boolean timeout;
@@ -40,9 +40,9 @@ public class BattleRoyalChat extends ListenerAdapter {
     private String shot(String shooter) {
         String target = shooter;
         while (target.equalsIgnoreCase(shooter)) {
-            target = players.get(random.nextInt(players.size()));
+            target = players.get(ThreadLocalRandom.current().nextInt(players.size()));
         }
-        int damage = random.nextInt(101);
+        int damage = ThreadLocalRandom.current().nextInt(101);
         int newHealth = playersStatus.get(target) - damage;
         if (newHealth <= 0) {
             playersStatus.remove(target);

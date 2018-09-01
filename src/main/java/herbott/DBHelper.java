@@ -19,6 +19,9 @@ public class DBHelper {
     public static final String BANLIST_TABLE = "banlist";
     public static final String STATS_TABLE = "stats";
 
+    private static final String ACTIVITY_TABLE = "activity";
+    private static final String ACT = "act";
+
     private static Connection getConnection() throws URISyntaxException, SQLException {
         System.out.println("Starting to create connection!");
 //        URI dbUri = new URI(testUri);
@@ -124,5 +127,38 @@ public class DBHelper {
             e.printStackTrace();
         }
         return map;
+    }
+
+    public static Map<String, Double> getActivityMap() {
+        Map<String, Double> map = new HashMap<>();
+        try {
+            Statement st = getConnection().createStatement();
+            ResultSet rs = st.executeQuery(String.format("SELECT * from %s;", ACTIVITY_TABLE));
+            while (rs.next()) {
+                map.putIfAbsent(rs.getString(NICK), rs.getDouble(ACT));
+            }
+            st.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
+    public static void updateActivity(Map<String, Double> map) {
+        try {
+            Statement st = getConnection().createStatement();
+            Map<String, Double> db = getActivityMap();
+            for (String nick : map.keySet()) {
+                if (db.containsKey(nick)) {
+                    st.executeUpdate(String.format("UPDATE %s SET %s = %f WHERE nick = '%s'",
+                            ACTIVITY_TABLE, ACT, map.get(nick), nick));
+                } else {
+                    st.executeUpdate(String.format("INSERT INTO %s (%s, %s) VALUES ('%s', %f)",
+                            ACTIVITY_TABLE, NICK, ACT, nick, map.get(nick)));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

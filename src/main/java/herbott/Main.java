@@ -39,6 +39,7 @@ public class Main {
                                                 .addListener(new UserNoticeListener())
 												.addListener(new BanCommandListener())
 												.addListener(new TotalControl())
+												.addListener(new SubLottery())
 												.buildConfiguration();
 
 		bot = new PircBotX(config);
