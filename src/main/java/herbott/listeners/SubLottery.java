@@ -31,11 +31,11 @@ public class SubLottery extends ListenerAdapter {
                 TimeUnit.SECONDS.sleep(1);
                 event.respondChannel(randomizeAll().toUpperCase() + " PogChamp PogChamp PogChamp");
             } else if (message.equalsIgnoreCase("!саб 2")) {
-                event.respondChannel("Розыгрывается саб среди 3х самых активных присутствующих в чате...");
-                TimeUnit.MILLISECONDS.sleep(500);
                 List<String> finalists = getTop3InChat();
+                event.respondChannel("Розыгрывается саб среди " + finalists.size() + "х самых активных и присутствующих в чате...");
+                TimeUnit.MILLISECONDS.sleep(500);
                 Iterator<String> iterator = finalists.iterator();
-                StringBuilder builder = new StringBuilder("Это: ");
+                StringBuilder builder = new StringBuilder("Эти счастливчики: ");
                 while (iterator.hasNext()) {
                     builder.append(iterator.next()).append(" ");
                 }
