@@ -138,6 +138,8 @@ public class SubLottery extends ListenerAdapter {
                 TimeUnit.MINUTES.sleep(1);
                 chance = false;
                 winnerName = "";
+                TimeUnit.SECONDS.sleep(1);
+                Main.bot.sendIRC().message("#"+Main.CHANNEL, "Победитель не ответил! BibleThump BibleThump BibleThump");
             } catch (InterruptedException e) {
                 System.out.println("Thread interrupted");
             }
