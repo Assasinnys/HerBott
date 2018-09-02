@@ -37,7 +37,7 @@ public class SubLottery extends ListenerAdapter {
         }
 
         if (username.equalsIgnoreCase(Main.CHANNEL) || username.equalsIgnoreCase(Main.CREATOR)) {
-            if (message.equalsIgnoreCase("!саб 1")) {
+            if (message.equalsIgnoreCase("!опа")) {
                 event.respondChannel("И победителем становится [барабанная дробь] ...");
                 TimeUnit.SECONDS.sleep(5);
                 winnerName = randomizeAll();
@@ -45,7 +45,7 @@ public class SubLottery extends ListenerAdapter {
                 chance = true;
                 timer = new WinnerTimer();
                 timer.start();
-            } else if (message.equalsIgnoreCase("!саб 2")) {
+            } else if (message.equalsIgnoreCase("!саб")) {
                 List<String> finalists = getTop3InChat();
                 event.respondChannel("Розыгрывается саб среди " + finalists.size() + "х самых активных и присутствующих в чате...");
                 TimeUnit.MILLISECONDS.sleep(500);
@@ -139,7 +139,7 @@ public class SubLottery extends ListenerAdapter {
                 chance = false;
                 winnerName = "";
                 TimeUnit.SECONDS.sleep(1);
-                Main.bot.sendIRC().message("#"+Main.CHANNEL, "Победитель не ответил! BibleThump BibleThump BibleThump");
+                Main.bot.sendIRC().message("#" + Main.CHANNEL, "Победитель не ответил! BibleThump BibleThump BibleThump");
             } catch (InterruptedException e) {
                 System.out.println("Thread interrupted");
             }
