@@ -41,6 +41,7 @@ public class DBHelper {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             st.executeUpdate(String.format("UPDATE stats SET %s = %s + 1 WHERE nick = '%s'", column, column, nick));
+            st.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,6 +53,7 @@ public class DBHelper {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             st.executeUpdate(String.format("INSERT INTO stats (nick, tryapka, battle, duel) VALUES ('%s', 0, 0, 0);", nick));
+            st.close();
             connection.close();
             updateData(nick, column);
         } catch (Exception e) {
@@ -64,6 +66,7 @@ public class DBHelper {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             st.executeUpdate(String.format("INSERT INTO %s (%s) VALUES ('%s');", BANLIST_TABLE, NICK, nick));
+            st.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,6 +78,7 @@ public class DBHelper {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             st.executeUpdate(String.format("DELETE FROM %s WHERE %s = '%s';",BANLIST_TABLE, NICK, nick));
+            st.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,6 +94,7 @@ public class DBHelper {
             while (rs.next()) {
                 nicks.add(rs.getString("nick"));
             }
+            st.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,6 +110,7 @@ public class DBHelper {
             ResultSet rs = st.executeQuery(String.format("SELECT %s FROM stats WHERE nick = '%s'", column, nick));
             rs.next();
             result = rs.getInt(column);
+            st.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -122,6 +128,7 @@ public class DBHelper {
             while (rs.next()) {
                 if (rs.getInt(column) != 0) map.put(rs.getString(DBHelper.NICK), rs.getInt(column));
             }
+            st.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -132,12 +139,14 @@ public class DBHelper {
     public static Map<String, Double> getActivityMap() {
         Map<String, Double> map = new HashMap<>();
         try {
-            Statement st = getConnection().createStatement();
+            Connection connection = getConnection();
+            Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(String.format("SELECT * from %s;", ACTIVITY_TABLE));
             while (rs.next()) {
                 map.putIfAbsent(rs.getString(NICK), rs.getDouble(ACT));
             }
             st.close();
+            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -146,7 +155,8 @@ public class DBHelper {
 
     public static void updateActivity(Map<String, Double> map) {
         try {
-            Statement st = getConnection().createStatement();
+            Connection connection = getConnection();
+            Statement st = connection.createStatement();
             Map<String, Double> db = getActivityMap();
             for (String nick : map.keySet()) {
                 if (db.containsKey(nick)) {
@@ -158,6 +168,7 @@ public class DBHelper {
                 }
             }
             st.close();
+            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
