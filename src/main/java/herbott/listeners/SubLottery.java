@@ -135,7 +135,7 @@ public class SubLottery extends ListenerAdapter {
         @Override
         public void run() {
             try {
-                TimeUnit.MINUTES.sleep(1);
+                TimeUnit.MINUTES.sleep(3);
                 chance = false;
                 winnerName = "";
                 TimeUnit.SECONDS.sleep(1);

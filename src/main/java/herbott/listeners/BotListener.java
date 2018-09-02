@@ -17,6 +17,7 @@ public class BotListener extends ListenerAdapter {
 	private boolean guessGame;
 	private boolean timeout;
 	private boolean timeout2;
+	private boolean timeout3;
 
 	public BotListener() {
 		bots.add("herbott");
@@ -74,7 +75,7 @@ public class BotListener extends ListenerAdapter {
 	@Override
 	public void onMessage(MessageEvent event) throws Exception {
 		String message = event.getMessage();
-		String user = event.getUser().getNick();
+		String user = Objects.requireNonNull(event.getUser()).getNick();
 
 		if (Statistics.getStats().getBanlist().contains(user)) return;
 
@@ -156,6 +157,11 @@ public class BotListener extends ListenerAdapter {
 				}
 			}
 		}
+		else if (message.equalsIgnoreCase("!вабанк") && !timeout3) {
+            timeout3 = true;
+            new TimeOuter3().start();
+            event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
+        }
 	}
 
 	private String guess(String message) {
@@ -209,4 +215,16 @@ public class BotListener extends ListenerAdapter {
 			timeout2 = false;
 		}
 	}
+
+    class TimeOuter3 extends Thread {
+        @Override
+        public void run() {
+            try {
+                TimeUnit.SECONDS.sleep(30);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            timeout3 = false;
+        }
+    }
 }
