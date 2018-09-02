@@ -1,5 +1,6 @@
 package herbott.listeners;
 
+import herbott.Main;
 import herbott.UserNoticeEvent;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.Event;
@@ -23,6 +24,6 @@ public class UserNoticeListener implements Listener {
     }
 
     private void sendMessage(String message, PircBotX bot) {
-        bot.sendIRC().message("#roboher42", message);
+        bot.sendIRC().message("#" + Main.CHANNEL, message);
     }
 }
