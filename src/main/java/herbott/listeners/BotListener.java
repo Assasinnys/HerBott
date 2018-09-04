@@ -7,6 +7,7 @@ import org.pircbotx.hooks.events.*;
 import herbott.*;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class BotListener extends ListenerAdapter {
@@ -133,7 +134,7 @@ public class BotListener extends ListenerAdapter {
         }
 		else if (message.equalsIgnoreCase("!команды")) {
 			event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать, !стат тряпка, !стат битва, !стат дуэль," +
-					" !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй");
+					" !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг");
 		}
 		else if (message.equalsIgnoreCase("!суицид")) {
 			event.respondWith(String.format("Суицид так суицид! Это твой выбор! Прощай, %s riPepperonis", user));
@@ -142,7 +143,9 @@ public class BotListener extends ListenerAdapter {
 			} catch (InterruptedException i) {
 				i.printStackTrace();
 			}
-			event.respondWith(String.format( "/timeout %s %d", user, 60));
+			if (ThreadLocalRandom.current().nextInt(2) != 0) {
+                event.respondWith(String.format("/timeout %s %d", user, 60));
+            } else event.respondChannel("Ебать ты лох, даже суициднуться не смог! LUL LUL LUL");
 		}
 		else if (message.equalsIgnoreCase("!цалуй") && !timeout2) {
 			timeout2 = true;
@@ -163,6 +166,9 @@ public class BotListener extends ListenerAdapter {
         }
         else if (message.equalsIgnoreCase("!тэг")) {
 		    event.respondChannel("roblife42#2537");
+        }
+        else if (message.equalsIgnoreCase("!группа")) {
+		    event.respondChannel("Группа: https://vk.com/roblife42");
         }
 	}
 
