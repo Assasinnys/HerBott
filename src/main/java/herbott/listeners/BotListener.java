@@ -143,7 +143,7 @@ public class BotListener extends ListenerAdapter {
 			} catch (InterruptedException i) {
 				i.printStackTrace();
 			}
-			if (ThreadLocalRandom.current().nextInt(2) != 0) {
+			if (ThreadLocalRandom.current().nextInt(10) < 7) {
                 event.respondWith(String.format("/timeout %s %d", user, 60));
             } else event.respondChannel("Ебать ты лох, даже суициднуться не смог! LUL LUL LUL");
 		}
