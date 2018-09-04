@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
-import org.pircbotx.hooks.types.GenericMessageEvent;
 import herbott.*;
 
 import java.util.*;
@@ -15,7 +14,7 @@ public class BotListener extends ListenerAdapter {
 	public static List<String> bots = new ArrayList<>();
 	private int guess;
 	private boolean guessGame;
-	private boolean timeout;
+	private boolean timeoutTryapka;
 	private boolean timeout2;
 	private boolean timeout3;
 
@@ -96,8 +95,8 @@ public class BotListener extends ListenerAdapter {
 		else if (message.equalsIgnoreCase("всем привет")) {
 			event.respondWith(user + ", привет!");
 		}
-		else if (message.equalsIgnoreCase("!тряпка") && !timeout) {
-			timeout = true;
+		else if (message.equalsIgnoreCase("!тряпка") && !timeoutTryapka) {
+			timeoutTryapka = true;
 			new TimeOuter().start();
 			List<String> list = viewersList();
 			while(true) {
@@ -157,7 +156,7 @@ public class BotListener extends ListenerAdapter {
 				}
 			}
 		}
-		else if (message.equalsIgnoreCase("!вабанк") && !timeout3) {
+		else if (message.equals("!ВАБАНК") && !timeout3) {
             timeout3 = true;
             new TimeOuter3().start();
             event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
@@ -200,7 +199,7 @@ public class BotListener extends ListenerAdapter {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			timeout = false;
+			timeoutTryapka = false;
 		}
 	}
 
