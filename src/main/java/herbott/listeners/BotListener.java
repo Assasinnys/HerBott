@@ -161,6 +161,9 @@ public class BotListener extends ListenerAdapter {
             new TimeOuter3().start();
             event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
         }
+        else if (message.equalsIgnoreCase("!тэг")) {
+		    event.respondChannel("roblife42#2537");
+        }
 	}
 
 	private String guess(String message) {
