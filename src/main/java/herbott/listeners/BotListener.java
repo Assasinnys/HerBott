@@ -134,7 +134,7 @@ public class BotListener extends ListenerAdapter {
         }
 		else if (message.equalsIgnoreCase("!команды")) {
 			event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать, !стат тряпка, !стат битва, !стат дуэль," +
-					" !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг");
+					" !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс");
 		}
 		else if (message.equalsIgnoreCase("!суицид")) {
 			event.respondWith(String.format("Суицид так суицид! Это твой выбор! Прощай, %s riPepperonis", user));
@@ -165,11 +165,14 @@ public class BotListener extends ListenerAdapter {
             event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
         }
         else if (message.equalsIgnoreCase("!тэг")) {
-		    event.respondChannel("roblife42#2537");
+		    event.respondChannel("Тэг роба: roblife42#2537");
         }
         else if (message.equalsIgnoreCase("!группа")) {
-		    event.respondChannel("Группа: https://vk.com/roblife42");
+		    event.respondChannel("Наша группа в вк: https://vk.com/roblife42");
         }
+        else if (message.equalsIgnoreCase("!дс")) {
+			event.respondChannel("Наш дискорд: ");
+		}
 	}
 
 	private String guess(String message) {
