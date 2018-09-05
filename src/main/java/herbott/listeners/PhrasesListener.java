@@ -17,8 +17,12 @@ public class PhrasesListener extends ListenerAdapter {
 
         if (message.matches("(.*)кусь(.*)")) {
             event.respondChannel("КУСЬ SMOrc КУСЬ SMOrc КУСЬ SMOrc КУСЬ");
-        } else if (message.matches("(.*)фыр(.*)")) {
+        }
+        else if (message.matches("(.*)фыр(.*)")) {
             event.respondChannel("ФЫР-ФЫР-ФЫР-ФЫР!!!");
+        }
+        else if (message.matches("(.*)орда(.*)")) {
+            event.respondChannel("ОРДА СОСЕД! ЗА АЛЬЯНС!!!");
         }
     }
 }

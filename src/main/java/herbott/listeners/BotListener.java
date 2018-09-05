@@ -171,7 +171,7 @@ public class BotListener extends ListenerAdapter {
 		    event.respondChannel("Наша группа в вк: https://vk.com/roblife42");
         }
         else if (message.equalsIgnoreCase("!дс")) {
-			event.respondChannel("Наш дискорд: ");
+			event.respondChannel("Наш дискорд: https://discord.gg/pTGw77c");
 		}
 	}
 

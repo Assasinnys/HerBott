@@ -61,14 +61,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="167" column="44" lean-forward="false" selection-start-line="167" selection-start-column="44" selection-end-line="167" selection-end-column="44" />
+            <state relative-caret-position="697">
+              <caret line="152" column="4" lean-forward="false" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#BotListener#0;class#BotListener#0" expanded="false" />
+                <element signature="method#oneOfAllChat#0;class#BotListener#0" expanded="false" />
+                <element signature="method#viewersList#0;class#BotListener#0" expanded="false" />
+                <element signature="method#randomViewer#0;class#BotListener#0" expanded="false" />
+                <element signature="method#guess#0;class#BotListener#0" expanded="false" />
+                <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
+                <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
+                <element signature="class#TimeOuter#0;class#BotListener#0" expanded="false" />
+                <element signature="class#TimeOuter2#0;class#BotListener#0" expanded="false" />
+                <element signature="class#TimeOuter3#0;class#BotListener#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhrasesListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -488,7 +508,6 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/MyServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/connection/WebConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BanCommandListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestRequests.java" />
@@ -507,6 +526,7 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/UserNoticeListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/SubLottery.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" />
       </list>
     </option>
   </component>
@@ -889,7 +909,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -975,13 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1125,11 +1138,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="167" column="44" lean-forward="false" selection-start-line="167" selection-start-column="44" selection-end-line="167" selection-end-column="44" />
+        <state relative-caret-position="697">
+          <caret line="152" column="4" lean-forward="false" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#BotListener#0;class#BotListener#0" expanded="false" />
+            <element signature="method#oneOfAllChat#0;class#BotListener#0" expanded="false" />
+            <element signature="method#viewersList#0;class#BotListener#0" expanded="false" />
+            <element signature="method#randomViewer#0;class#BotListener#0" expanded="false" />
+            <element signature="method#guess#0;class#BotListener#0" expanded="false" />
+            <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
+            <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
+            <element signature="class#TimeOuter#0;class#BotListener#0" expanded="false" />
+            <element signature="class#TimeOuter2#0;class#BotListener#0" expanded="false" />
+            <element signature="class#TimeOuter3#0;class#BotListener#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
