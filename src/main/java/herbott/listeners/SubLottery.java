@@ -63,6 +63,8 @@ public class SubLottery extends ListenerAdapter {
                 timer = new WinnerTimer();
                 timer.start();
             }
+        } else if (username.equalsIgnoreCase(Main.CREATOR) && message.equalsIgnoreCase("!топчик")) {
+            event.respondPrivateMessage(getTopActivity().toString());
         }
 
         if (message.length() >= limit) {

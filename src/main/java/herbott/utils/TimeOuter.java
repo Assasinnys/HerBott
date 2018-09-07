@@ -4,11 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 public class TimeOuter extends Thread {
 
-    private Boolean flag;
+    private String id;
     private long sec;
 
-    public TimeOuter(Boolean flag, long sec) {
-        this.flag = flag;
+    public TimeOuter(String id, long sec) {
+        this.id = id;
         this.sec = sec;
     }
 
@@ -19,6 +19,6 @@ public class TimeOuter extends Thread {
         } catch (InterruptedException e) {
             System.out.println("TimeOuter interrupted");
         }
-        flag = false;
+
     }
 }
