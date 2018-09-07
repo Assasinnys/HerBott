@@ -63,9 +63,6 @@ public class SubLottery extends ListenerAdapter {
                 timer = new WinnerTimer();
                 timer.start();
             }
-        } else if (username.equalsIgnoreCase(Main.CREATOR) && message.equalsIgnoreCase("!топчик")) {
-            event.respondPrivateMessage(getTopActivity().toString());
-            Main.bot.sendIRC().whois(username);
         }
 
         if (message.length() >= limit) {
