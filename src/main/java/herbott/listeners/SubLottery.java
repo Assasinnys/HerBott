@@ -65,6 +65,7 @@ public class SubLottery extends ListenerAdapter {
             }
         } else if (username.equalsIgnoreCase(Main.CREATOR) && message.equalsIgnoreCase("!топчик")) {
             event.respondPrivateMessage(getTopActivity().toString());
+            Main.bot.sendIRC().whois(username);
         }
 
         if (message.length() >= limit) {
@@ -82,7 +83,6 @@ public class SubLottery extends ListenerAdapter {
         } else {
             System.out.println("Not taking message");
         }
-
     }
 
     private String randomizeAll() {
