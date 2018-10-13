@@ -157,12 +157,11 @@ public class BotListener extends ListenerAdapter {
         } else if (message.equalsIgnoreCase("!дс")) {
             event.respondChannel("Наш дискорд: https://discord.gg/pTGw77c");
         } else if (message.equals("!трек")) {
-            if (event.getTags().get("badges").equalsIgnoreCase("subscriber")) {
+            if (event.getTags().get("badges").matches("(.*)subscriber(.*)")) {
                 event.respondChannel("Заказывай https://twitch-dj.ru/c/RobLife42 VoteYea");
             } else {
                 event.respondChannel("Подпишись сначала тута: https://www.twitch.tv/products/roblife42 MrDestructoid");
             }
-            System.out.println(event.getTags().get("badges"));
         }
     }
 
