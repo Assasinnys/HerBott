@@ -156,9 +156,13 @@ public class BotListener extends ListenerAdapter {
             event.respondChannel("Наша группа в вк: https://vk.com/roblife42");
         } else if (message.equalsIgnoreCase("!дс")) {
             event.respondChannel("Наш дискорд: https://discord.gg/pTGw77c");
-        } /*else if (message.equals("!песня")) {
-
-        }*/
+        } else if (message.equals("!трек")) {
+            if (event.getTags().get("badges").equalsIgnoreCase("subscriber")) {
+                event.respondChannel("Заказывай https://twitch-dj.ru/c/RobLife42 VoteYea");
+            } else {
+                event.respondChannel("Подпишись сначала тута: https://www.twitch.tv/products/roblife42 MrDestructoid");
+            }
+        }
     }
 
     private String guess(String message) {
