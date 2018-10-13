@@ -162,6 +162,7 @@ public class BotListener extends ListenerAdapter {
             } else {
                 event.respondChannel("Подпишись сначала тута: https://www.twitch.tv/products/roblife42 MrDestructoid");
             }
+            System.out.println(event.getTags().get("badges"));
         }
     }
 
