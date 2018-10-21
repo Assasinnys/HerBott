@@ -18,9 +18,13 @@ public class BotListener extends ListenerAdapter {
     private boolean timeoutTryapka;
     private boolean timeout2;
     private boolean timeout3;
+    private long timeTryapka = 0;
+    private long timeKiss = 0;
+    private long timeAllIn = 0;
+    private static final int DELAY = 30000;
 
     public BotListener() {
-        bots.add("herbott");
+        bots.add("lifebott42");
         bots.add("electricallongboard");
         bots.add("rutonybot");
         bots.add("mikuia");
@@ -91,9 +95,11 @@ public class BotListener extends ListenerAdapter {
             event.respondWith("Зрителей: " + json.getString("chatter_count"));
         } else if (message.equalsIgnoreCase("всем привет")) {
             event.respondWith(user + ", привет!");
-        } else if (message.equalsIgnoreCase("!тряпка") && !timeoutTryapka) {
-            timeoutTryapka = true;
-            new TimeOuter().start();
+        } else if (message.equalsIgnoreCase("!тряпка")
+                && (System.currentTimeMillis() - timeTryapka) > DELAY) {
+//            timeoutTryapka = true;
+            timeTryapka = System.currentTimeMillis();
+//            new TimeOuter().start();
             List<String> list = viewersList();
             while (true) {
                 String nick = randomViewer(list);
@@ -109,7 +115,7 @@ public class BotListener extends ListenerAdapter {
             }
         } else if (message.equalsIgnoreCase("!угадать") && !guessGame) {
             guessGame = true;
-            guess = new Random().nextInt(10) + 1;
+            guess = ThreadLocalRandom.current().nextInt(10) + 1;
             System.out.println("Число = " + guess);
             event.respondWith("Я загадал число от 1 до 10. Угадайте! Отвечать в виде: !число <ваш_ответ>");
         } else if (message.startsWith("!число") && guessGame) {
@@ -135,9 +141,11 @@ public class BotListener extends ListenerAdapter {
             if (ThreadLocalRandom.current().nextInt(10) < 7) {
                 event.respondWith(String.format("/timeout %s %d", user, 60));
             } else event.respondChannel("Ебать ты лох, даже суициднуться не смог! LUL LUL LUL");
-        } else if (message.equalsIgnoreCase("!цалуй") && !timeout2) {
-            timeout2 = true;
-            new TimeOuter2().start();
+        } else if (message.equalsIgnoreCase("!цалуй")
+                && (System.currentTimeMillis() - timeKiss) > DELAY) {
+//            timeout2 = true;
+//            new TimeOuter2().start();
+            timeKiss = System.currentTimeMillis();
             List<String> list = viewersList();
             while (true) {
                 String nick = randomViewer(list);
@@ -146,9 +154,10 @@ public class BotListener extends ListenerAdapter {
                     break;
                 }
             }
-        } else if (message.equals("!ВАБАНК") && !timeout3) {
-            timeout3 = true;
-            new TimeOuter3().start();
+        } else if (message.equals("!ВАБАНК") && (System.currentTimeMillis() - timeAllIn) > DELAY) {
+            timeAllIn = System.currentTimeMillis();
+//            timeout3 = true;
+//            new TimeOuter3().start();
             event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
         } else if (message.equalsIgnoreCase("!тэг")) {
             event.respondChannel("Тэг роба: roblife42#2537");
@@ -193,39 +202,39 @@ public class BotListener extends ListenerAdapter {
         Main.bot.sendRaw().rawLineNow(String.format("PONG %s\r\n", event.getPingValue()));
     }
 
-    class TimeOuter extends Thread {
-        @Override
-        public void run() {
-            try {
-                TimeUnit.SECONDS.sleep(30);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            timeoutTryapka = false;
-        }
-    }
-
-    class TimeOuter2 extends Thread {
-        @Override
-        public void run() {
-            try {
-                TimeUnit.SECONDS.sleep(30);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            timeout2 = false;
-        }
-    }
-
-    class TimeOuter3 extends Thread {
-        @Override
-        public void run() {
-            try {
-                TimeUnit.SECONDS.sleep(30);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            timeout3 = false;
-        }
-    }
+//    class TimeOuter extends Thread {
+//        @Override
+//        public void run() {
+//            try {
+//                TimeUnit.SECONDS.sleep(30);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            timeoutTryapka = false;
+//        }
+//    }
+//
+//    class TimeOuter2 extends Thread {
+//        @Override
+//        public void run() {
+//            try {
+//                TimeUnit.SECONDS.sleep(30);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            timeout2 = false;
+//        }
+//    }
+//
+//    class TimeOuter3 extends Thread {
+//        @Override
+//        public void run() {
+//            try {
+//                TimeUnit.SECONDS.sleep(30);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            timeout3 = false;
+//        }
+//    }
 }

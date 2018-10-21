@@ -15,16 +15,16 @@ public class PhrasesListener extends ListenerAdapter {
 
         if (Statistics.getStats().getBanlist().contains(nick)) return;
 
-        if (message.matches("(.*)кусь(.*)")) {
+        if (message.matches("(.*) кусь (.*)")) {
             event.respondChannel("КУСЬ SMOrc КУСЬ SMOrc КУСЬ SMOrc КУСЬ");
         }
-        else if (message.matches("(.*)фыр(.*)")) {
+        else if (message.matches("(.*) фыр (.*)")) {
             event.respondChannel("ФЫР-ФЫР-ФЫР-ФЫР!!!");
         }
-        else if (message.matches("(.*)орда(.*)")) {
+        else if (message.matches("(.*) орда (.*)")) {
             event.respondChannel("ОРДА СОСЕД! ЗА АЛЬЯНС!!!");
         }
-        else if (message.matches("(.*)умён(.*)") && !message.matches("(.*)я(.*)")) {
+        else if (message.matches("(.*) умён (.*)") && !message.matches("(.*)я(.*)")) {
             event.respondChannel("Конечно умён, не то, что ты! LUL");
         }
     }

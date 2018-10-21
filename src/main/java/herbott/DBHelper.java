@@ -19,7 +19,7 @@ public class DBHelper {
     public static final String BANLIST_TABLE = "banlist";
     public static final String STATS_TABLE = "stats";
 
-    private static final String ACTIVITY_TABLE = "activity";
+    public static final String ACTIVITY_TABLE = "activity";
     private static final String ACT = "act";
 
     private static Connection getConnection() throws URISyntaxException, SQLException {
@@ -167,6 +167,18 @@ public class DBHelper {
                             ACTIVITY_TABLE, NICK, ACT, nick, map.get(nick)));
                 }
             }
+            st.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void resetTable(String tableName) {
+        try{
+            Connection connection = getConnection();
+            Statement st = connection.createStatement();
+            st.execute("DELETE from " + tableName);
             st.close();
             connection.close();
         } catch (Exception e) {

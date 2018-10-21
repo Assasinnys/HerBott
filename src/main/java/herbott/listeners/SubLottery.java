@@ -62,6 +62,11 @@ public class SubLottery extends ListenerAdapter {
                 chance = true;
                 timer = new WinnerTimer();
                 timer.start();
+            } else if (message.equalsIgnoreCase("!сброс активности")) {
+                if (executor.isAlive())
+                    executor.interrupt();
+                DBHelper.resetTable(DBHelper.ACTIVITY_TABLE);
+                factor.clear();
             }
         }
 
