@@ -169,7 +169,7 @@ public class BotListener extends ListenerAdapter {
         } else if (message.equalsIgnoreCase("!follow")) {
             String result = getFollowTime(getUserId(user));
             if (!result.equals(""))
-                event.respondChannel(String.format("%s, ты подписан на Роба %s DxCat", user, result));
+                event.respondChannel(String.format("%s , ты подписан на Роба %s DxCat", user, result));
             else
                 event.respondChannel("Ах ты ж даже не фоловер! SMOrc");
         }
