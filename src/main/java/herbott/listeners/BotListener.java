@@ -22,6 +22,7 @@ public class BotListener extends ListenerAdapter {
     private long timeTryapka = 0;
     private long timeKiss = 0;
     private long timeAllIn = 0;
+    private long timeFollow = 0;
     private static final int DELAY = 30000;
 
     public BotListener() {
@@ -129,7 +130,7 @@ public class BotListener extends ListenerAdapter {
 //            event.respondWith("Статистика временно недоступна!");
         } else if (message.equalsIgnoreCase("!команды")) {
             event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать, !стат тряпка, !стат битва, !стат дуэль," +
-                    " !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек");
+                    " !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек, !follow");
         } else if (message.equalsIgnoreCase("!суицид")) {
             event.respondWith(String.format("Суицид так суицид! Это твой выбор! Прощай, %s riPepperonis", user));
             try {
@@ -166,10 +167,11 @@ public class BotListener extends ListenerAdapter {
             } else {
                 event.respondChannel("А ты кто такой? Подпишись, тогда и поговорим: https://www.twitch.tv/products/roblife42 MrDestructoid");
             }
-        } else if (message.equalsIgnoreCase("!follow")) {
+        } else if (message.equalsIgnoreCase("!follow") && (System.currentTimeMillis() - timeFollow) > DELAY) {
+            timeFollow = System.currentTimeMillis();
             String result = getFollowTime(getUserId(user));
             if (!result.equals(""))
-                event.respondChannel(String.format("%s , ты подписан на Роба %s DxCat", user, result));
+                event.respondChannel(String.format("%s , ты подписан на Роба уже %s DxCat", user, result));
             else
                 event.respondChannel("Ах ты ж даже не фоловер! SMOrc");
         }
