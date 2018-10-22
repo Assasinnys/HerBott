@@ -205,7 +205,7 @@ public class BotListener extends ListenerAdapter {
 
     private String getUserId(String nickname) throws Exception {
         String url = "https://api.twitch.tv/helix/users?login=" + nickname;
-        JSONObject json = new JSONObject(JSONParser.readUrl(url));
+        JSONObject json = new JSONObject(JSONParser.readUrlAuth(url));
         return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
