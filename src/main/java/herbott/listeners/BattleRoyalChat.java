@@ -167,7 +167,7 @@ public class BattleRoyalChat extends ListenerAdapter {
         public void run() {
             try {
                 TimeUnit.MINUTES.sleep(1);
-                if (players.size() >= 3) event.respondWith("Регистрация окончена. Игроков: " + startBattle() +". Битва начинается! GOWKratos");
+                if (players.size() >= 3) event.respondWith("Регистрация окончена. Игроков: " + startBattle() +". Битва начинается! Squid1 Squid3 Squid4 ");
                 else {
                     endGame(1);
                     event.respondWith("Регистрация окончена. Игроков недостаточно для начала битвы. FailFish");

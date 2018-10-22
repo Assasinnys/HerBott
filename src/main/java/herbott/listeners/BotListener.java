@@ -1,11 +1,15 @@
 package herbott.listeners;
 
+import herbott.utils.TimeParser;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
@@ -15,9 +19,6 @@ public class BotListener extends ListenerAdapter {
     public static List<String> bots = new ArrayList<>();
     private int guess;
     private boolean guessGame;
-    private boolean timeoutTryapka;
-    private boolean timeout2;
-    private boolean timeout3;
     private long timeTryapka = 0;
     private long timeKiss = 0;
     private long timeAllIn = 0;
@@ -37,7 +38,7 @@ public class BotListener extends ListenerAdapter {
     private String oneOfAllChat() {
         List<String> temp = new ArrayList<>();
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", "roboher42")));
+            JSONObject json = new JSONObject(JSONParser.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
             JSONArray viewers = json.getJSONObject("chatters").getJSONArray("viewers");
             for (int j = 0; j < viewers.length(); j++) {
                 temp.add(viewers.getString(j));
@@ -97,9 +98,7 @@ public class BotListener extends ListenerAdapter {
             event.respondWith(user + ", привет!");
         } else if (message.equalsIgnoreCase("!тряпка")
                 && (System.currentTimeMillis() - timeTryapka) > DELAY) {
-//            timeoutTryapka = true;
             timeTryapka = System.currentTimeMillis();
-//            new TimeOuter().start();
             List<String> list = viewersList();
             while (true) {
                 String nick = randomViewer(list);
@@ -143,8 +142,6 @@ public class BotListener extends ListenerAdapter {
             } else event.respondChannel("Ебать ты лох, даже суициднуться не смог! LUL LUL LUL");
         } else if (message.equalsIgnoreCase("!цалуй")
                 && (System.currentTimeMillis() - timeKiss) > DELAY) {
-//            timeout2 = true;
-//            new TimeOuter2().start();
             timeKiss = System.currentTimeMillis();
             List<String> list = viewersList();
             while (true) {
@@ -156,8 +153,6 @@ public class BotListener extends ListenerAdapter {
             }
         } else if (message.equals("!ВАБАНК") && (System.currentTimeMillis() - timeAllIn) > DELAY) {
             timeAllIn = System.currentTimeMillis();
-//            timeout3 = true;
-//            new TimeOuter3().start();
             event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
         } else if (message.equalsIgnoreCase("!тэг")) {
             event.respondChannel("Тэг роба: roblife42#2537");
@@ -169,8 +164,14 @@ public class BotListener extends ListenerAdapter {
             if (event.getTags().get("badges").matches("(.*)subscriber(.*)")) {
                 event.respondChannel("Заказывай, бро: https://twitch-dj.ru/c/RobLife42");
             } else {
-                event.respondChannel("А ты кто такой? А ну-ка подпишись сначала: https://www.twitch.tv/products/roblife42 MrDestructoid");
+                event.respondChannel("А ты кто такой? Подпишись, тогда и поговорим: https://www.twitch.tv/products/roblife42 MrDestructoid");
             }
+        } else if (message.equalsIgnoreCase("!follow")) {
+            String result = getFollowTime(getUserId(user));
+            if (!result.equals(""))
+                event.respondChannel(String.format("%s, ты подписан на Роба %s DxCat", user, result));
+            else
+                event.respondChannel("Ах ты ж даже не фоловер! SMOrc");
         }
     }
 
@@ -202,39 +203,33 @@ public class BotListener extends ListenerAdapter {
         Main.bot.sendRaw().rawLineNow(String.format("PONG %s\r\n", event.getPingValue()));
     }
 
-//    class TimeOuter extends Thread {
-//        @Override
-//        public void run() {
-//            try {
-//                TimeUnit.SECONDS.sleep(30);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            timeoutTryapka = false;
-//        }
-//    }
-//
-//    class TimeOuter2 extends Thread {
-//        @Override
-//        public void run() {
-//            try {
-//                TimeUnit.SECONDS.sleep(30);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            timeout2 = false;
-//        }
-//    }
-//
-//    class TimeOuter3 extends Thread {
-//        @Override
-//        public void run() {
-//            try {
-//                TimeUnit.SECONDS.sleep(30);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            timeout3 = false;
-//        }
-//    }
+    private String getUserId(String nickname) throws Exception {
+        String url = "https://api.twitch.tv/helix/users?login=" + nickname;
+        JSONObject json = new JSONObject(JSONParser.readUrl(url));
+        return json.getJSONArray("data").getJSONObject(0).getString("id");
+    }
+
+    private String getFollowTime(String userId) {
+        String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
+        String s = "";
+        try {
+            JSONObject json = new JSONObject(JSONParser.readUrl(url));
+            JSONArray data = json.getJSONArray("data");
+            for (int i = 0; i < data.length(); i++) {
+                System.out.println(data.getString(i));
+                if (data.getJSONObject(i).getString("to_name").equalsIgnoreCase(Main.CHANNEL)) {
+                    s = data.getJSONObject(i).getString("followed_at");
+                    break;
+                }
+            }
+            s = s.replace("T", " ").replace("Z", "");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            s = TimeParser.parse(System.currentTimeMillis(), sdf.parse(s).getTime());
+        } catch (ParseException e) {
+            s = "";
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return s;
+    }
 }
