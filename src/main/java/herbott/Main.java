@@ -12,6 +12,7 @@ import java.util.List;
 public class Main {
 
     public static final String BOTNAME = "LifeBot42";
+    public static final String CLIENT_ID = "qkgjxy0g275eedgwehwby8irxfrxm1";
     public static final String OAUTH = "oauth:mhc3e2af15fes3x9o1qeyveqrbl7mk";
     //    public static final String REFRESH_OAUTH = "79fia2ncbscnh10z7y1m8dpuailu5dr9ti2xnzitm2w0k67wbi";
     public static final String CHANNEL = "roblife42";

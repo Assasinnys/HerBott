@@ -213,7 +213,7 @@ public class BotListener extends ListenerAdapter {
         String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
         String s = "";
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrl(url));
+            JSONObject json = new JSONObject(JSONParser.readUrlAuth(url));
             JSONArray data = json.getJSONArray("data");
             for (int i = 0; i < data.length(); i++) {
                 System.out.println(data.getString(i));

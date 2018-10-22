@@ -64,8 +64,8 @@
       <file leaf-file-name="TestRequests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/other/TestRequests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="55" selection-end-column="94" />
+            <state relative-caret-position="255">
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -74,8 +74,8 @@
       <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="225" column="79" lean-forward="false" selection-start-line="225" selection-start-column="79" selection-end-line="225" selection-end-column="79" />
+            <state relative-caret-position="320">
+              <caret line="215" column="68" lean-forward="false" selection-start-line="215" selection-start-column="68" selection-end-line="215" selection-end-column="68" />
               <folding>
                 <element signature="method#guess#0;class#BotListener#0" expanded="false" />
                 <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
@@ -88,8 +88,8 @@
       <file leaf-file-name="JSONParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/JSONParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="167">
+              <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -394,11 +394,11 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/SubLottery.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BattleRoyalChat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/utils/TimeParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestRequests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/JSONParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/JSONParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
       </list>
     </option>
   </component>
@@ -1022,14 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/TimeParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1038,28 +1030,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestRequests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/JSONParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="167">
+          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestRequests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="55" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="225" column="79" lean-forward="false" selection-start-line="225" selection-start-column="79" selection-end-line="225" selection-end-column="79" />
+        <state relative-caret-position="320">
+          <caret line="215" column="68" lean-forward="false" selection-start-line="215" selection-start-column="68" selection-end-line="215" selection-end-column="68" />
           <folding>
             <element signature="method#guess#0;class#BotListener#0" expanded="false" />
             <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
