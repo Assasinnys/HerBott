@@ -174,6 +174,8 @@ public class BotListener extends ListenerAdapter {
                 event.respondChannel(String.format("%s , ты подписан на Роба уже %s DxCat", user, result));
             else
                 event.respondChannel("Ах ты ж даже не фоловер! SMOrc");
+        } else if (message.equalsIgnoreCase("!серж")) {
+            event.respondChannel("Смотри на здоровье: https://www.youtube.com/watch?v=wcy-fMbn2ps");
         }
     }
 
