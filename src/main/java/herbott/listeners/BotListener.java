@@ -176,6 +176,8 @@ public class BotListener extends ListenerAdapter {
                 event.respondChannel("Ах ты ж даже не фоловер! SMOrc");
         } else if (message.equalsIgnoreCase("!серж")) {
             event.respondChannel("Смотри на здоровье: https://www.youtube.com/watch?v=wcy-fMbn2ps");
+        } else if (message.equalsIgnoreCase("!смайлик")) {
+            event.respondChannel("Настройка BetterTV здесь: https://vk.com/roblife42?w=wall-169323171_1406");
         }
     }
 
