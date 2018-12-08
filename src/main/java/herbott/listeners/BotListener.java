@@ -34,6 +34,7 @@ public class BotListener extends ListenerAdapter {
         bots.add("nightbot");
         bots.add("electricalskateboard");
         bots.add("commanderroot");
+        bots.add("p0sitivitybot");
     }
 
     private String oneOfAllChat() {
@@ -129,8 +130,9 @@ public class BotListener extends ListenerAdapter {
             event.respondWith(s);
 //            event.respondWith("Статистика временно недоступна!");
         } else if (message.equalsIgnoreCase("!команды")) {
-            event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать, !стат тряпка, !стат битва, !стат дуэль," +
-                    " !команды битва, !битва, !топ битва, !топ тряпка, !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек, !follow");
+            event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать," +
+                    " !стат тряпка, !стат битва, !стат дуэль, !команды битва, !битва, !топ битва, !топ тряпка," +
+                    " !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек, !follow, !серж, !смайлик");
         } else if (message.equalsIgnoreCase("!суицид")) {
             event.respondWith(String.format("Суицид так суицид! Это твой выбор! Прощай, %s riPepperonis", user));
             try {
