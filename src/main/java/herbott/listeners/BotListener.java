@@ -132,7 +132,7 @@ public class BotListener extends ListenerAdapter {
         } else if (message.equalsIgnoreCase("!команды")) {
             event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать," +
                     " !стат тряпка, !стат битва, !стат дуэль, !команды битва, !битва, !топ битва, !топ тряпка," +
-                    " !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек, !follow, !серж, !смайлик");
+                    " !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек, !follow, !серж, !смайлик, !лизь");
         } else if (message.equalsIgnoreCase("!суицид")) {
             event.respondWith(String.format("Суицид так суицид! Это твой выбор! Прощай, %s riPepperonis", user));
             try {
