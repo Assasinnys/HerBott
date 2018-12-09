@@ -19,21 +19,15 @@ public class Main {
     public static final String CHANNEL_ID = "241801295";
     public static final String CREATOR = "assasinnys";
     public static final String CREATOR_ID = "47295543";
+    public static ControlFromAppConnector connector;
 
     public static PircBotX bot;
 
     public static void main(String[] args) throws Exception {
         List<Listener> listeners = new ArrayList<>();
-        listeners.add(new BotListener());
-        listeners.add(new BattleRoyalChat());
-        listeners.add(new DuelListener());
-        listeners.add(new VoteListener());
-        listeners.add(new BalListener());
-        listeners.add(new PhrasesListener());
-        listeners.add(new UserNoticeListener());
-        listeners.add(new BanCommandListener());
-        listeners.add(new TotalControl());
-        listeners.add(new SubLottery());
+        setupListeners(listeners);
+        connector = new ControlFromAppConnector();
+        connector.start();
 
         Configuration config = new Configuration.Builder()
                 .setAutoNickChange(false)
@@ -55,5 +49,18 @@ public class Main {
 
         bot = new PircBotX(config);
         bot.startBot();
+    }
+
+    private static void setupListeners(List<Listener> listeners) {
+        listeners.add(new BotListener());
+        listeners.add(new BattleRoyalChat());
+        listeners.add(new DuelListener());
+        listeners.add(new VoteListener());
+        listeners.add(new BalListener());
+        listeners.add(new PhrasesListener());
+        listeners.add(new UserNoticeListener());
+        listeners.add(new BanCommandListener());
+        listeners.add(new TotalControl());
+        listeners.add(new SubLottery());
     }
 }
