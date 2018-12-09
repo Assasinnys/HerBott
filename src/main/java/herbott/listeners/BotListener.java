@@ -23,6 +23,7 @@ public class BotListener extends ListenerAdapter {
     private long timeKiss = 0;
     private long timeAllIn = 0;
     private long timeFollow = 0;
+    private long timeLick = 0;
     private static final int DELAY = 30000;
 
     public BotListener() {
@@ -35,6 +36,7 @@ public class BotListener extends ListenerAdapter {
         bots.add("electricalskateboard");
         bots.add("commanderroot");
         bots.add("p0sitivitybot");
+        bots.add("rutonybot");
     }
 
     private String oneOfAllChat() {
@@ -180,7 +182,9 @@ public class BotListener extends ListenerAdapter {
             event.respondChannel("Смотри на здоровье: https://www.youtube.com/watch?v=wcy-fMbn2ps");
         } else if (message.equalsIgnoreCase("!смайлик")) {
             event.respondChannel("Настройка BetterTTV здесь: https://vk.com/roblife42?w=wall-169323171_1406");
-        } else if (message.equalsIgnoreCase("!лизь")) {
+        } else if (message.equalsIgnoreCase("!лизь") &&
+                (System.currentTimeMillis() - timeLick) > DELAY) {
+            timeLick = System.currentTimeMillis();
             event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL," +
                     " кто следующий?", user, oneOfAllChat()));
         }
