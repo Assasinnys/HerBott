@@ -179,7 +179,10 @@ public class BotListener extends ListenerAdapter {
         } else if (message.equalsIgnoreCase("!серж")) {
             event.respondChannel("Смотри на здоровье: https://www.youtube.com/watch?v=wcy-fMbn2ps");
         } else if (message.equalsIgnoreCase("!смайлик")) {
-            event.respondChannel("Настройка BetterTV здесь: https://vk.com/roblife42?w=wall-169323171_1406");
+            event.respondChannel("Настройка BetterTTV здесь: https://vk.com/roblife42?w=wall-169323171_1406");
+        } else if (message.equalsIgnoreCase("!лизь")) {
+            event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL," +
+                    " кто следующий?", user, oneOfAllChat()));
         }
     }
 
