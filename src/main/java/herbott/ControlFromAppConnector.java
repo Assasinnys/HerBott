@@ -8,13 +8,18 @@ public class ControlFromAppConnector extends Thread {
 
     private ServerSocket serverSocket;
     private Socket clientSocket;
+    private volatile String ipAddress;
 
     @Override
     public void run() {
         try {
             serverSocket = new ServerSocket(7755);
-            clientSocket = serverSocket.accept();
-            System.out.println("Connection complete!");
+            ipAddress = serverSocket.getInetAddress().getHostAddress();
+            System.out.println("Address socket = " + ipAddress);
+            while (true) {
+                clientSocket = serverSocket.accept();
+                System.out.println("Connection complete!");
+            }
         } catch (IOException io) {
             io.printStackTrace();
         }
