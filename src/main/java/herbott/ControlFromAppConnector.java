@@ -15,7 +15,7 @@ public class ControlFromAppConnector extends Thread {
         try {
             serverSocket = new ServerSocket(7755);
             clientSocket = new Socket();
-            String hostAddress = clientSocket.getLocalAddress().getHostAddress();
+            String hostAddress = clientSocket.getLocalAddress().toString();
             System.out.println("hostAddress = " + hostAddress);
             ipAddress = serverSocket.getInetAddress().getHostAddress();
             System.out.println("Address socket = " + ipAddress);
