@@ -16,6 +16,10 @@ public class ControlFromAppConnector extends Thread {
             serverSocket = new ServerSocket(7755);
             ipAddress = serverSocket.getInetAddress().getHostAddress();
             System.out.println("Address socket = " + ipAddress);
+            String hostName = serverSocket.getInetAddress().getHostName();
+            System.out.println("HostName = " + hostName);
+            String canonicalHostName = serverSocket.getInetAddress().getCanonicalHostName();
+            System.out.println("canonicalHostName = " + canonicalHostName);
             while (true) {
                 clientSocket = serverSocket.accept();
                 System.out.println("Connection complete!");
