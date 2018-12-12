@@ -28,6 +28,9 @@ public class ControlFromAppConnector extends Thread {
         try {
             server.start();
             server.join();
+            while(true) {
+
+            }
         } catch (Exception io) {
             io.printStackTrace();
         }
