@@ -20,7 +20,9 @@ public class ControlFromAppConnector extends Thread {
 
     @Override
     public void run() {
-        Server server = new Server(Integer.valueOf(System.getenv("PORT")));
+        int port = Integer.valueOf(System.getenv("PORT"));
+        Server server = new Server(port);
+        System.out.println("port = " + port);
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
