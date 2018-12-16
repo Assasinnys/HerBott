@@ -259,6 +259,7 @@ public class BotListener extends ListenerAdapter {
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Client-ID", "" + Main.CLIENT_ID);
         connection.setRequestProperty("Content-Type", "application/json");
+        System.out.println("1 = " + connection.getResponseCode());
         OutputStream outputStream = connection.getOutputStream();
         Map<String, String> params = new HashMap<>();
         params.put("hub.callback", "https://herbott.herokuapp.com/callback");

@@ -16,6 +16,7 @@ public class WebHookCallback extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, String[]> params = req.getParameterMap();
+        System.out.println("get callback accepted");
         if (params.containsKey(HUB_CHALLENGE)) {
             System.out.println("sub accepted");
             challenge = params.get(HUB_CHALLENGE)[0];
