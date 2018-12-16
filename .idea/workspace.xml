@@ -8,14 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/JSONParser.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/JSONParser.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BalListener$TimeOuter.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BalListener$TimeOuter.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BotListener.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BotListener.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/other/Test.class" afterPath="$PROJECT_DIR$/out/production/classes/other/Test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/other/TestRequests.class" afterPath="$PROJECT_DIR$/out/production/classes/other/TestRequests.class" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -74,8 +67,8 @@
       <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="267" column="50" lean-forward="false" selection-start-line="267" selection-start-column="50" selection-end-line="267" selection-end-column="50" />
+            <state relative-caret-position="446">
+              <caret line="261" column="66" lean-forward="true" selection-start-line="261" selection-start-column="66" selection-end-line="261" selection-end-column="66" />
               <folding>
                 <element signature="method#guess#0;class#BotListener#0" expanded="false" />
                 <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
@@ -100,8 +93,8 @@
       <file leaf-file-name="WebHookCallback.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+            <state relative-caret-position="323">
+              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1081,7 +1074,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544998969464</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="test control connector">
+      <created>1544999300621</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1544999300621</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1365,8 +1365,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        <state relative-caret-position="323">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1385,8 +1385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="267" column="50" lean-forward="false" selection-start-line="267" selection-start-column="50" selection-end-line="267" selection-end-column="50" />
+        <state relative-caret-position="446">
+          <caret line="261" column="66" lean-forward="true" selection-start-line="261" selection-start-column="66" selection-end-line="261" selection-end-column="66" />
           <folding>
             <element signature="method#guess#0;class#BotListener#0" expanded="false" />
             <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
