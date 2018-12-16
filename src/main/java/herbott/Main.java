@@ -26,8 +26,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         List<Listener> listeners = new ArrayList<>();
         setupListeners(listeners);
-        connector = new ControlFromAppConnector();
-        connector.start();
+//        connector = new ControlFromAppConnector();
+//        connector.start();
 
         Configuration config = new Configuration.Builder()
                 .setAutoNickChange(false)
