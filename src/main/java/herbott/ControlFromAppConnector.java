@@ -30,9 +30,6 @@ public class ControlFromAppConnector extends Thread {
         try {
             server.start();
             server.join();
-            while(true) {
-
-            }
         } catch (Exception io) {
             io.printStackTrace();
         }
@@ -41,7 +38,7 @@ public class ControlFromAppConnector extends Thread {
     class Hi extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            System.out.println("get request accepted! ☺");
+            System.out.println("GET request accepted! ☺");
         }
     }
 }
