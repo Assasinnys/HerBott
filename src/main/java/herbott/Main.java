@@ -1,6 +1,7 @@
 package herbott;
 
 import herbott.listeners.*;
+import herbott.webserver.ControlFromAppConnector;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 import org.pircbotx.cap.EnableCapHandler;
@@ -24,8 +25,6 @@ public class Main {
     public static PircBotX bot;
 
     public static void main(String[] args) throws Exception {
-        List<Listener> listeners = new ArrayList<>();
-        setupListeners(listeners);
         connector = new ControlFromAppConnector();
         connector.start();
 
@@ -44,14 +43,15 @@ public class Main {
                 .setAutoReconnectAttempts(10)
                 .setAutoReconnectDelay(2000)
                 .setBotFactory(new HerBottFactory())
-                .addListeners(listeners)
+                .addListeners(setupListeners())
                 .buildConfiguration();
 
         bot = new PircBotX(config);
         bot.startBot();
     }
 
-    private static void setupListeners(List<Listener> listeners) {
+    private static List<Listener> setupListeners() {
+        List<Listener> listeners = new ArrayList<>();
         listeners.add(new BotListener());
         listeners.add(new BattleRoyalChat());
         listeners.add(new DuelListener());
@@ -62,5 +62,6 @@ public class Main {
         listeners.add(new BanCommandListener());
         listeners.add(new TotalControl());
         listeners.add(new SubLottery());
+        return listeners;
     }
 }

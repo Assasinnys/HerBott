@@ -8,6 +8,9 @@ import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
 
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -187,6 +190,8 @@ public class BotListener extends ListenerAdapter {
             timeLick = System.currentTimeMillis();
             event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL," +
                     " кто следующий?", user, oneOfAllChat()));
+        } else if (message.equalsIgnoreCase("!ок") && user.equalsIgnoreCase(Main.CREATOR)) {
+            sendSubscribeRequest();
         }
     }
 
@@ -246,5 +251,24 @@ public class BotListener extends ListenerAdapter {
             e.printStackTrace();
         }
         return s;
+    }
+
+    private void sendSubscribeRequest() throws Exception {
+        System.out.println("send sub request");
+        HttpURLConnection connection = (HttpURLConnection) new URL("https://api.twitch.tv/helix/webhooks/hub").openConnection();
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Client-ID", "" + Main.CLIENT_ID);
+        connection.setRequestProperty("Content-Type", "application/json");
+        OutputStream outputStream = connection.getOutputStream();
+        Map<String, String> params = new HashMap<>();
+        params.put("hub.callback", "https://herbott.herokuapp.com/callback");
+        params.put("hub.mode", "subscribe");
+        params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
+        params.put("hub.lease_seconds", "864000");
+        JSONObject object = new JSONObject(params);
+        outputStream.write(object.toString().getBytes("UTF-8"));
+        outputStream.flush();
+        System.out.println("response = " + connection.getResponseCode());
+        connection.disconnect();
     }
 }
