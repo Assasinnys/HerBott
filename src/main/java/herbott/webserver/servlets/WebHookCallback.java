@@ -27,7 +27,7 @@ public class WebHookCallback extends HttpServlet{
                 System.out.println("sub denied");
                 resp.setStatus(200, "OK");
             }
-        }
+        } else resp.setStatus(937);
     }
 
     @Override

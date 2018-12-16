@@ -7,12 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/ControlFromAppConnector.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/ControlFromAppConnector.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/Main.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/Main.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/Main.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/other/Test.java" afterPath="$PROJECT_DIR$/src/main/java/other/Test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -68,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="270" column="73" lean-forward="false" selection-start-line="270" selection-start-column="73" selection-end-line="270" selection-end-column="73" />
+            <state relative-caret-position="4">
+              <caret line="235" column="34" lean-forward="false" selection-start-line="235" selection-start-column="34" selection-end-line="235" selection-end-column="34" />
               <folding>
                 <element signature="method#guess#0;class#BotListener#0" expanded="false" />
                 <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
@@ -94,11 +100,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebHookCallback.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebHookCallback.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+            <state relative-caret-position="324">
+              <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -533,7 +551,6 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/utils/DoubleValueComparator.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/utils/ValueComparator.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/other/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/UserNoticeListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/utils/TimeOuter.java" />
@@ -550,8 +567,9 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/ControlFromAppConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/other/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" />
       </list>
     </option>
   </component>
@@ -712,7 +730,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TwitchBot [fatJar]">
+  <component name="RunManager" selected="Application.Test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -890,10 +908,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.TwitchBot [fatJar]" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Test" />
         <item index="1" class="java.lang.String" itemvalue="Application.TestRequests" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestBase" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.TwitchBot [fatJar]" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestBase" />
         <item index="4" class="java.lang.String" itemvalue="Gradle.TwitchBot [build]" />
       </list>
     </recent_temporary>
@@ -1052,7 +1070,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544969952354</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="test control connector">
+      <created>1544998352258</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1544998352258</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1060,11 +1085,12 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327654" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.51002866" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327654" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327654" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3673611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1081,7 +1107,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327654" sideWeight="0.48997134" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327654" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1188,13 +1213,6 @@
     </entry>
     <entry file="jar://$JAVA_HOME$/jdk1.8.0_141/src.zip!/java/util/concurrent/TimeUnit.java" />
     <entry file="jar://$JAVA_HOME$/jdk1.8.0_141/src.zip!/java/sql/Statement.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -1269,13 +1287,6 @@
       </provider>
     </entry>
     <entry file="jar://$JAVA_HOME$/jdk1.8.0_141/src.zip!/java/text/DateFormat.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestRequests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/TimeParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1330,16 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/ControlFromAppConnector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1352,12 +1353,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="270" column="73" lean-forward="false" selection-start-line="270" selection-start-column="73" selection-end-line="270" selection-end-column="73" />
+        <state relative-caret-position="4">
+          <caret line="235" column="34" lean-forward="false" selection-start-line="235" selection-start-column="34" selection-end-line="235" selection-end-column="34" />
           <folding>
             <element signature="method#guess#0;class#BotListener#0" expanded="false" />
             <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
             <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestRequests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
