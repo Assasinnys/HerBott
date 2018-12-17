@@ -257,6 +257,7 @@ public class BotListener extends ListenerAdapter {
         System.out.println("send sub request");
         HttpURLConnection connection = (HttpURLConnection) new URL("https://api.twitch.tv/helix/webhooks/hub").openConnection();
         connection.setRequestMethod("POST");
+        connection.setDoOutput(true);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Client-ID", Main.CLIENT_ID);
         System.out.println("1 = " + connection.getResponseCode());
