@@ -267,6 +267,7 @@ public class BotListener extends ListenerAdapter {
         params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
         params.put("hub.lease_seconds", "864000");
         JSONObject object = new JSONObject(params);
+        System.out.println("json = " + object.toString());
         outputStream.write(object.toString().getBytes("UTF-8"));
         outputStream.flush();
         System.out.println("response = " + connection.getResponseCode());
