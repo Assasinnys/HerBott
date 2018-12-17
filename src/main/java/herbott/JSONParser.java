@@ -1,5 +1,7 @@
 package herbott;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -41,7 +43,7 @@ public class JSONParser {
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-            conn.setRequestProperty("Client-ID", "qkgjxy0g275eedgwehwby8irxfrxm1");
+            conn.setRequestProperty("Client-ID", Main.CLIENT_ID);
             reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), Charset.forName("UTF-8")));
             StringBuilder buffer = new StringBuilder();
             int read;
@@ -62,5 +64,14 @@ public class JSONParser {
             }
         }
         return "";
+    }
+
+    public static JSONObject parseJsonFromStreamNotice(BufferedReader reader) throws Exception {
+        StringBuilder buffer = new StringBuilder();
+        int read;
+        char[] chars = new char[1024];
+        while ((read = reader.read(chars)) != -1)
+            buffer.append(chars, 0, read);
+        return new JSONObject(buffer.toString());
     }
 }

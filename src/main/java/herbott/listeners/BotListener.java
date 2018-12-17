@@ -257,10 +257,9 @@ public class BotListener extends ListenerAdapter {
         System.out.println("send sub request");
         HttpURLConnection connection = (HttpURLConnection) new URL("https://api.twitch.tv/helix/webhooks/hub").openConnection();
         connection.setRequestMethod("POST");
-        connection.setDoOutput(true);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Client-ID", Main.CLIENT_ID);
-        System.out.println("1 = " + connection.getResponseCode());
+        connection.setDoOutput(true);
         OutputStream outputStream = connection.getOutputStream();
         Map<String, String> params = new HashMap<>();
         params.put("hub.callback", "https://herbott.herokuapp.com/callback");
@@ -268,10 +267,9 @@ public class BotListener extends ListenerAdapter {
         params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
         params.put("hub.lease_seconds", "864000");
         JSONObject object = new JSONObject(params);
-        System.out.println("json = " + object.toString());
         outputStream.write(object.toString().getBytes("UTF-8"));
         outputStream.flush();
-        System.out.println("response = " + connection.getResponseCode());
+        System.out.println("response = " + connection.getResponseCode() + " " + connection.getResponseMessage());
         connection.disconnect();
     }
 }

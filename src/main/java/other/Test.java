@@ -21,7 +21,6 @@ public class Test {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Client-ID", Main.CLIENT_ID);
         connection.setDoOutput(true);
-        System.out.println("1 = " + connection.getResponseCode());
         OutputStream outputStream = connection.getOutputStream();
         Map<String, String> params = new HashMap<>();
         params.put("hub.callback", "https://herbott.herokuapp.com/callback");
