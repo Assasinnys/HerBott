@@ -188,7 +188,7 @@ public class BotListener extends ListenerAdapter {
         } else if (message.equalsIgnoreCase("!лизь") &&
                 (System.currentTimeMillis() - timeLick) > DELAY) {
             timeLick = System.currentTimeMillis();
-            event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL," +
+            event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL ," +
                     " кто следующий?", user, oneOfAllChat()));
         } else if (message.equalsIgnoreCase("!ок") && user.equalsIgnoreCase(Main.CREATOR)) {
             sendSubscribeRequest();
