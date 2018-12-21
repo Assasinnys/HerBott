@@ -43,22 +43,26 @@ public class WebHookCallback extends HttpServlet{
                 }
             }
         } else {
-            try {
-                JSONObject object = JSONParser.parseJsonFromStreamNotice(req.getReader());
-                JSONArray data = object.getJSONArray(DATA);
-                if (data.isNull(0)) {
-                    Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream offline!");
-                } else {
-                    Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream started!");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            System.out.println("request not supported!");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("post request accepted! /callback post");
+        try {
+            JSONObject object = JSONParser.parseJsonFromStreamNotice(req.getReader());
+            JSONArray data = object.getJSONArray(DATA);
+            if (data.isNull(0)) {
+                System.out.println("Stream offline!");
+                Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream offline!");
+            } else {
+                System.out.println("Stream started!");
+                Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream started!");
+            }
+            resp.setStatus(HTTP_OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
