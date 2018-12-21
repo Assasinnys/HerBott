@@ -10,6 +10,7 @@ public class Hi extends HttpServlet {
 
     private String index = "<!DOCTYPE html>\n" +
             "<html>\n" +
+            "<meta charset=\"UTF-8\">" +
             "  <head>\n" +
             "    <title>Заголовок</title>\n" +
             "  </head>\n" +
