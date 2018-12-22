@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-        sendSubscribeRequest();
+        sendGet("https://herbott.herokuapp.com/oauth");
     }
 
     private static void sendSubscribeRequest() throws Exception {
@@ -32,6 +32,14 @@ public class Test {
         outputStream.write(object.toString().getBytes("UTF-8"));
         outputStream.flush();
         System.out.println("response = " + connection.getResponseCode());
+        connection.disconnect();
+    }
+
+    private static void sendGet(String url) throws Exception {
+        System.out.println("Starting send GET ...");
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("GET");
+        System.out.println("Result: " + connection.getResponseCode() + " " + connection.getResponseMessage());
         connection.disconnect();
     }
 }
