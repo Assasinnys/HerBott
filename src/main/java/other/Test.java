@@ -11,7 +11,8 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-        sendGet("https://herbott.herokuapp.com/oauth");
+//        sendReq("https://herbott.herokuapp.com/oauth");
+        oauth();
     }
 
     private static void sendSubscribeRequest() throws Exception {
@@ -35,11 +36,19 @@ public class Test {
         connection.disconnect();
     }
 
-    private static void sendGet(String url) throws Exception {
-        System.out.println("Starting send GET ...");
+    private static void sendReq(String url) throws Exception {
+        System.out.println("Starting send req ...");
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("POST");
+        System.out.println("Result: " + connection.getResponseCode() + " " + connection.getResponseMessage());
+        connection.disconnect();
+    }
+
+    private static void oauth() throws Exception {
+        String url = "https://id.twitch.tv/oauth2/authorize?client_id=" + Main.CLIENT_ID +
+                "&redirect_uri=http://localhost&scope=viewing_activity_read&response_type=code";
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
         connection.setRequestMethod("GET");
         System.out.println("Result: " + connection.getResponseCode() + " " + connection.getResponseMessage());
-        connection.disconnect();
     }
 }

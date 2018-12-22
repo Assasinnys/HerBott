@@ -14,6 +14,7 @@ public class Main {
 
     public static final String BOTNAME = "LifeBot42";
     public static final String CLIENT_ID = "qkgjxy0g275eedgwehwby8irxfrxm1";
+    private static final String CLIENT_SECRET = "8l3symtvrrm7g7166mb5bidozus6cu";
     public static final String OAUTH = "oauth:mhc3e2af15fes3x9o1qeyveqrbl7mk";
     //    public static final String REFRESH_OAUTH = "79fia2ncbscnh10z7y1m8dpuailu5dr9ti2xnzitm2w0k67wbi";
     public static final String CHANNEL = "roblife42";
