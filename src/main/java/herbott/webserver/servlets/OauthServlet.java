@@ -1,5 +1,7 @@
 package herbott.webserver.servlets;
 
+import herbott.Main;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,8 @@ public class OauthServlet extends HttpServlet {
     private void requestUserToken(String code) {
         System.out.println("Start to request access token...");
         String url = String.format("https://id.twitch.tv/oauth2/token" +
-                "?client_id=%s&client_secret=<your client secret>");
+                "?client_id=%s&client_secret=%s&code=%s&grant_type=authorization_code" +
+                "&redirect_uri=https://herbott.herokuapp.com/oauth", Main.CLIENT_ID, Main.CLIENT_SECRET,
+                code);
     }
 }
