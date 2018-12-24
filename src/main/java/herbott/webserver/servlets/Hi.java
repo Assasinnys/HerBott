@@ -24,12 +24,7 @@ public class Hi extends HttpServlet {
         System.out.println("GET request accepted! ☺");
         resp.getOutputStream().print(index);
         resp.getOutputStream().flush();
-        resp.setStatus(HttpServletResponse.SC_OK);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        resp.setStatus(HttpServletResponse.SC_OK);
         resp.sendRedirect("https://vk.com");
     }
 }
