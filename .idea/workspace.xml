@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -1166,7 +1164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545491154852</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="test redirect">
+      <created>1545693291095</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1545693291095</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1226,7 +1231,8 @@
     <MESSAGE value="update subscription callback" />
     <MESSAGE value="test index.html" />
     <MESSAGE value="test oauth servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="test oauth servlet" />
+    <MESSAGE value="test redirect" />
+    <option name="LAST_COMMIT_MESSAGE" value="test redirect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
