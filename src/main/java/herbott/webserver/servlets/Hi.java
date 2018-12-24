@@ -22,8 +22,9 @@ public class Hi extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("GET request accepted! ☺");
-        resp.getOutputStream().print(index);
-        resp.getOutputStream().flush();
-        resp.setStatus(HttpServletResponse.SC_OK);
+//        resp.getOutputStream().print(index);
+//        resp.getOutputStream().flush();
+//        resp.setStatus(HttpServletResponse.SC_OK);
+        resp.sendRedirect("https://vk.com");
     }
 }
