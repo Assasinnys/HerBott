@@ -2,7 +2,6 @@ package herbott.webserver.servlets;
 
 import herbott.JSONParser;
 import herbott.Main;
-import herbott.utils.WakeUpTimer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -62,7 +61,6 @@ public class WebHookCallback extends HttpServlet{
                 System.out.println("Stream online!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream online!");
                 Main.isActive = true;
-                new WakeUpTimer().start();
             }
             resp.setStatus(HTTP_OK);
         } catch (Exception e) {

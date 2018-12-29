@@ -1,6 +1,7 @@
 package herbott;
 
 import herbott.listeners.*;
+import herbott.utils.WakeUpTimer;
 import herbott.webserver.ControlFromAppConnector;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
@@ -29,6 +30,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         connector = new ControlFromAppConnector();
         connector.start();
+
+        new WakeUpTimer().start();
 
         Configuration config = new Configuration.Builder()
                 .setAutoNickChange(false)
