@@ -1,6 +1,7 @@
 package herbott.listeners;
 
 import herbott.Main;
+import herbott.utils.WakeUpTimer;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
 

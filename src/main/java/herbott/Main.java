@@ -21,6 +21,7 @@ public class Main {
     public static final String CHANNEL_ID = "241801295";
     public static final String CREATOR = "assasinnys";
     public static final String CREATOR_ID = "47295543";
+    public static volatile boolean isActive = true;
     public static ControlFromAppConnector connector;
 
     public static PircBotX bot;
