@@ -1,5 +1,7 @@
 package herbott.webserver.servlets;
 
+import herbott.Main;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +27,8 @@ public class Hi extends HttpServlet {
 //        resp.getOutputStream().print(index);
 //        resp.getOutputStream().flush();
 //        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.sendRedirect("https://vk.com");
+        resp.sendRedirect("https://id.twitch.tv/oauth2/authorize" +
+                "?client_id=" + Main.CLIENT_ID + "&redirect_uri=https://herbott.herokuapp.com/oauth" +
+                "&response_type=token&scope=user:edit:broadcast");
     }
 }

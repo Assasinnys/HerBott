@@ -16,12 +16,15 @@ public class OauthServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Oauth GET request accepted!");
-        Map<String, String[]> params = req.getParameterMap();
-        if (params.containsKey(CODE)) {
-            String code = params.get(CODE)[0];
-            System.out.println("Code = " + code);
-            requestUserToken(code);
-        }
+//        Map<String, String[]> params = req.getParameterMap();
+
+        System.out.println("Cookie = " + req.getCookies()[0]);
+
+//        if (params.containsKey(CODE)) {
+//            String code = params.get(CODE)[0];
+//            System.out.println("Code = " + code);
+//            requestUserToken(code);
+//        }
     }
 
     @Override
