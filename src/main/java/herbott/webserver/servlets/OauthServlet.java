@@ -18,7 +18,7 @@ public class OauthServlet extends HttpServlet {
         System.out.println("Oauth GET request accepted!");
 //        Map<String, String[]> params = req.getParameterMap();
 
-        System.out.println("Request URI = " + req.getRequestURI());
+        System.out.println("Request PARTS = " + req.getParts().toString());
 
 //        if (params.containsKey(CODE)) {
 //            String code = params.get(CODE)[0];
