@@ -3,6 +3,7 @@ package other;
 import herbott.Main;
 import org.json.JSONObject;
 
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,8 +12,7 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-//        sendReq("https://herbott.herokuapp.com/oauth");
-        oauth();
+        oauthVsev();
     }
 
     private static void sendSubscribeRequest() throws Exception {
@@ -50,5 +50,27 @@ public class Test {
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
         connection.setRequestMethod("GET");
         System.out.println("Result: " + connection.getResponseCode() + " " + connection.getResponseMessage());
+    }
+
+    private static void oauthVsev() throws Exception {
+        System.out.println("Trying to connect ...");
+        String url = "https://api.lufthansa.com/v1/oauth/token";
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        connection.setDoOutput(true);
+        String params = "client_id=dz7zd4bxtquxnpw7f67hma8u&client_secret=R6BSbEu4tu&grant_type=client_credentials";
+        connection.getOutputStream().write(params.getBytes("UTF-8"));
+        connection.getOutputStream().flush();
+        System.out.println("Response = " + connection.getResponseCode() + " " + connection.getResponseMessage());
+        StringBuilder json = new StringBuilder();
+        int i;
+        char[] b = new char[1024];
+        InputStreamReader reader = new InputStreamReader(connection.getInputStream());
+        while ((i = reader.read(b)) != -1) {
+            json.append(b, 0, i);
+        }
+        connection.disconnect();
+        System.out.println("json = " + json.toString());
     }
 }

@@ -57,6 +57,7 @@ public class WebHookCallback extends HttpServlet{
                 System.out.println("Stream offline!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream offline!");
                 Main.isActive = false;
+                Main.bot.close();
             } else {
                 System.out.println("Stream online!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream online!");

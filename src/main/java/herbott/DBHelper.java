@@ -77,7 +77,7 @@ public class DBHelper {
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            st.executeUpdate(String.format("DELETE FROM %s WHERE %s = '%s';",BANLIST_TABLE, NICK, nick));
+            st.executeUpdate(String.format("DELETE FROM %s WHERE %s = '%s';", BANLIST_TABLE, NICK, nick));
             st.close();
             connection.close();
         } catch (Exception e) {
@@ -175,7 +175,7 @@ public class DBHelper {
     }
 
     public static void resetTable(String tableName) {
-        try{
+        try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             st.execute("DELETE from " + tableName);
