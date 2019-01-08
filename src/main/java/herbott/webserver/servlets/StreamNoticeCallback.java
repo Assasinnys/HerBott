@@ -1,6 +1,6 @@
 package herbott.webserver.servlets;
 
-import herbott.JSONParser;
+import herbott.JsonUtils;
 import herbott.Main;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
-public class WebHookCallback extends HttpServlet{
+public class StreamNoticeCallback extends HttpServlet{
 
     private String challenge = null;
     private static final int HTTP_OK = 200;
@@ -24,7 +24,7 @@ public class WebHookCallback extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, String[]> params = req.getParameterMap();
-        System.out.println("get callback accepted");
+        System.out.println("GET request accepted! /StreamNoticeCallback accepted");
 
         if (params.containsKey(HUB_MODE)) {
             String hubMode = params.get(HUB_MODE)[0];
@@ -49,9 +49,9 @@ public class WebHookCallback extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("post request accepted! /callback post");
+        System.out.println("POST request accepted! /StreamNoticeCallback post");
         try {
-            JSONObject object = JSONParser.parseJsonFromStreamNotice(req.getReader());
+            JSONObject object = JsonUtils.parseJsonFromStreamNotice(req.getReader());
             JSONArray data = object.getJSONArray(DATA);
             if (data.isNull(0)) {
                 System.out.println("Stream offline!");

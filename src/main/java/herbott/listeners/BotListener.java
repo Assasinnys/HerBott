@@ -45,7 +45,7 @@ public class BotListener extends ListenerAdapter {
     private String oneOfAllChat() {
         List<String> temp = new ArrayList<>();
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
+            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
             JSONArray viewers = json.getJSONObject("chatters").getJSONArray("viewers");
             for (int j = 0; j < viewers.length(); j++) {
                 temp.add(viewers.getString(j));
@@ -64,7 +64,7 @@ public class BotListener extends ListenerAdapter {
     public static List<String> viewersList() {
         List<String> temp = new ArrayList<>();
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
+            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
             JSONArray viewers = json.getJSONObject("chatters").getJSONArray("viewers");
             for (int j = 0; j < viewers.length(); j++) {
                 temp.add(viewers.getString(j));
@@ -99,7 +99,7 @@ public class BotListener extends ListenerAdapter {
         } else if (message.startsWith("!random")) {
             event.respondWith("Твоё число: " + randomNumber(message));
         } else if (message.equalsIgnoreCase("!users")) {
-            JSONObject json = new JSONObject(JSONParser.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", "roboher42")));
+            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", "roboher42")));
             event.respondWith("Зрителей: " + json.getString("chatter_count"));
         } else if (message.equalsIgnoreCase("всем привет")) {
             event.respondWith(user + ", привет!");
@@ -225,7 +225,7 @@ public class BotListener extends ListenerAdapter {
 
     private String getUserId(String nickname) throws Exception {
         String url = "https://api.twitch.tv/helix/users?login=" + nickname;
-        JSONObject json = new JSONObject(JSONParser.readUrlAuth(url));
+        JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
         return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
@@ -233,7 +233,7 @@ public class BotListener extends ListenerAdapter {
         String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
         String s = "";
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrlAuth(url));
+            JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
             JSONArray data = json.getJSONArray("data");
             for (int i = 0; i < data.length(); i++) {
                 if (data.getJSONObject(i).getString("to_name").equalsIgnoreCase(Main.CHANNEL)) {

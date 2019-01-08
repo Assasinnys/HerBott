@@ -3,7 +3,7 @@ package herbott.webserver;
 import herbott.webserver.servlets.Hi;
 import herbott.webserver.servlets.OauthServlet;
 import herbott.webserver.servlets.TakeActiveServlet;
-import herbott.webserver.servlets.WebHookCallback;
+import herbott.webserver.servlets.StreamNoticeCallback;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -18,7 +18,7 @@ public class ControlFromAppConnector extends Thread {
         context.setContextPath("/");
         server.setHandler(context);
         context.addServlet(new ServletHolder(new Hi()), "/*");
-        context.addServlet(new ServletHolder(new WebHookCallback()), "/callback");
+        context.addServlet(new ServletHolder(new StreamNoticeCallback()), "/callback");
         context.addServlet(new ServletHolder(new OauthServlet()), "/oauth");
         context.addServlet(new ServletHolder(new TakeActiveServlet()), "/takeactive");
         try {

@@ -103,7 +103,7 @@ public class VoteListener extends ListenerAdapter {
     private List<String> getMods() {
         List<String> temp = new ArrayList<>();
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrl(String.format(
+            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format(
                     "https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
             JSONArray mods = json.getJSONObject("chatters").getJSONArray("moderators");
             for (int j = 0; j < mods.length(); j++) {

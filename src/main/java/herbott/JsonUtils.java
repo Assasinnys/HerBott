@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-public class JSONParser {
+public class JsonUtils {
 
     public static String readUrl(String urlString) {
         BufferedReader reader = null;

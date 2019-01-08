@@ -57,7 +57,7 @@ public class BattleRoyalChat extends ListenerAdapter {
     private List<String> viewersList() {
         List<String> temp = new ArrayList<>();
         try {
-            JSONObject json = new JSONObject(JSONParser.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
+            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
             JSONArray viewers = json.getJSONObject("chatters").getJSONArray("viewers");
             for (int j = 0; j < viewers.length(); j++) {
                 temp.add(viewers.getString(j));
