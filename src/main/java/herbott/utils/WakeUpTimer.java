@@ -12,14 +12,16 @@ public class WakeUpTimer extends Thread {
 
     @Override
     public void run() {
-        while (isActive) {
+        do {
             try {
                 TimeUnit.MINUTES.sleep(5);
                 makeWakeUpRequest();
+            } catch (InterruptedException interrupt) {
+                System.out.println("Wake up timer interrupted.");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        } while (isActive);
     }
 
     private void makeWakeUpRequest() throws Exception {

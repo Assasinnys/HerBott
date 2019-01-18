@@ -1,7 +1,7 @@
 package herbott.listeners;
 
-import herbott.retrofit.ApiManager;
 import herbott.utils.TimeParser;
+import herbott.utils.Utils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +42,7 @@ public class BotListener extends ListenerAdapter {
         bots.add("rutonybot");
     }
 
+    // retrofit
     private String oneOfAllChat() {
         List<String> temp = new ArrayList<>();
         try {
@@ -61,6 +62,7 @@ public class BotListener extends ListenerAdapter {
         return temp.get(r.nextInt(temp.size()));
     }
 
+    // retrofit
     public static List<String> viewersList() {
         List<String> temp = new ArrayList<>();
         try {
@@ -204,12 +206,12 @@ public class BotListener extends ListenerAdapter {
     }
 
     private boolean mainStop() {
-        Main.isActive = false;
+        Utils.disactiveBot();
         return true;
     }
 
     private boolean mainStart() {
-        Main.isActive = true;
+        Utils.activeBot();
         return true;
     }
 
@@ -241,12 +243,14 @@ public class BotListener extends ListenerAdapter {
         Main.bot.sendRaw().rawLineNow(String.format("PONG %s\r\n", event.getPingValue()));
     }
 
+    // retrofit
     private String getUserId(String nickname) throws Exception {
         String url = "https://api.twitch.tv/helix/users?login=" + nickname;
         JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
         return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
+    // retrofit
     private String getFollowTime(String userId) {
         String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
         String s = "";
@@ -269,9 +273,5 @@ public class BotListener extends ListenerAdapter {
             e.printStackTrace();
         }
         return s;
-    }
-
-    private ApiManager getRequestManager() {
-        return ApiManager.getApiManager();
     }
 }

@@ -2,6 +2,7 @@ package herbott.webserver.servlets;
 
 import herbott.JsonUtils;
 import herbott.Main;
+import herbott.utils.Utils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -57,12 +58,12 @@ public class StreamNoticeCallback extends HttpServlet{
             if (data.isNull(0)) {
                 System.out.println("Stream offline!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream offline!");
-                Main.isActive = false;
+                Utils.disactiveBot();
                 Main.bot.close();
             } else {
                 System.out.println("Stream online!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream online!");
-                Main.isActive = true;
+                Utils.activeBot();
             }
             resp.setStatus(HTTP_OK);
         } catch (Exception e) {

@@ -23,4 +23,19 @@ public class Utils {
                 .execute();
         System.out.println("response = " + response.code() + " " + response.message());
     }
+
+    public static void activeBot() {
+        Main.isActive = true;
+        if (!Main.wakeUpTimer.isAlive()) {
+            Main.wakeUpTimer = new WakeUpTimer();
+            Main.wakeUpTimer.start();
+        }
+    }
+
+    public static void disactiveBot() {
+        Main.isActive = false;
+        if (Main.wakeUpTimer.isAlive()) {
+            Main.wakeUpTimer.interrupt();
+        }
+    }
 }
