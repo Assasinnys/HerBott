@@ -293,29 +293,30 @@ public class BotListener extends ListenerAdapter {
 //        JSONObject object = new JSONObject(params);
 //        outputStream.write(object.toString().getBytes("UTF-8"));
 //        outputStream.flush();
-        getRequestManager().getHelixApi()
+        Response<ResponseBody> response = getRequestManager().getHelixApi()
                 .subStreamNotice(params)
-                .enqueue(new retrofit2.Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        System.out.println("onResponse()");
-                        if (response.isSuccessful()) {
-                            System.out.println("successful " + response.code());
-                        } else {
-                            try {
-                                System.out.println("error body " + response.errorBody().string());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        System.out.println("failure");
-                    }
-                });
-//        System.out.println("response = " + response.code() + " " + response.message());
+                .execute();
+//                .enqueue(new retrofit2.Callback<ResponseBody>() {
+//                    @Override
+//                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                        System.out.println("onResponse()");
+//                        if (response.isSuccessful()) {
+//                            System.out.println("successful " + response.code());
+//                        } else {
+//                            try {
+//                                System.out.println("error body " + response.errorBody().string());
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                        System.out.println("failure");
+//                    }
+//                });
+        System.out.println("response = " + response.code() + " " + response.message());
 //        connection.disconnect();
     }
 
