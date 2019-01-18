@@ -47,7 +47,7 @@ public class StreamNoticeCallback extends HttpServlet{
         }
     }
 
-    // getting stream notice webhook
+    // getting stream notice webhooks
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("POST request accepted! /StreamNoticeCallback post");

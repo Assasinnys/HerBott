@@ -5,19 +5,19 @@ import herbott.retrofit.api.TwitchOauth2API;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RequestManager {
+public class ApiManager {
     private static final String BASE_HELIX_URL = "https://api.twitch.tv/helix/";
     private static final String BASE_OAUTH2_URL = "https://id.twitch.tv/oauth2/";
 
-    private static RequestManager manager = new RequestManager();
+    private static ApiManager manager = new ApiManager();
 
     private TwitchHelixAPI helixApi = null;
     private TwitchOauth2API oauth2Api = null;
 
-    private RequestManager() {
+    private ApiManager() {
     }
 
-    public static RequestManager getRequestManager() {
+    public static ApiManager getApiManager() {
         return manager;
     }
 

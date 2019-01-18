@@ -1,27 +1,21 @@
 package herbott.listeners;
 
-import herbott.retrofit.RequestManager;
+import herbott.retrofit.ApiManager;
 import herbott.utils.TimeParser;
-import okhttp3.ResponseBody;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
-import retrofit2.Call;
-//import retrofit2.Callback;
-import retrofit2.Response;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+
+import static herbott.utils.Utils.sendSubscribeRequest;
 
 public class BotListener extends ListenerAdapter {
 
@@ -277,21 +271,7 @@ public class BotListener extends ListenerAdapter {
         return s;
     }
 
-    private void sendSubscribeRequest() throws Exception {
-        System.out.println("send sub request");
-        Map<String, String> params = new HashMap<>();
-        params.put("hub.callback", "https://herbott.herokuapp.com/callback");
-        params.put("hub.mode", "subscribe");
-        params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
-        params.put("hub.lease_seconds", "864000");
-        Response<ResponseBody> response = getRequestManager()
-                .getHelixApi()
-                .subStreamNotice(params)
-                .execute();
-        System.out.println("response = " + response.code() + " " + response.message());
-    }
-
-    private RequestManager getRequestManager() {
-        return RequestManager.getRequestManager();
+    private ApiManager getRequestManager() {
+        return ApiManager.getApiManager();
     }
 }

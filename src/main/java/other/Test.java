@@ -1,7 +1,6 @@
 package other;
 
 import herbott.Main;
-import herbott.retrofit.RequestManager;
 import okhttp3.ResponseBody;
 import org.json.JSONObject;
 import retrofit2.Call;
@@ -21,6 +20,7 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) throws Exception {
+        System.out.println("START");
         appAccessToken();
     }
 
@@ -92,7 +92,10 @@ public class Test {
         try {
             Response<ResponseBody> res = api.getAppToken(Main.CLIENT_ID, Main.CLIENT_SECRET).execute();
             if (res.isSuccessful()) {
+                System.out.println("successful");
                 System.out.println(res.body().string());
+            } else {
+                System.out.println("failure " + res.errorBody().string());
             }
         } catch (IOException t) {
             t.printStackTrace();
@@ -100,7 +103,7 @@ public class Test {
     }
 
     interface Api{
-        @POST("oauth2/token?grant_type=client_credentials")
+        @POST("token?grant_type=client_credentials")
         Call<ResponseBody> getAppToken(@Query("client_id") String id, @Query("client_secret") String secret);
     }
 }

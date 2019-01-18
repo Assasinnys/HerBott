@@ -24,6 +24,7 @@ public class Main {
     public static final String CREATOR_ID = "47295543";
     public static volatile boolean isActive = false;
     public static ControlFromAppConnector connector;
+    public static WakeUpTimer wakeUpTimer;
 
     public static PircBotX bot;
 
@@ -31,7 +32,8 @@ public class Main {
         connector = new ControlFromAppConnector();
         connector.start();
 
-        new WakeUpTimer().start();
+        wakeUpTimer = new WakeUpTimer();
+        wakeUpTimer.start();
 
         Configuration config = new Configuration.Builder()
                 .setAutoNickChange(false)
