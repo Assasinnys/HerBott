@@ -9,9 +9,11 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" line="283" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
+    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="test bugs">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -70,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="297" column="65" lean-forward="true" selection-start-line="297" selection-start-column="65" selection-end-line="297" selection-end-column="65" />
+              <caret line="297" column="65" lean-forward="false" selection-start-line="297" selection-start-column="65" selection-end-line="297" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#guess#0;class#BotListener#0" expanded="false" />
@@ -91,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+            <state relative-caret-position="613">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -322,8 +324,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4606346886900" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="1023953127" />
+        <entry key="$PROJECT_DIR$" value="4606347412505" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3193969554" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="3880265061" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="3949009108" />
       </map>
@@ -544,8 +546,8 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/SubLottery.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -931,13 +933,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00008" summary="test control connector">
-      <created>1544455634979</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1544455634979</updated>
-    </task>
     <task id="LOCAL-00009" summary="test control connector">
       <created>1544455911199</created>
       <option name="number" value="00009" />
@@ -1274,7 +1269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547845418362</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="test bugs">
+      <created>1547845723818</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1547845723818</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1662,18 +1664,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="297" column="65" lean-forward="true" selection-start-line="297" selection-start-column="65" selection-end-line="297" selection-end-column="65" />
+          <caret line="297" column="65" lean-forward="false" selection-start-line="297" selection-start-column="65" selection-end-line="297" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#guess#0;class#BotListener#0" expanded="false" />
@@ -1686,6 +1680,14 @@
             <element signature="e#14975#14976#0" expanded="true" />
             <element signature="e#15032#15033#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
