@@ -10,7 +10,7 @@ import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
 import retrofit2.Call;
-import retrofit2.Callback;
+//import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
@@ -295,7 +295,7 @@ public class BotListener extends ListenerAdapter {
 //        outputStream.flush();
         getRequestManager().getHelixApi()
                 .subStreamNotice(params)
-                .enqueue(new Callback<ResponseBody>() {
+                .enqueue(new retrofit2.Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         System.out.println("onResponse()");

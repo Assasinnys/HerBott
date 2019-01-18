@@ -9,30 +9,9 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" line="283" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="test bugs">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_12_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_2_2_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_2_60.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_2_60.xml" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_8_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/TwitchBot_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/TwitchBot_main.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/TwitchBot_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/TwitchBot_test.iml" />
+    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/JSONParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BattleRoyalChat.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BattleRoyalChat.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BotListener.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BotListener.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/VoteListener.class" afterPath="$PROJECT_DIR$/out/production/classes/herbott/listeners/VoteListener.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -91,27 +70,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3774">
-              <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="170">
+              <caret line="297" column="65" lean-forward="true" selection-start-line="297" selection-start-column="65" selection-end-line="297" selection-end-column="65" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#guess#0;class#BotListener#0" expanded="false" />
                 <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
                 <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
                 <element signature="method#getUserId#0;class#BotListener#0" expanded="false" />
                 <element signature="method#getFollowTime#0;class#BotListener#0" expanded="false" />
-                <element signature="e#14685#14686#0" expanded="true" />
-                <element signature="e#14762#14763#0" expanded="true" />
-                <element signature="e#14963#14964#0" expanded="true" />
-                <element signature="e#15020#15021#0" expanded="true" />
+                <element signature="e#14697#14698#0" expanded="true" />
+                <element signature="e#14774#14775#0" expanded="true" />
+                <element signature="e#14975#14976#0" expanded="true" />
+                <element signature="e#15032#15033#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="562">
@@ -564,8 +544,8 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/SubLottery.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
       </list>
     </option>
   </component>
@@ -951,13 +931,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00007" summary="test control connector">
-      <created>1544454182150</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1544454182150</updated>
-    </task>
     <task id="LOCAL-00008" summary="test control connector">
       <created>1544455634979</created>
       <option name="number" value="00008" />
@@ -1294,7 +1267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547844168153</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="test bugs">
+      <created>1547845418362</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1547845418362</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1622,14 +1602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/76f3c69879d3e01c082f49d8661c5590838148e1/retrofit-2.3.0-sources.jar!/retrofit2/Callback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1682,21 +1654,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/76f3c69879d3e01c082f49d8661c5590838148e1/retrofit-2.3.0-sources.jar!/retrofit2/Callback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3774">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="method#guess#0;class#BotListener#0" expanded="false" />
-            <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
-            <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
-            <element signature="method#getUserId#0;class#BotListener#0" expanded="false" />
-            <element signature="method#getFollowTime#0;class#BotListener#0" expanded="false" />
-            <element signature="e#14685#14686#0" expanded="true" />
-            <element signature="e#14762#14763#0" expanded="true" />
-            <element signature="e#14963#14964#0" expanded="true" />
-            <element signature="e#15020#15021#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1705,6 +1667,25 @@
         <state relative-caret-position="562">
           <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="297" column="65" lean-forward="true" selection-start-line="297" selection-start-column="65" selection-end-line="297" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#guess#0;class#BotListener#0" expanded="false" />
+            <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
+            <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
+            <element signature="method#getUserId#0;class#BotListener#0" expanded="false" />
+            <element signature="method#getFollowTime#0;class#BotListener#0" expanded="false" />
+            <element signature="e#14697#14698#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
+            <element signature="e#14975#14976#0" expanded="true" />
+            <element signature="e#15032#15033#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
