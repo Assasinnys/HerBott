@@ -14,13 +14,13 @@ import java.util.Map;
 
 public class StreamNoticeCallback extends HttpServlet{
 
-    private String challenge = null;
     private static final int HTTP_OK = 200;
     private static final int HTTP_BAD_REQUEST = 400;
     private static final String HUB_CHALLENGE = "hub.challenge";
     private static final String HUB_MODE = "hub.mode";
     private static final String DATA = "data";
 
+    // verify subscription stream notice
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, String[]> params = req.getParameterMap();
@@ -34,7 +34,7 @@ public class StreamNoticeCallback extends HttpServlet{
             } else if (hubMode.equalsIgnoreCase("subscribe")) {
                 if (params.containsKey(HUB_CHALLENGE)) {
                     System.out.println("sub accepted");
-                    challenge = params.get(HUB_CHALLENGE)[0];
+                    String challenge = params.get(HUB_CHALLENGE)[0];
                     resp.getOutputStream().print(challenge);
                     resp.getOutputStream().flush();
                     resp.setStatus(HTTP_OK);
@@ -47,6 +47,7 @@ public class StreamNoticeCallback extends HttpServlet{
         }
     }
 
+    // getting stream notice webhook
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("POST request accepted! /StreamNoticeCallback post");

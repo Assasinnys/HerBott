@@ -1,12 +1,15 @@
 package herbott.listeners;
 
+import herbott.retrofit.RequestManager;
 import herbott.utils.TimeParser;
+import okhttp3.ResponseBody;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
+import retrofit2.Response;
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -190,9 +193,27 @@ public class BotListener extends ListenerAdapter {
             timeLick = System.currentTimeMillis();
             event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL ," +
                     " кто следующий?", user, oneOfAllChat()));
-        } else if (message.equalsIgnoreCase("!ок") && user.equalsIgnoreCase(Main.CREATOR)) {
+        } else if (message.equalsIgnoreCase("!sub_stream_notice") && user.equalsIgnoreCase(Main.CREATOR)) {
             sendSubscribeRequest();
+        } else if (message.equalsIgnoreCase("!main_stop") && user.equalsIgnoreCase(Main.CREATOR)) {
+            if (mainStop()) {
+                event.respondChannel("BOT: MAIN STOP - isActive = " + Main.isActive);
+            }
+        } else if (message.equalsIgnoreCase("!main_start") && user.equalsIgnoreCase(Main.CREATOR)) {
+            if (mainStart()) {
+                event.respondChannel("BOT: MAIN START - isActive = " + Main.isActive);
+            }
         }
+    }
+
+    private boolean mainStop() {
+        Main.isActive = false;
+        return true;
+    }
+
+    private boolean mainStart() {
+        Main.isActive = true;
+        return true;
     }
 
     private String guess(String message) {
@@ -255,21 +276,28 @@ public class BotListener extends ListenerAdapter {
 
     private void sendSubscribeRequest() throws Exception {
         System.out.println("send sub request");
-        HttpURLConnection connection = (HttpURLConnection) new URL("https://api.twitch.tv/helix/webhooks/hub").openConnection();
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("Client-ID", Main.CLIENT_ID);
-        connection.setDoOutput(true);
-        OutputStream outputStream = connection.getOutputStream();
+//        HttpURLConnection connection = (HttpURLConnection) new URL("https://api.twitch.tv/helix/webhooks/hub").openConnection();
+//        connection.setRequestMethod("POST");
+//        connection.setRequestProperty("Content-Type", "application/json");
+//        connection.setRequestProperty("Client-ID", Main.CLIENT_ID);
+//        connection.setDoOutput(true);
+//        OutputStream outputStream = connection.getOutputStream();
         Map<String, String> params = new HashMap<>();
         params.put("hub.callback", "https://herbott.herokuapp.com/callback");
         params.put("hub.mode", "subscribe");
         params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
         params.put("hub.lease_seconds", "864000");
-        JSONObject object = new JSONObject(params);
-        outputStream.write(object.toString().getBytes("UTF-8"));
-        outputStream.flush();
-        System.out.println("response = " + connection.getResponseCode() + " " + connection.getResponseMessage());
-        connection.disconnect();
+//        JSONObject object = new JSONObject(params);
+//        outputStream.write(object.toString().getBytes("UTF-8"));
+//        outputStream.flush();
+        Response<ResponseBody> response = getRequestManager().getHelixApi()
+                .subStreamNotice(params)
+                .execute();
+        System.out.println("response = " + response.code() + " " + response.message());
+//        connection.disconnect();
+    }
+
+    private RequestManager getRequestManager() {
+        return RequestManager.getRequestManager();
     }
 }
