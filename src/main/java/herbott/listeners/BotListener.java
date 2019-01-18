@@ -279,45 +279,16 @@ public class BotListener extends ListenerAdapter {
 
     private void sendSubscribeRequest() throws Exception {
         System.out.println("send sub request");
-//        HttpURLConnection connection = (HttpURLConnection) new URL("https://api.twitch.tv/helix/webhooks/hub").openConnection();
-//        connection.setRequestMethod("POST");
-//        connection.setRequestProperty("Content-Type", "application/json");
-//        connection.setRequestProperty("Client-ID", Main.CLIENT_ID);
-//        connection.setDoOutput(true);
-//        OutputStream outputStream = connection.getOutputStream();
         Map<String, String> params = new HashMap<>();
         params.put("hub.callback", "https://herbott.herokuapp.com/callback");
         params.put("hub.mode", "subscribe");
         params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
         params.put("hub.lease_seconds", "864000");
-//        JSONObject object = new JSONObject(params);
-//        outputStream.write(object.toString().getBytes("UTF-8"));
-//        outputStream.flush();
-        Response<ResponseBody> response = getRequestManager().getHelixApi()
+        Response<ResponseBody> response = getRequestManager()
+                .getHelixApi()
                 .subStreamNotice(params)
                 .execute();
-//                .enqueue(new retrofit2.Callback<ResponseBody>() {
-//                    @Override
-//                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                        System.out.println("onResponse()");
-//                        if (response.isSuccessful()) {
-//                            System.out.println("successful " + response.code());
-//                        } else {
-//                            try {
-//                                System.out.println("error body " + response.errorBody().string());
-//                            } catch (IOException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-//                        System.out.println("failure");
-//                    }
-//                });
         System.out.println("response = " + response.code() + " " + response.message());
-//        connection.disconnect();
     }
 
     private RequestManager getRequestManager() {

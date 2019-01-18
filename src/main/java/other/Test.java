@@ -1,8 +1,17 @@
 package other;
 
 import herbott.Main;
+import herbott.retrofit.RequestManager;
+import okhttp3.ResponseBody;
 import org.json.JSONObject;
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -12,7 +21,7 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-        oauthVsev();
+        appAccessToken();
     }
 
     private static void sendSubscribeRequest() throws Exception {
@@ -72,5 +81,26 @@ public class Test {
         }
         connection.disconnect();
         System.out.println("json = " + json.toString());
+    }
+
+    private static void appAccessToken() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://id.twitch.tv/oauth2/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        Api api = retrofit.create(Api.class);
+        try {
+            Response<ResponseBody> res = api.getAppToken(Main.CLIENT_ID, Main.CLIENT_SECRET).execute();
+            if (res.isSuccessful()) {
+                System.out.println(res.body().string());
+            }
+        } catch (IOException t) {
+            t.printStackTrace();
+        }
+    }
+
+    interface Api{
+        @POST("oauth2/token?grant_type=client_credentials")
+        Call<ResponseBody> getAppToken(@Query("client_id") String id, @Query("client_secret") String secret);
     }
 }
