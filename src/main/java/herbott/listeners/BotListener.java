@@ -9,8 +9,11 @@ import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -290,10 +293,29 @@ public class BotListener extends ListenerAdapter {
 //        JSONObject object = new JSONObject(params);
 //        outputStream.write(object.toString().getBytes("UTF-8"));
 //        outputStream.flush();
-        Response<ResponseBody> response = getRequestManager().getHelixApi()
+        getRequestManager().getHelixApi()
                 .subStreamNotice(params)
-                .execute();
-        System.out.println("response = " + response.code() + " " + response.message());
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        System.out.println("onResponse()");
+                        if (response.isSuccessful()) {
+                            System.out.println("successful " + response.code());
+                        } else {
+                            try {
+                                System.out.println("error body " + response.errorBody().string());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        System.out.println("failure");
+                    }
+                });
+//        System.out.println("response = " + response.code() + " " + response.message());
 //        connection.disconnect();
     }
 
