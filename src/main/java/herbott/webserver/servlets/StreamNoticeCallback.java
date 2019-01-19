@@ -58,7 +58,7 @@ public class StreamNoticeCallback extends HttpServlet{
             if (data.isNull(0)) {
                 System.out.println("Stream offline!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream offline!");
-                Utils.disactiveBot();
+                Utils.inactiveBot();
                 Main.bot.close();
             } else {
                 System.out.println("Stream online!");

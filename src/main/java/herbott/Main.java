@@ -32,9 +32,6 @@ public class Main {
         connector = new ControlFromAppConnector();
         connector.start();
 
-        wakeUpTimer = new WakeUpTimer();
-        wakeUpTimer.start();
-
         Configuration config = new Configuration.Builder()
                 .setAutoNickChange(false)
                 .setOnJoinWhoEnabled(false)

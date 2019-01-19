@@ -32,7 +32,7 @@ public class Utils {
         }
     }
 
-    public static void disactiveBot() {
+    public static void inactiveBot() {
         Main.isActive = false;
         if (Main.wakeUpTimer.isAlive()) {
             Main.wakeUpTimer.interrupt();

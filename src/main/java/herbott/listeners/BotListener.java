@@ -101,7 +101,7 @@ public class BotListener extends ListenerAdapter {
         } else if (message.startsWith("!random")) {
             event.respondWith("Твоё число: " + randomNumber(message));
         } else if (message.equalsIgnoreCase("!users")) {
-            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", "roboher42")));
+            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
             event.respondWith("Зрителей: " + json.getString("chatter_count"));
         } else if (message.equalsIgnoreCase("всем привет")) {
             event.respondWith(user + ", привет!");
@@ -206,7 +206,7 @@ public class BotListener extends ListenerAdapter {
     }
 
     private boolean mainStop() {
-        Utils.disactiveBot();
+        Utils.inactiveBot();
         return true;
     }
 
