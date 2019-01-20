@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static herbott.retrofit.ApiManager.getApiManager;
+import static herbott.Main.wakeUpTimer;
 
 public class Utils {
     public static void sendSubscribeRequest() throws Exception {
@@ -25,21 +26,34 @@ public class Utils {
     }
 
     public static void activeBot() {
-        Main.isActive = true;
         System.out.println("activeBot()");
-        if (!Main.wakeUpTimer.isAlive()) {
-            System.out.println("(active) wake up timer online = " + Main.wakeUpTimer.isAlive());
-            Main.wakeUpTimer = new WakeUpTimer();
-            Main.wakeUpTimer.start();
+        Main.isActive = true;
+        if (wakeUpTimer == null) {
+            System.out.println("active null");
+            startWakeUpTimer();
+        }
+        else if (!wakeUpTimer.isAlive()) {
+            System.out.println("(active isAlive()) wake up timer online = " + wakeUpTimer.isAlive());
+            startWakeUpTimer();
         }
     }
 
     public static void inactiveBot() {
-        Main.isActive = false;
         System.out.println("inactiveBot()");
-        if (Main.wakeUpTimer.isAlive()) {
-            System.out.println("(inactive) wake up timer online = " + Main.wakeUpTimer.isAlive());
-            Main.wakeUpTimer.interrupt();
+        if (!Main.isActive) {
+            return;
         }
+        Main.isActive = false;
+        if (wakeUpTimer != null) {
+            if (wakeUpTimer.isAlive()) {
+                System.out.println("(inactive) wake up timer online = " + wakeUpTimer.isAlive());
+                wakeUpTimer.interrupt();
+            }
+        }
+    }
+
+    private static void startWakeUpTimer() {
+        wakeUpTimer = new WakeUpTimer();
+        wakeUpTimer.start();
     }
 }
