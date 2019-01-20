@@ -1,5 +1,7 @@
 package herbott.listeners;
 
+import herbott.retrofit.ApiManager;
+import herbott.retrofit.model.FollowJsonModel;
 import herbott.utils.TimeParser;
 import herbott.utils.Utils;
 import org.json.JSONArray;
@@ -8,7 +10,9 @@ import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
+import retrofit2.Response;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -250,28 +254,56 @@ public class BotListener extends ListenerAdapter {
         return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
-    // retrofit
+    // retrofit (do this)
     private String getFollowTime(String userId) {
-        String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
-        String s = "";
+//        String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
+        String answer = "";
+//        try {
+//            JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
+//            JSONArray data = json.getJSONArray("data");
+//            for (int i = 0; i < data.length(); i++) {
+//                if (data.getJSONObject(i).getString("to_name").equalsIgnoreCase(Main.CHANNEL)) {
+//                    s = data.getJSONObject(i).getString("followed_at");
+//                    break;
+//                }
+//            }
+//            s = s.replace("T", " ").replace("Z", "");
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//            s = TimeParser.parse(sdf.parse(s).getTime(), System.currentTimeMillis());
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//            s = "";
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
         try {
-            JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
-            JSONArray data = json.getJSONArray("data");
-            for (int i = 0; i < data.length(); i++) {
-                if (data.getJSONObject(i).getString("to_name").equalsIgnoreCase(Main.CHANNEL)) {
-                    s = data.getJSONObject(i).getString("followed_at");
-                    break;
+            FollowJsonModel response = ApiManager.getApiManager()
+                    .getHelixApi()
+                    .getFollowData(userId)
+                    .execute()
+                    .body();
+            if (response != null) {
+                List<FollowJsonModel.Data> followData = response.data;
+                for (FollowJsonModel.Data data : followData) {
+                    if (data.toName.equalsIgnoreCase(Main.CHANNEL)) {
+                        answer = data.followedAt;
+                        break;
+                    }
                 }
+                if (!answer.equalsIgnoreCase("")) {
+                    answer = answer.replace("T", " ").replace("Z", "");
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    answer = TimeParser.parse(sdf.parse(answer).getTime(), System.currentTimeMillis());
+                } else {
+                    answer = "Ах ты даже не фолловер! SMOrc";
+                }
+            } else {
+                answer = "Что-то пошло не так BibleThump";
             }
-            s = s.replace("T", " ").replace("Z", "");
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            s = TimeParser.parse(sdf.parse(s).getTime(), System.currentTimeMillis());
-        } catch (ParseException e) {
-            e.printStackTrace();
-            s = "";
-        } catch (JSONException e) {
-            e.printStackTrace();
+        } catch (IOException | ParseException io) {
+            io.printStackTrace();
+            answer = "Произошла ошибка при получении информации с twitch.tv BibleThump";
         }
-        return s;
+        return answer;
     }
 }
