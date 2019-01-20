@@ -254,28 +254,8 @@ public class BotListener extends ListenerAdapter {
         return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
-    // retrofit (do this)
     private String getFollowTime(String userId) {
-//        String url = "https://api.twitch.tv/helix/users/follows?from_id=" + userId;
         String answer = "";
-//        try {
-//            JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
-//            JSONArray data = json.getJSONArray("data");
-//            for (int i = 0; i < data.length(); i++) {
-//                if (data.getJSONObject(i).getString("to_name").equalsIgnoreCase(Main.CHANNEL)) {
-//                    s = data.getJSONObject(i).getString("followed_at");
-//                    break;
-//                }
-//            }
-//            s = s.replace("T", " ").replace("Z", "");
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//            s = TimeParser.parse(sdf.parse(s).getTime(), System.currentTimeMillis());
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//            s = "";
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
         try {
             FollowJsonModel response = ApiManager.getApiManager()
                     .getHelixApi()

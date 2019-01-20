@@ -70,7 +70,7 @@ public class SubLottery extends ListenerAdapter {
             }
         }
 
-        if (message.length() >= limit) {
+        if (message.length() >= limit && !message.startsWith("!")) {
             if (factor.containsKey(username)) {
                 factor.put(username, factor.get(username) + add);
             } else {
