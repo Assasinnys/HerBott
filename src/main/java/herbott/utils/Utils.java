@@ -26,6 +26,7 @@ public class Utils {
 
     public static void activeBot() {
         Main.isActive = true;
+        System.out.println("activeBot()");
         if (!Main.wakeUpTimer.isAlive()) {
             System.out.println("(active) wake up timer online = " + Main.wakeUpTimer.isAlive());
             Main.wakeUpTimer = new WakeUpTimer();
@@ -35,6 +36,7 @@ public class Utils {
 
     public static void inactiveBot() {
         Main.isActive = false;
+        System.out.println("inactiveBot()");
         if (Main.wakeUpTimer.isAlive()) {
             System.out.println("(inactive) wake up timer online = " + Main.wakeUpTimer.isAlive());
             Main.wakeUpTimer.interrupt();

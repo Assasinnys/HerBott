@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="613">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -953,13 +953,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00015" summary="test control connector">
-      <created>1544962609734</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1544962609734</updated>
-    </task>
     <task id="LOCAL-00016" summary="test control connector">
       <created>1544962838057</created>
       <option name="number" value="00016" />
@@ -1296,7 +1289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547910800595</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fix command !main_start !main_stop and wake up timer">
+      <created>1548004846458</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1548004846460</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1364,7 +1364,8 @@
     <MESSAGE value="test bugs" />
     <MESSAGE value="bugs fixed" />
     <MESSAGE value="fix command !users" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix command !users" />
+    <MESSAGE value="fix command !main_start !main_stop and wake up timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix command !main_start !main_stop and wake up timer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1373,7 +1374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/connection/WebConnection.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/ActivityListener.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/HerBottFactory.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1688,10 +1688,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="1002" column="32" lean-forward="false" selection-start-line="1002" selection-start-column="32" selection-end-line="1002" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="613">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
