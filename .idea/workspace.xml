@@ -7,13 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BalListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BalListener.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BattleRoyalChat.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BattleRoyalChat.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/DuelListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/DuelListener.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/PhrasesListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/PhrasesListener.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -82,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hi.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Hi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -92,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/other/TestBase.java">
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="531">
+              <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -921,13 +920,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00021" summary="test control connector">
-      <created>1544998352258</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1544998352258</updated>
-    </task>
     <task id="LOCAL-00022" summary="test control connector">
       <created>1544998969464</created>
       <option name="number" value="00022" />
@@ -1264,7 +1256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548708759225</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="add oauth with twitch.tv">
+      <created>1548709335075</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1548709335075</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1612,14 +1611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="200" column="31" lean-forward="true" selection-start-line="200" selection-start-column="31" selection-end-line="200" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/model/UserAccessTokenJsonModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1684,14 +1675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1704,6 +1687,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/other/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="41" column="70" lean-forward="true" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
           <folding />
         </state>
       </provider>
