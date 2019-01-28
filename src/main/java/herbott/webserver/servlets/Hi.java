@@ -29,6 +29,6 @@ public class Hi extends HttpServlet {
 //        resp.setStatus(HttpServletResponse.SC_OK);
         resp.sendRedirect("https://id.twitch.tv/oauth2/authorize" +
                 "?client_id=" + Main.CLIENT_ID + "&redirect_uri=https://herbott.herokuapp.com/oauth" +
-                "&response_type=token&scope=user:edit:broadcast");
+                "&response_type=code&scope=user:edit:broadcast");
     }
 }

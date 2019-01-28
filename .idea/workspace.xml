@@ -6,36 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="fix activity listener">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/UserAccessTokenJsonModel.java" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
+    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/DBHelper.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/DBHelper.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/Main.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/Main.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/Statistics.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/Statistics.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/SubLottery.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/SubLottery.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/TotalControl.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/TotalControl.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/utils/TimeOuter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" afterPath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/TestBase.class" afterPath="$PROJECT_DIR$/build/classes/java/main/other/TestBase.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/DBHelper.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/DBHelper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BalListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BalListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BattleRoyalChat.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BattleRoyalChat.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/DuelListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/other/Test.java" afterPath="$PROJECT_DIR$/src/main/java/other/Test.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/other/TestBase.java" afterPath="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BalListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BalListener.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BattleRoyalChat.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BattleRoyalChat.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/DuelListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/DuelListener.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/PhrasesListener.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/PhrasesListener.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -94,11 +72,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OauthServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OauthServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="24" column="70" lean-forward="false" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hi.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -531,7 +519,6 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/UserNoticeListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/TakeActiveServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/ControlFromAppConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/WebHookCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/twitchAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/TwitchOauthAPI.java" />
@@ -558,6 +545,7 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/UserAccessTokenJsonModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" />
       </list>
     </option>
@@ -933,13 +921,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00020" summary="test control connector">
-      <created>1544969952354</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1544969952354</updated>
-    </task>
     <task id="LOCAL-00021" summary="test control connector">
       <created>1544998352258</created>
       <option name="number" value="00021" />
@@ -1276,7 +1257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548012105641</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="add oauth with twitch.tv">
+      <created>1548708759224</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1548708759225</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1348,7 +1336,8 @@
     <MESSAGE value="fix commands !main_start !main_stop and wake up timer" />
     <MESSAGE value="recoding command !follow" />
     <MESSAGE value="fix activity listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix activity listener" />
+    <MESSAGE value="add oauth with twitch.tv" />
+    <option name="LAST_COMMIT_MESSAGE" value="add oauth with twitch.tv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1549,6 +1538,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1616,14 +1608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="48" column="55" lean-forward="false" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="66" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -1712,6 +1696,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="24" column="70" lean-forward="false" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding />
         </state>
       </provider>
