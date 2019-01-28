@@ -5,12 +5,10 @@ import herbott.retrofit.model.FollowJsonModel;
 import herbott.utils.TimeParser;
 import herbott.utils.Utils;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
-import retrofit2.Response;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -95,7 +93,7 @@ public class BotListener extends ListenerAdapter {
         String message = event.getMessage();
         String user = Objects.requireNonNull(event.getUser()).getNick();
 
-        if (Statistics.getStats().getBanlist().contains(user)) return;
+        if (Statistics.getStats().getBanList().contains(user)) return;
 
         System.out.println(">>>> " + user + ": " + message);
         if (message.equalsIgnoreCase("бот")) {

@@ -20,7 +20,7 @@ public class DuelListener extends ListenerAdapter {
         String message = event.getMessage();
         String nickname = event.getUser().getNick();
 
-        if (Statistics.getStats().getBanlist().contains(nickname)) return;
+        if (Statistics.getStats().getBanList().contains(nickname)) return;
 
         if (message.equalsIgnoreCase("!дуэль") && !gameStatus && !BattleRoyalChat.isAlive() && !timeout) {
             if (firstPlayer.equalsIgnoreCase("")) {

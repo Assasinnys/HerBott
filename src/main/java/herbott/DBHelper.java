@@ -22,6 +22,11 @@ public class DBHelper {
     public static final String ACTIVITY_TABLE = "activity";
     private static final String ACT = "act";
 
+    public static final String TOKENS_TABLE = "tokens";
+    public static final String ACCESS_TOKEN = "access_token";
+    public static final String REFRESH_TOKEN = "refresh_token";
+    public static final String EXPIRE = "expire";
+
     private static Connection getConnection() throws URISyntaxException, SQLException {
         System.out.println("Starting to create connection!");
 //        URI dbUri = new URI(testUri);
@@ -85,14 +90,14 @@ public class DBHelper {
         }
     }
 
-    public static ArrayList<String> readNickMap(String tableName) {
+    public static ArrayList<String> readNickArray(String tableName) {
         ArrayList<String> nicks = new ArrayList<>();
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery(String.format("SELECT nick FROM %s", tableName));
+            ResultSet rs = st.executeQuery(String.format("SELECT %s FROM %s", NICK, tableName));
             while (rs.next()) {
-                nicks.add(rs.getString("nick"));
+                nicks.add(rs.getString(NICK));
             }
             st.close();
             connection.close();
@@ -179,6 +184,19 @@ public class DBHelper {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
             st.execute("DELETE from " + tableName);
+            st.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void addTokenToDB(String nick, String accessToken, String refreshToken, String expire) {
+        try {
+            Connection connection = getConnection();
+            Statement st = connection.createStatement();
+            st.executeUpdate(String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %s, %s, %s)",
+                    TOKENS_TABLE, NICK, ACCESS_TOKEN, REFRESH_TOKEN, EXPIRE, nick, accessToken, refreshToken, expire));
             st.close();
             connection.close();
         } catch (Exception e) {

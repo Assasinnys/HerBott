@@ -12,17 +12,20 @@ public class Statistics {
 
     private static Statistics stats = new Statistics();
 
-    private ArrayList<String> nicks;
+    private ArrayList<String> nicksForStats;
 
     private ArrayList<String> banlist;
+
+    private ArrayList<String> nicksForTokens;
 
     public static Statistics getStats() {
         return stats;
     }
 
     private Statistics() {
-        nicks = DBHelper.readNickMap(DBHelper.STATS_TABLE);
-        banlist = DBHelper.readNickMap(DBHelper.BANLIST_TABLE);
+        nicksForStats = DBHelper.readNickArray(DBHelper.STATS_TABLE);
+        banlist = DBHelper.readNickArray(DBHelper.BANLIST_TABLE);
+        nicksForTokens = DBHelper.readNickArray(DBHelper.TOKENS_TABLE);
     }
 
     public String top(int flag) {
@@ -59,11 +62,11 @@ public class Statistics {
     }
 
     public void sendStat(String nick, String column) {
-        if (nicks.contains(nick))
+        if (nicksForStats.contains(nick))
             DBHelper.updateData(nick, column);
         else {
             DBHelper.addNewData(nick, column);
-            nicks.add(nick);
+            nicksForStats.add(nick);
         }
     }
 
@@ -85,11 +88,19 @@ public class Statistics {
     }
 
     public int receiveStat(String nick, String column) {
-        return nicks.contains(nick)? DBHelper.receiveData(nick, column) : 0;
+        return nicksForStats.contains(nick)? DBHelper.receiveData(nick, column) : 0;
     }
 
-    public ArrayList<String> getBanlist() {
+    public ArrayList<String> getBanList() {
         return banlist;
     }
-}
 
+    public void addUserAccessToken(String nick, String accessToken, String refreshToken, String expire) {
+        if (!nicksForTokens.contains(nick)) {
+            DBHelper.addTokenToDB(nick, accessToken, refreshToken, expire);
+            System.out.println("User added to token base.");
+        } else {
+            System.out.println("User already exist in token base.");
+        }
+    }
+}

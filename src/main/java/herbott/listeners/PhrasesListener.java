@@ -13,7 +13,7 @@ public class PhrasesListener extends ListenerAdapter {
         String nick = Objects.requireNonNull(event.getUser()).getNick();
         String message = event.getMessage().toLowerCase();
 
-        if (Statistics.getStats().getBanlist().contains(nick)) return;
+        if (Statistics.getStats().getBanList().contains(nick)) return;
 
         if (message.matches("(.*) кусь (.*)")) {
             event.respondChannel("КУСЬ SMOrc КУСЬ SMOrc КУСЬ SMOrc КУСЬ");

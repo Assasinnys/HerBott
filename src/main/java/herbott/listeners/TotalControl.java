@@ -11,6 +11,7 @@ public class TotalControl extends ListenerAdapter {
     public void onMessage(MessageEvent event) {
         if (event.getMessage().startsWith("ex") && event.getUser().getNick().equalsIgnoreCase(Main.CREATOR)) {
             event.respondWith(event.getMessage().split(":")[1]);
+
         }
     }
 }
