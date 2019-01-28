@@ -80,8 +80,8 @@
       <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="197" column="88" lean-forward="false" selection-start-line="197" selection-start-column="88" selection-end-line="197" selection-end-column="88" />
+            <state relative-caret-position="463">
+              <caret line="197" column="106" lean-forward="false" selection-start-line="197" selection-start-column="106" selection-end-line="197" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -916,13 +916,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00024" summary="test control connector">
-      <created>1544999556906</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1544999556906</updated>
-    </task>
     <task id="LOCAL-00025" summary="test control connector">
       <created>1544999682090</created>
       <option name="number" value="00025" />
@@ -1259,7 +1252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548710748927</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="fix token save">
+      <created>1548710847937</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1548710847937</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1694,8 +1694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="197" column="88" lean-forward="false" selection-start-line="197" selection-start-column="88" selection-end-line="197" selection-end-column="88" />
+        <state relative-caret-position="463">
+          <caret line="197" column="106" lean-forward="false" selection-start-line="197" selection-start-column="106" selection-end-line="197" selection-end-column="106" />
           <folding />
         </state>
       </provider>
