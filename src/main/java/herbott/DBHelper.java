@@ -195,7 +195,7 @@ public class DBHelper {
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            st.executeUpdate(String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %s, %s, %s);",
+            st.executeUpdate(String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES ('%s', %s, %s, %s);",
                     TOKENS_TABLE, NICK, ACCESS_TOKEN, REFRESH_TOKEN, EXPIRE, nick, accessToken, refreshToken, expire));
             st.close();
             connection.close();

@@ -70,8 +70,8 @@
       <file leaf-file-name="OauthServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="78" />
+            <state relative-caret-position="358">
+              <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -80,8 +80,18 @@
       <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
+            <state relative-caret-position="477">
+              <caret line="197" column="88" lean-forward="false" selection-start-line="197" selection-start-column="88" selection-end-line="197" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Statistics.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -525,12 +535,12 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/Cat.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/UserAccessTokenJsonModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/DBHelper.java" />
       </list>
     </option>
@@ -906,13 +916,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00023" summary="test control connector">
-      <created>1544999300621</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1544999300621</updated>
-    </task>
     <task id="LOCAL-00024" summary="test control connector">
       <created>1544999556906</created>
       <option name="number" value="00024" />
@@ -1249,7 +1252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548709964940</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="fix token save">
+      <created>1548710748927</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1548710748927</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1615,17 +1625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="e#455#456#0" expanded="false" />
-            <element signature="e#483#484#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1669,14 +1668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/sql/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -1685,10 +1676,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
+        <state relative-caret-position="477">
+          <caret line="197" column="88" lean-forward="false" selection-start-line="197" selection-start-column="88" selection-end-line="197" selection-end-column="88" />
           <folding />
         </state>
       </provider>
