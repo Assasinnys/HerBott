@@ -65,6 +65,7 @@ public class Utils {
     public static boolean refreshToken(String nick) {
         String refreshToken = Statistics.getStats().getRefreshToken(nick);
         if (!refreshToken.equalsIgnoreCase("")) {
+            System.out.println(refreshToken);
             ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET)
                     .enqueue(new Callback<RefreshTokenJsonModel>() {
                         @Override
