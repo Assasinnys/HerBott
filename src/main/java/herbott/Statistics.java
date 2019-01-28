@@ -95,12 +95,22 @@ public class Statistics {
         return banlist;
     }
 
-    public void addUserAccessToken(String nick, String accessToken, String refreshToken, String expire) {
+    public synchronized void addUserAccessToken(String nick, String accessToken, String refreshToken) {
         if (!nicksForTokens.contains(nick)) {
-            DBHelper.addTokenToDB(nick, accessToken, refreshToken, expire);
+            DBHelper.addTokenToDB(nick, accessToken, refreshToken);
+            nicksForTokens.add(nick);
             System.out.println("User added to token base.");
         } else {
-            System.out.println("User already exist in token base.");
+            DBHelper.updateAccessToken(nick, accessToken, refreshToken);
+            System.out.println("User already exist in token base. Updating...");
+        }
+    }
+
+    public String getRefreshToken(String nick) {
+        if (nicksForTokens.contains(nick)) {
+            return DBHelper.getRefreshToken(nick);
+        } else {
+            return "";
         }
     }
 }

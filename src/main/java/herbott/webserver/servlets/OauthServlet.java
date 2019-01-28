@@ -46,8 +46,7 @@ public class OauthServlet extends HttpServlet {
                         if (response.isSuccessful()) {
                             UserAccessTokenJsonModel json = response.body();
                             if (json != null) {
-                                Statistics.getStats().addUserAccessToken(Main.CHANNEL, json.accessToken, json.refreshToken,
-                                        String.valueOf(json.expire));
+                                Statistics.getStats().addUserAccessToken(Main.CHANNEL, json.accessToken, json.refreshToken);
                             } else {
                                 System.out.println("Error due reading json response.");
                             }

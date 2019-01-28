@@ -191,14 +191,39 @@ public class DBHelper {
         }
     }
 
-    public static void addTokenToDB(String nick, String accessToken, String refreshToken, String expire) {
+    public static void addTokenToDB(String nick, String accessToken, String refreshToken) {
         try {
             Connection connection = getConnection();
             Statement st = connection.createStatement();
-            st.executeUpdate(String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES ('%s', '%s', '%s', '%s');",
-                    TOKENS_TABLE, NICK, ACCESS_TOKEN, REFRESH_TOKEN, EXPIRE, nick, accessToken, refreshToken, expire));
+            st.executeUpdate(String.format("INSERT INTO %s (%s, %s, %s) VALUES ('%s', '%s', '%s');",
+                    TOKENS_TABLE, NICK, ACCESS_TOKEN, REFRESH_TOKEN, nick, accessToken, refreshToken));
             st.close();
             connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getRefreshToken(String nick) {
+        String refreshToken = "";
+        try {
+            Statement st = getConnection().createStatement();
+            ResultSet rs = st.executeQuery(String.format("SELECT * FROM %s WHERE nick = '%s'", TOKENS_TABLE, nick));
+            rs.next();
+            refreshToken = rs.getString(REFRESH_TOKEN);
+            st.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return refreshToken;
+    }
+
+    public static void updateAccessToken(String nick, String accessToken, String refreshToken) {
+        try {
+            Statement st = getConnection().createStatement();
+            st.executeUpdate(String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = '%s';",
+                    TOKENS_TABLE, ACCESS_TOKEN, accessToken, REFRESH_TOKEN, refreshToken, NICK, nick));
+            st.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

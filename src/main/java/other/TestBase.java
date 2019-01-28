@@ -1,5 +1,7 @@
 package other;
 
+import herbott.DBHelper;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
@@ -20,7 +22,10 @@ public class TestBase {
                 if (command.equalsIgnoreCase("stop")) break;
                 if (command.split(" ")[0].equalsIgnoreCase("select")) {
                     rs = st.executeQuery(command);
-                    System.out.println(rs.toString());
+                    while (rs.next()) {
+                        System.out.println(rs.getString(DBHelper.NICK) + " " + rs.getString(DBHelper.ACCESS_TOKEN)
+                        + " " + rs.getString(DBHelper.REFRESH_TOKEN) + " " + rs.getString(DBHelper.EXPIRE));
+                    }
                 } else
                     System.out.println("Выполнение запроса: " + st.execute(command));
             }

@@ -1,7 +1,12 @@
 package herbott.utils;
 
 import herbott.Main;
+import herbott.Statistics;
+import herbott.retrofit.ApiManager;
+import herbott.retrofit.model.RefreshTokenJsonModel;
 import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.util.HashMap;
@@ -55,5 +60,32 @@ public class Utils {
     private static void startWakeUpTimer() {
         wakeUpTimer = new WakeUpTimer();
         wakeUpTimer.start();
+    }
+
+    public static boolean refreshToken(String nick) {
+        String refreshToken = Statistics.getStats().getRefreshToken(nick);
+        if (!refreshToken.equalsIgnoreCase("")) {
+            ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET)
+                    .enqueue(new Callback<RefreshTokenJsonModel>() {
+                        @Override
+                        public void onResponse(Call<RefreshTokenJsonModel> call, Response<RefreshTokenJsonModel> response) {
+                            if (response.isSuccessful()) {
+                                RefreshTokenJsonModel json = response.body();
+                                if (json != null) {
+                                    Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
+                                    System.out.println("Token refreshed.");
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<RefreshTokenJsonModel> call, Throwable t) {
+                            System.out.println("Error due refreshing access token.");
+                        }
+                    });
+            return true;
+        } else {
+            return false;
+        }
     }
 }
