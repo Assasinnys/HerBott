@@ -69,6 +69,7 @@ public class Utils {
             try {
                 System.out.println("1");
                 Response<RefreshTokenJsonModel> response = ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET).execute();
+                System.out.println("2");
                 System.out.println("response = " + (response != null));
                 System.out.println(response.code());
                 if (response.isSuccessful()) {
