@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,8 +37,7 @@ public class Utils {
         if (wakeUpTimer == null) {
             System.out.println("active null");
             startWakeUpTimer();
-        }
-        else if (!wakeUpTimer.isAlive()) {
+        } else if (!wakeUpTimer.isAlive()) {
             System.out.println("(active isAlive()) wake up timer online = " + wakeUpTimer.isAlive());
             startWakeUpTimer();
         }
@@ -66,31 +66,48 @@ public class Utils {
         String refreshToken = Statistics.getStats().getRefreshToken(nick);
         if (!refreshToken.equalsIgnoreCase("")) {
             System.out.println(refreshToken);
-            ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET)
-                    .enqueue(new Callback<RefreshTokenJsonModel>() {
-                        @Override
-                        public void onResponse(Call<RefreshTokenJsonModel> call, Response<RefreshTokenJsonModel> response) {
-                            if (response.isSuccessful()) {
-                                System.out.println("response successful");
-                                RefreshTokenJsonModel json = response.body();
-                                if (json != null) {
-                                    Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
-                                    System.out.println("Token refreshed.");
-                                }
-                            } else {
-                                System.out.println("response not successful");
-                                System.out.println(response.errorBody());
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<RefreshTokenJsonModel> call, Throwable t) {
-                            System.out.println("Error due refreshing access token.");
-                        }
-                    });
-            return true;
-        } else {
+            try {
+                Response<RefreshTokenJsonModel> response = ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET).execute();
+                if (response.isSuccessful()) {
+                    System.out.println("response successful");
+                    RefreshTokenJsonModel json = response.body();
+                    if (json != null) {
+                        Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
+                        System.out.println("Token refreshed.");
+                    } else {
+                        System.out.println("response is null");
+                    }
+                } else {
+                    System.out.println("response not successful");
+                    System.out.println(response.errorBody());
+                }
+//                    .enqueue(new Callback<RefreshTokenJsonModel>() {
+//                        @Override
+//                        public void onResponse(Call<RefreshTokenJsonModel> call, Response<RefreshTokenJsonModel> response) {
+//                            if (response.isSuccessful()) {
+//                                System.out.println("response successful");
+//                                RefreshTokenJsonModel json = response.body();
+//                                if (json != null) {
+//                                    Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
+//                                    System.out.println("Token refreshed.");
+//                                }
+//                            } else {
+//                                System.out.println("response not successful");
+//                                System.out.println(response.errorBody());
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onFailure(Call<RefreshTokenJsonModel> call, Throwable t) {
+//                            System.out.println("Error due refreshing access token.");
+//                        }
+//                    });
+                return true;
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+        } /*else {*/
             return false;
-        }
+//        }
     }
 }
