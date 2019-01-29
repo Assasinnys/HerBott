@@ -70,8 +70,10 @@ public class Utils {
                 params.put("refresh_token", refreshToken);
                 params.put("client_id", Main.CLIENT_ID);
                 params.put("client_secret", Main.CLIENT_SECRET);
+
                 Response<UserAccessTokenJsonModel> response = ApiManager.getApiManager()
                         .getOauth2Api().refreshUserAccessToken(params).execute();
+
                 if (response.isSuccessful()) {
                     System.out.println("response successful");
                     UserAccessTokenJsonModel json = response.body();

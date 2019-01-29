@@ -23,8 +23,8 @@ public class TestBase {
                 if (command.split(" ")[0].equalsIgnoreCase("select")) {
                     rs = st.executeQuery(command);
                     while (rs.next()) {
-                        System.out.println(rs.getString(DBHelper.NICK) + " " + rs.getString(DBHelper.ACCESS_TOKEN)
-                        + " " + rs.getString(DBHelper.REFRESH_TOKEN));
+                        System.out.println(rs.getString(DBHelper.NICK) + "\n" + rs.getString(DBHelper.ACCESS_TOKEN)
+                        + "\n" + rs.getString(DBHelper.REFRESH_TOKEN));
                     }
                 } else
                     System.out.println("Выполнение запроса: " + st.execute(command));

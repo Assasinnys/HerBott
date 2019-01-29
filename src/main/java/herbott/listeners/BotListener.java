@@ -204,12 +204,6 @@ public class BotListener extends ListenerAdapter {
             if (mainStart()) {
                 event.respondChannel("BOT: MAIN START - isActive = " + Main.isActive);
             }
-        } else if (message.equalsIgnoreCase("!refresh") && user.equalsIgnoreCase(Main.CREATOR)) {
-            if (Utils.refreshToken(Main.CHANNEL)) {
-                event.respondChannel("token refreshed.");
-            } else {
-                event.respondChannel("error due refreshing token.");
-            }
         }
     }
 
