@@ -24,7 +24,7 @@ public class TestBase {
                     rs = st.executeQuery(command);
                     while (rs.next()) {
                         System.out.println(rs.getString(DBHelper.NICK) + " " + rs.getString(DBHelper.ACCESS_TOKEN)
-                        + " " + rs.getString(DBHelper.REFRESH_TOKEN) + " " + rs.getString(DBHelper.EXPIRE));
+                        + " " + rs.getString(DBHelper.REFRESH_TOKEN));
                     }
                 } else
                     System.out.println("Выполнение запроса: " + st.execute(command));

@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +23,7 @@ public class Test {
 
     public static void main(String[] args) throws Exception {
         System.out.println("START");
-        appAccessToken();
+//        appAccessToken();
     }
 
     private static void sendSubscribeRequest() throws Exception {
