@@ -3,10 +3,8 @@ package herbott.utils;
 import herbott.Main;
 import herbott.Statistics;
 import herbott.retrofit.ApiManager;
-import herbott.retrofit.model.RefreshTokenJsonModel;
+import herbott.retrofit.model.UserAccessTokenJsonModel;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
@@ -67,34 +65,24 @@ public class Utils {
         if (!refreshToken.equalsIgnoreCase("")) {
             System.out.println(refreshToken);
             try {
-                System.out.println("1");
                 Map<String, String> params = new HashMap<>();
                 params.put("grant_type", "refresh_token");
                 params.put("refresh_token", refreshToken);
                 params.put("client_id", Main.CLIENT_ID);
                 params.put("client_secret", Main.CLIENT_SECRET);
-                System.out.println("2");
-//                Response<RefreshTokenJsonModel> response = ApiManager.getApiManager()
-//                        .getOauth2Api().refreshUserAccessToken(params).execute();
-                Response<ResponseBody> response = ApiManager.getApiManager()
+                Response<UserAccessTokenJsonModel> response = ApiManager.getApiManager()
                         .getOauth2Api().refreshUserAccessToken(params).execute();
-                System.out.println("3");
-                System.out.println("response = " + (response != null));
-                System.out.println(response.code());
                 if (response.isSuccessful()) {
                     System.out.println("response successful");
-//                    RefreshTokenJsonModel json = response.body();
-                    ResponseBody json = response.body();
+                    UserAccessTokenJsonModel json = response.body();
                     if (json != null) {
-//                        Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
-                        System.out.println(json.string());
+                        Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
                         System.out.println("Token refreshed.");
                     } else {
                         System.out.println("response is null");
                     }
                 } else {
                     System.out.println("response not successful");
-                    System.out.println(response.errorBody());
                 }
                 return true;
             } catch (IOException i) {
