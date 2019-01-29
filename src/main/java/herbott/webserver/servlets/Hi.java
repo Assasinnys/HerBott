@@ -27,8 +27,12 @@ public class Hi extends HttpServlet {
 //        resp.getOutputStream().print(index);
 //        resp.getOutputStream().flush();
 //        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.sendRedirect("https://id.twitch.tv/oauth2/authorize" +
-                "?client_id=" + Main.CLIENT_ID + "&redirect_uri=https://herbott.herokuapp.com/oauth" +
-                "&response_type=code&scope=user:edit:broadcast");
+
+
+
+
+//        resp.sendRedirect("https://id.twitch.tv/oauth2/authorize" +
+//                "?client_id=" + Main.CLIENT_ID + "&redirect_uri=https://herbott.herokuapp.com/oauth" +
+//                "&response_type=code&scope=user:edit:broadcast");
     }
 }
