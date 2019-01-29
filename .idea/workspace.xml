@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/Error.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -80,32 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="207" column="28" lean-forward="false" selection-start-line="207" selection-start-column="28" selection-end-line="207" selection-end-column="28" />
-              <folding>
-                <element signature="method#BotListener#0;class#BotListener#0" expanded="false" />
-                <element signature="method#oneOfAllChat#0;class#BotListener#0" expanded="false" />
-                <element signature="method#viewersList#0;class#BotListener#0" expanded="false" />
-                <element signature="method#randomViewer#0;class#BotListener#0" expanded="false" />
-                <element signature="method#mainStart#0;class#BotListener#0" expanded="false" />
-                <element signature="method#randomNumber#0;class#BotListener#0" expanded="false" />
-                <element signature="docComment;method#onPing#0;class#BotListener#0" expanded="false" />
-                <element signature="method#onPing#0;class#BotListener#0" expanded="false" />
-                <element signature="method#getUserId#0;class#BotListener#0" expanded="false" />
-                <element signature="method#getFollowTime#0;class#BotListener#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+            <state relative-caret-position="272">
+              <caret line="76" column="69" lean-forward="false" selection-start-line="76" selection-start-column="69" selection-end-line="76" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,42 +91,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwitchOauth2API.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TwitchOauth2API.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Statistics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1802">
-              <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="198" column="67" lean-forward="false" selection-start-line="198" selection-start-column="67" selection-end-line="198" selection-end-column="67" />
-              <folding />
+            <state relative-caret-position="476">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -580,14 +530,14 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/UserAccessTokenJsonModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Statistics.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/Error.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" />
       </list>
     </option>
   </component>
@@ -991,13 +941,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00034" summary="update subscription callback">
-      <created>1545419955752</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1545419955752</updated>
-    </task>
     <task id="LOCAL-00035" summary="test index.html">
       <created>1545429761858</created>
       <option name="number" value="00035" />
@@ -1334,7 +1277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548776775224</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="fix refresh token">
+      <created>1548777374556</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1548777374556</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1689,26 +1639,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="198" column="67" lean-forward="false" selection-start-line="198" selection-start-column="67" selection-end-line="198" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/OauthServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1740,14 +1674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchHelixAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1756,29 +1682,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        <state relative-caret-position="153">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+        <state relative-caret-position="466">
+          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Statistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="198" column="67" lean-forward="false" selection-start-line="198" selection-start-column="67" selection-end-line="198" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="272">
+          <caret line="76" column="69" lean-forward="false" selection-start-line="76" selection-start-column="69" selection-end-line="76" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
