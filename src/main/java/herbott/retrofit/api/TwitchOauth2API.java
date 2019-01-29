@@ -19,7 +19,9 @@ public interface TwitchOauth2API {
 
     @FormUrlEncoded
     @POST("token")
-    Call<RefreshTokenJsonModel> refreshUserAccessToken(/*@Query("refresh_token") String refreshToken, @Query("client_id") String clientID,
-                                                       @Query("client_secret") String secret*/
-    @FieldMap Map<String, String> params);
+    Call<ResponseBody> refreshUserAccessToken(@FieldMap Map<String, String> params);
 }
+
+
+/*@Query("refresh_token") String refreshToken, @Query("client_id") String clientID,
+                                                       @Query("client_secret") String secret*/
