@@ -3,10 +3,8 @@ package herbott.utils;
 import herbott.Main;
 import herbott.Statistics;
 import herbott.retrofit.ApiManager;
-import herbott.retrofit.model.RefreshTokenJsonModel;
+import herbott.retrofit.model.Error;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
@@ -68,16 +66,16 @@ public class Utils {
             System.out.println(refreshToken);
             try {
                 System.out.println("1");
-                Response<RefreshTokenJsonModel> response = ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET).execute();
+                Response<Error> response = ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(refreshToken, Main.CLIENT_ID, Main.CLIENT_SECRET).execute();
                 System.out.println("2");
                 System.out.println("response = " + (response != null));
                 System.out.println(response.code());
                 if (response.isSuccessful()) {
                     System.out.println("response successful");
-                    RefreshTokenJsonModel json = response.body();
+                    Error json = response.body();
                     if (json != null) {
-                        Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
-                        System.out.println("Token refreshed.");
+//                        Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
+                        System.out.println("Token error refreshed.");
                     } else {
                         System.out.println("response is null");
                     }
@@ -85,33 +83,11 @@ public class Utils {
                     System.out.println("response not successful");
                     System.out.println(response.errorBody());
                 }
-//                    .enqueue(new Callback<RefreshTokenJsonModel>() {
-//                        @Override
-//                        public void onResponse(Call<RefreshTokenJsonModel> call, Response<RefreshTokenJsonModel> response) {
-//                            if (response.isSuccessful()) {
-//                                System.out.println("response successful");
-//                                RefreshTokenJsonModel json = response.body();
-//                                if (json != null) {
-//                                    Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
-//                                    System.out.println("Token refreshed.");
-//                                }
-//                            } else {
-//                                System.out.println("response not successful");
-//                                System.out.println(response.errorBody());
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<RefreshTokenJsonModel> call, Throwable t) {
-//                            System.out.println("Error due refreshing access token.");
-//                        }
-//                    });
                 return true;
             } catch (IOException i) {
                 i.printStackTrace();
             }
-        } /*else {*/
-            return false;
-//        }
+        }
+        return false;
     }
 }
