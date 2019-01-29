@@ -76,6 +76,9 @@ public class Utils {
                                     Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
                                     System.out.println("Token refreshed.");
                                 }
+                            } else {
+                                System.out.println("response not successful");
+                                System.out.println(response.errorBody());
                             }
                         }
 
