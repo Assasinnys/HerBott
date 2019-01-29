@@ -71,6 +71,7 @@ public class Utils {
                         @Override
                         public void onResponse(Call<RefreshTokenJsonModel> call, Response<RefreshTokenJsonModel> response) {
                             if (response.isSuccessful()) {
+                                System.out.println("response successful");
                                 RefreshTokenJsonModel json = response.body();
                                 if (json != null) {
                                     Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
