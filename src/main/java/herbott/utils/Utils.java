@@ -99,7 +99,7 @@ public class Utils {
         System.out.println("start post");
         try {
             Response<ResponseBody> response = ApiManager.getApiManager().getVkApi().postStreamNotice(Main.VK_GROUP_ID, 1,
-                    "test create wall post.").execute();
+                    "test create wall post. link https://www.twitch.tv/roblife42").execute();
             System.out.println("wall.post code = " + response.code());
             if (response.isSuccessful() && response.body() != null) {
                 System.out.println("wall.post body = " + Objects.requireNonNull(response.body()).string());

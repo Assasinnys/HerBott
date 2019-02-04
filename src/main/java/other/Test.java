@@ -1,6 +1,7 @@
 package other;
 
 import herbott.Main;
+import herbott.retrofit.ApiManager;
 import herbott.retrofit.api.VkOauth2Api;
 import herbott.retrofit.model.VkOauthResponseModel;
 import okhttp3.ResponseBody;
@@ -21,13 +22,24 @@ import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Test {
 
     public static void main(String[] args) throws Exception {
         System.out.println("START");
-        getVkAccessToken();
+        getStreamInfo();
+    }
+
+    private static void getStreamInfo() throws Exception {
+        Response<ResponseBody> response = ApiManager.getApiManager().getHelixApi().getStreamInfo(Main.CHANNEL_ID).execute();
+        System.out.println("response code = " + response.code());
+        if (response.body() != null && response.isSuccessful()) {
+            System.out.println("response body = " + Objects.requireNonNull(response.body()).string());
+        } else {
+            System.out.println("Error");
+        }
     }
 
     private static void getVkAccessToken() throws Exception {
