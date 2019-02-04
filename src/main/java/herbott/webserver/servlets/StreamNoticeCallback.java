@@ -64,6 +64,8 @@ public class StreamNoticeCallback extends HttpServlet{
                 System.out.println("Stream online!");
                 Main.bot.sendIRC().message("#" + Main.CHANNEL, "Stream online!");
                 Utils.activeBot();
+                String title = data.getJSONObject(0).getString("title");
+                Utils.createWallPost("Стрим начался.\nНазвание: " + title + "\n Ссылка на стрим: https://www.twitch.tv/roblife42");
             }
             resp.setStatus(HTTP_OK);
         } catch (Exception e) {

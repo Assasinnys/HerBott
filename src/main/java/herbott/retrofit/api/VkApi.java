@@ -10,7 +10,7 @@ public interface VkApi {
 
     // guid=stream&
 
-    @GET("wall.post?from_group=1&signed=0&v=5.92&access_token=" + Main.VK_ACCESS_TOKEN)
+    @GET("wall.post?from_group=1&signed=0&guid=stream&v=5.92&access_token=" + Main.VK_ACCESS_TOKEN)
     Call<ResponseBody> postStreamNotice(@Query("owner_id") int ownerId, @Query("from_group") int fromGroup,
                                         @Query("message") String message);
 }

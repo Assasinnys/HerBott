@@ -20,7 +20,7 @@ public class TotalControl extends ListenerAdapter {
         else if (event.getMessage().equalsIgnoreCase("!test_vk_post")) {
             event.respondChannel("Starting test...");
 
-            if (Utils.createWallPost()) {
+            if (Utils.createWallPost("test")) {
                 event.respondChannel("post successfully created");
             } else {
                 event.respondChannel("Error: post not created");
