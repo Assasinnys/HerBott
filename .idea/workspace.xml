@@ -7,11 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchHelixAPI.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchHelixAPI.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/other/Test.java" afterPath="$PROJECT_DIR$/src/main/java/other/Test.java" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/Main.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/Main.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/TotalControl.class" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/TotalControl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" afterPath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -70,6 +75,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="VkApi.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -91,6 +106,16 @@
                 <element signature="method#inactiveBot#0;class#Utils#0" expanded="false" />
                 <element signature="method#startWakeUpTimer#0;class#Utils#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TotalControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -534,12 +559,12 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkOauth2Api.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/VkOauthResponseModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/TotalControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchHelixAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java" />
       </list>
     </option>
   </component>
@@ -914,13 +939,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00047" summary="add wake up time function">
-      <created>1546093111153</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1546093111153</updated>
-    </task>
     <task id="LOCAL-00048" summary="test oauth with twitch">
       <created>1546095530093</created>
       <option name="number" value="00048" />
@@ -1257,7 +1275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549276641708</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="added vk wall.post">
+      <created>1549278166272</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1549278166272</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1668,14 +1693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1684,10 +1701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchHelixAPI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="70" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
+        <state relative-caret-position="136">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1696,14 +1713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1718,6 +1727,22 @@
             <element signature="method#inactiveBot#0;class#Utils#0" expanded="false" />
             <element signature="method#startWakeUpTimer#0;class#Utils#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchHelixAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="70" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
