@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 
 public interface VkApi {
 
-    @GET("wall.post?from_group=1&signed=0&guid=stream&access_token=" + Main.VK_ACCESS_TOKEN)
+    @GET("wall.post?from_group=1&signed=0&v=5.92&guid=stream&access_token=" + Main.VK_ACCESS_TOKEN)
     Call<ResponseBody> postStreamNotice(@Query("owner_id") int ownerId, @Query("from_group") int fromGroup,
                                         @Query("message") String message);
 }
