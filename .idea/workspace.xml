@@ -921,13 +921,6 @@
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
     </task>
-    <task id="LOCAL-00044" summary="test redirect">
-      <created>1545693807806</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1545693807807</updated>
-    </task>
     <task id="LOCAL-00045" summary="test redirect">
       <created>1545694625306</created>
       <option name="number" value="00045" />
@@ -1264,7 +1257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549275555789</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="added vk wall.post">
+      <created>1549276017016</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1549276017016</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="ToolWindowManager">

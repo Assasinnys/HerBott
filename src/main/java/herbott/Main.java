@@ -22,7 +22,7 @@ public class Main {
     public static final String CREATOR = "assasinnys";
     public static final String CREATOR_ID = "47295543";
     public static final int VK_GROUP_ID = -169323171;
-    public static final String VK_ACCESS_TOKEN = "761ef0d237c637e6b484a3b6d69e1b059ce22d7e2399a590858019c52b7562a787c6646f28b4bc8753ee0";
+    public static final String VK_ACCESS_TOKEN = "b68c7690e8f0ba4724b8492e813ebad0b8fd1943d6f0ace8a54a58e81d13c74fcd1906932f264002a7df8";
     public static volatile boolean isActive = false;
     public static ControlFromAppConnector connector;
     public static WakeUpTimer wakeUpTimer;
