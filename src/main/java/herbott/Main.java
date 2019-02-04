@@ -17,11 +17,12 @@ public class Main {
     public static final String CLIENT_ID = "qkgjxy0g275eedgwehwby8irxfrxm1";
     public static final String CLIENT_SECRET = "8l3symtvrrm7g7166mb5bidozus6cu";
     public static final String OAUTH = "oauth:mhc3e2af15fes3x9o1qeyveqrbl7mk";
-    //    public static final String REFRESH_OAUTH = "79fia2ncbscnh10z7y1m8dpuailu5dr9ti2xnzitm2w0k67wbi";
     public static final String CHANNEL = "roblife42";
     public static final String CHANNEL_ID = "241801295";
     public static final String CREATOR = "assasinnys";
     public static final String CREATOR_ID = "47295543";
+    public static final int VK_GROUP_ID = -169323171;
+    public static final String VK_ACCESS_TOKEN = "a4a3a0693148b38e304441740659d2b60afafa21330e1a650a85251115a26566fdc2ad41732c56245267d";
     public static volatile boolean isActive = false;
     public static ControlFromAppConnector connector;
     public static WakeUpTimer wakeUpTimer;

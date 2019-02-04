@@ -1,12 +1,15 @@
 package other;
 
 import herbott.Main;
+import herbott.retrofit.api.VkOauth2Api;
+import herbott.retrofit.model.VkOauthResponseModel;
 import okhttp3.ResponseBody;
 import org.json.JSONObject;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -18,12 +21,28 @@ import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Test {
 
     public static void main(String[] args) throws Exception {
         System.out.println("START");
-//        appAccessToken();
+        getVkAccessToken();
+    }
+
+    private static void getVkAccessToken() throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        String code = scanner.nextLine();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://oauth.vk.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        Response<VkOauthResponseModel> bodyR = retrofit.create(VkOauth2Api.class)
+                .getAccessTokenFromCode("6844607", "1jvwRyq8LoYQchLq26nm", "https://herbott.herokuapp.com", code).execute();
+        System.out.println(bodyR.code());
+        VkOauthResponseModel body = bodyR.body();
+
+        System.out.println("Access token = " + body.accessToken + "\n" + "expires in = " + body.expiresIn);
     }
 
     private static void sendSubscribeRequest() throws Exception {
@@ -104,7 +123,7 @@ public class Test {
         }
     }
 
-    interface Api{
+    interface Api {
         @POST("token?grant_type=client_credentials")
         Call<ResponseBody> getAppToken(@Query("client_id") String id, @Query("client_secret") String secret);
     }

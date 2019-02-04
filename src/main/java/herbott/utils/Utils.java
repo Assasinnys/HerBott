@@ -10,6 +10,7 @@ import retrofit2.Response;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import static herbott.retrofit.ApiManager.getApiManager;
 import static herbott.Main.wakeUpTimer;
@@ -90,6 +91,25 @@ public class Utils {
             } catch (IOException i) {
                 i.printStackTrace();
             }
+        }
+        return false;
+    }
+
+    public static boolean createWallPost() {
+        System.out.println("start post");
+        try {
+            Response<ResponseBody> response = ApiManager.getApiManager().getVkApi().postStreamNotice(Main.VK_GROUP_ID, 1,
+                    "test create wall post.").execute();
+            System.out.println("wall.post code = " + response.code());
+            if (response.isSuccessful() && response.body() != null) {
+                System.out.println("wall.post body = " + Objects.requireNonNull(response.body()).string());
+                return true;
+            } else {
+                System.out.println("wall.post error");
+            }
+        } catch (IOException io) {
+            io.printStackTrace();
+            System.out.println("wall.post exception");
         }
         return false;
     }
