@@ -1,5 +1,6 @@
 package other;
 
+import herbott.JsonUtils;
 import herbott.Main;
 import herbott.retrofit.ApiManager;
 import herbott.retrofit.api.VkOauth2Api;
@@ -18,7 +19,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,6 @@ public class Test {
 
     public static void main(String[] args) throws Exception {
         System.out.println("START");
-        getStreamInfo();
     }
 
     private static void getStreamInfo() throws Exception {
@@ -133,6 +132,12 @@ public class Test {
         } catch (IOException t) {
             t.printStackTrace();
         }
+    }
+
+    private static String getUserId(String nickname) throws Exception {
+        String url = "https://api.twitch.tv/helix/users?login=" + nickname;
+        JSONObject json = new JSONObject(JsonUtils.readUrlAuth(url));
+        return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
     interface Api {

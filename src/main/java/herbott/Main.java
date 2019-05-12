@@ -21,8 +21,11 @@ public class Main {
     public static final String CHANNEL_ID = "241801295";
     public static final String CREATOR = "assasinnys";
     public static final String CREATOR_ID = "47295543";
+    public static final String SERG_CHANNEL_ID = "80368392";
+    public static final String SERG_CHANNEL = "serg_heavybeard";
     public static final int VK_GROUP_ID = -169323171;
-    public static final String VK_ACCESS_TOKEN = "111b9c1f251b5e56163ad69514ed4fbea1c3739135220142b2bb51deaeb283f4c7c1e4ace1b3d6d29c1f7";
+    public static final int OWNER_VK_ID = 134686051;
+    public static final String VK_ACCESS_TOKEN = "ef96fdde331f8a342d622301b81dea313adc1cbc3f0839026c97fada74edef2c2bd2b668e0ee74f38288e";
     public static volatile boolean isActive = false;
     public static ControlFromAppConnector connector;
     public static WakeUpTimer wakeUpTimer;
