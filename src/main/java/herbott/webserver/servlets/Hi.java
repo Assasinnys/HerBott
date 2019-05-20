@@ -26,11 +26,6 @@ public class Hi extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("GET request accepted! ☺");
-        try {
-            Utils.sendSubscribeRequest();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 //        resp.getOutputStream().print(index);
 //        resp.getOutputStream().flush();
 //        resp.setStatus(HttpServletResponse.SC_OK);
