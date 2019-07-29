@@ -24,11 +24,7 @@ public class BotListener extends ListenerAdapter {
     public static List<String> bots = new ArrayList<>();
     private int guess;
     private boolean guessGame;
-    private long timeTryapka = 0;
-    private long timeKiss = 0;
-    private long timeAllIn = 0;
     private long timeFollow = 0;
-    private long timeLick = 0;
     private static final int DELAY = 30000;
 
     public BotListener() {
@@ -98,31 +94,8 @@ public class BotListener extends ListenerAdapter {
         System.out.println(">>>> " + user + ": " + message);
         if (message.equalsIgnoreCase("бот")) {
             event.respondWith("@" + user + " Bot online! Ready to work");
-        } else if (message.equalsIgnoreCase("!best")) {
-            event.respondWith("Лучший в этом чате - " + oneOfAllChat() + " Kappa");
-        } else if (message.startsWith("!random")) {
-            event.respondWith("Твоё число: " + randomNumber(message));
-        } else if (message.equalsIgnoreCase("!users")) {
-            JSONObject json = new JSONObject(JsonUtils.readUrl(String.format("https://tmi.twitch.tv/group/user/%s/chatters", Main.CHANNEL)));
-            event.respondWith("Зрителей: " + json.getString("chatter_count"));
         } else if (message.equalsIgnoreCase("всем привет")) {
             event.respondWith(user + ", привет!");
-        } else if (message.equalsIgnoreCase("!тряпка")
-                && (System.currentTimeMillis() - timeTryapka) > DELAY) {
-            timeTryapka = System.currentTimeMillis();
-            List<String> list = viewersList();
-            while (true) {
-                String nick = randomViewer(list);
-                if (!bots.contains(nick)) {
-                    event.respondWith(user + " кинул cцаную тряпку в " + nick + " WutFace");
-                    if (nick.equalsIgnoreCase(Main.CHANNEL) || nick.equalsIgnoreCase("svezhyi_rulet")) {
-                        event.respondWith("и получил мутом по губам LUL");
-                        event.respondWith(String.format("/timeout %s %d", user, 120));
-                    }
-                    Statistics.getStats().sendStat(nick, DBHelper.TRYAPKA);
-                    break;
-                }
-            }
         } else if (message.equalsIgnoreCase("!угадать") && !guessGame) {
             guessGame = true;
             guess = ThreadLocalRandom.current().nextInt(10) + 1;
@@ -130,18 +103,6 @@ public class BotListener extends ListenerAdapter {
             event.respondWith("Я загадал число от 1 до 10. Угадайте! Отвечать в виде: !число <ваш_ответ>");
         } else if (message.startsWith("!число") && guessGame) {
             event.respondWith("@" + user + " " + guess(message));
-        } else if (message.equalsIgnoreCase("!стат тряпка")) {
-            int num = Statistics.getStats().receiveStat(user, DBHelper.TRYAPKA);
-            event.respondWith(String.format("%s , по тебе попали %d раз(а) сцаной тряпкой. DansGame", user, num));
-//            event.respondWith("Статистика временно недоступна!");
-        } else if (message.equalsIgnoreCase("!топ тряпка")) {
-            String s = Statistics.getStats().top(Statistics.TRAP);
-            event.respondWith(s);
-//            event.respondWith("Статистика временно недоступна!");
-        } else if (message.equalsIgnoreCase("!команды")) {
-            event.respondWith("Основные команды: !best, !users, !random <число>, !тряпка, !угадать," +
-                    " !стат тряпка, !стат битва, !стат дуэль, !команды битва, !битва, !топ битва, !топ тряпка," +
-                    " !топ дуэль, !суицид, !цалуй, !ВАБАНК, !группа, !тэг, !дс, !трек, !follow, !серж, !смайлик, !лизь");
         } else if (message.equalsIgnoreCase("!суицид")) {
             event.respondWith(String.format("Суицид так суицид! Это твой выбор! Прощай, %s riPepperonis", user));
             try {
@@ -152,20 +113,6 @@ public class BotListener extends ListenerAdapter {
             if (ThreadLocalRandom.current().nextInt(10) < 7) {
                 event.respondWith(String.format("/timeout %s %d", user, 60));
             } else event.respondChannel("Ебать ты лох, даже суициднуться не смог! LUL LUL LUL");
-        } else if (message.equalsIgnoreCase("!цалуй")
-                && (System.currentTimeMillis() - timeKiss) > DELAY) {
-            timeKiss = System.currentTimeMillis();
-            List<String> list = viewersList();
-            while (true) {
-                String nick = randomViewer(list);
-                if (!bots.contains(nick)) {
-                    event.respondWith(String.format("%s решил слиться в страстном поцелуе с %s KappaPride", user, nick));
-                    break;
-                }
-            }
-        } else if (message.equals("!ВАБАНК") && (System.currentTimeMillis() - timeAllIn) > DELAY) {
-            timeAllIn = System.currentTimeMillis();
-            event.respondChannel(String.format("%s прожимает ВАБАНК и уходит с %s в тайную комнату PogChamp", user, randomViewer(viewersList())));
         } else if (message.equalsIgnoreCase("!тэг")) {
             event.respondChannel("Тэг роба: roblife42#2537");
         } else if (message.equalsIgnoreCase("!группа")) {
@@ -185,15 +132,6 @@ public class BotListener extends ListenerAdapter {
                 event.respondChannel(String.format("%s , ты подписан на Роба уже %s DxCat", user, result));
             else
                 event.respondChannel("Ах ты ж даже не фоловер! SMOrc");
-        } else if (message.equalsIgnoreCase("!серж")) {
-            event.respondChannel("Смотри на здоровье: https://www.youtube.com/watch?v=wcy-fMbn2ps");
-        } else if (message.equalsIgnoreCase("!смайлик")) {
-            event.respondChannel("Настройка BetterTTV здесь: https://vk.com/roblife42?w=wall-169323171_1406");
-        } else if (message.equalsIgnoreCase("!лизь") &&
-                (System.currentTimeMillis() - timeLick) > DELAY) {
-            timeLick = System.currentTimeMillis();
-            event.respondChannel(String.format("%s поймал и зализал до экстаза %s lickL ," +
-                    " кто следующий?", user, oneOfAllChat()));
         } else if (message.equalsIgnoreCase("!sub_stream_notice") && user.equalsIgnoreCase(Main.CREATOR)) {
             sendSubscribeRequest();
         } else if (message.equalsIgnoreCase("!main_stop") && user.equalsIgnoreCase(Main.CREATOR)) {
@@ -229,12 +167,6 @@ public class BotListener extends ListenerAdapter {
         } catch (ArrayIndexOutOfBoundsException a) {
             return "Команда без числа";
         }
-    }
-
-    private int randomNumber(String message) {
-        Random random = new Random();
-        String[] s = message.split(" ");
-        return random.nextInt(Integer.parseInt(s[1])) + 1;
     }
 
     /**

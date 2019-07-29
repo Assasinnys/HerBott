@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="add automatic sub request">
+    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="fix automatic sub request">
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
@@ -14,10 +14,39 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/fatJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/DBHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/HerBottFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/HerInputParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/Statistics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/UserNoticeEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BalListener$TimeOuter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BalListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BanCommandListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BattleRoyalChat$TimeOuter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BattleRoyalChat$TimerRegistration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BattleRoyalChat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/BotListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/DuelListener$TimeOuter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/DuelListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/PhrasesListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/SubLottery$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/SubLottery$UpdateExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/SubLottery$WinnerTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/SubLottery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/TotalControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/UserNoticeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/VoteListener$VoteTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/listeners/VoteListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/utils/DoubleValueComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/utils/IntValueComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/utils/TimeOuter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/herbott/utils/TimeParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/other/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/other/TestBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/other/TestRequests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -87,11 +116,48 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="1173">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="81" column="51" lean-forward="true" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
+              <folding>
+                <element signature="method#BotListener#0;class#BotListener#0" />
+                <element signature="method#viewersList#0;class#BotListener#0" />
+                <element signature="method#mainStop#0;class#BotListener#0" />
+                <element signature="method#mainStart#0;class#BotListener#0" />
+                <element signature="method#guess#0;class#BotListener#0" />
+                <element signature="docComment;method#onPing#0;class#BotListener#0" />
+                <element signature="method#onPing#0;class#BotListener#0" />
+                <element signature="method#getFollowTime#0;class#BotListener#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -162,7 +228,6 @@
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshTokenJsonModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" />
         <option value="$PROJECT_DIR$/src/main/java/other/TestBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/VkOauth2Api.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/VkOauthResponseModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java" />
@@ -174,6 +239,7 @@
         <option value="$PROJECT_DIR$/src/main/java/other/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java" />
         <option value="$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" />
       </list>
     </option>
   </component>
@@ -195,7 +261,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TwitchBot" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TwitchBot" type="eaaa3913:PackageViewModuleGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,17 +356,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TwitchBot" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TwitchBot" type="eaaa3913:PackageViewModuleGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -383,25 +449,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TwitchBot [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="TwitchBot [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -440,6 +487,25 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TwitchBot [install]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="install" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -471,16 +537,16 @@
       <item itemvalue="Application.TestBase" />
       <item itemvalue="Application.TestRequests" />
       <item itemvalue="Gradle.TwitchBot [fatJar]" />
-      <item itemvalue="Gradle.TwitchBot [build]" />
       <item itemvalue="Gradle.TwitchBot [clean]" />
+      <item itemvalue="Gradle.TwitchBot [install]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TwitchBot [install]" />
         <item itemvalue="Gradle.TwitchBot [fatJar]" />
         <item itemvalue="Gradle.TwitchBot [clean]" />
         <item itemvalue="Application.TestRequests" />
         <item itemvalue="Application.TestBase" />
-        <item itemvalue="Gradle.TwitchBot [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -494,13 +560,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
-    </task>
-    <task id="LOCAL-00051" summary="fix wake up bug">
-      <created>1546908796196</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1546908796205</updated>
     </task>
     <task id="LOCAL-00052" summary="bug fixed">
       <created>1546909706364</created>
@@ -838,13 +897,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557667740475</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="fix automatic sub request">
+      <created>1558368351815</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1558368351816</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49541286" visible="true" weight="0.3160981" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49541286" visible="true" weight="0.32302773" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -883,7 +950,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="update subscription callback" />
     <MESSAGE value="test index.html" />
     <MESSAGE value="test oauth servlet" />
     <MESSAGE value="test redirect" />
@@ -908,7 +974,8 @@
     <MESSAGE value="test vk wall.post" />
     <MESSAGE value="fix wall.post" />
     <MESSAGE value="add automatic sub request" />
-    <option name="LAST_COMMIT_MESSAGE" value="add automatic sub request" />
+    <MESSAGE value="fix automatic sub request" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix automatic sub request" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.pircbotx/pircbotx/2.1/fb64ee53c136e8c73b384d16830abb7296c714ae/pircbotx-2.1-sources.jar!/org/pircbotx/PircBotX.java" />
@@ -1112,47 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="135" selection-start-line="27" selection-start-column="135" selection-end-line="27" selection-end-column="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="197" column="26" selection-start-line="197" selection-start-column="26" selection-end-line="197" selection-end-column="26" />
-          <folding>
-            <element signature="method#BotListener#0;class#BotListener#0" />
-            <element signature="method#oneOfAllChat#0;class#BotListener#0" />
-            <element signature="method#viewersList#0;class#BotListener#0" />
-            <element signature="method#randomViewer#0;class#BotListener#0" />
-            <element signature="method#mainStop#0;class#BotListener#0" />
-            <element signature="method#mainStart#0;class#BotListener#0" />
-            <element signature="method#guess#0;class#BotListener#0" />
-            <element signature="method#randomNumber#0;class#BotListener#0" />
-            <element signature="docComment;method#onPing#0;class#BotListener#0" />
-            <element signature="method#onPing#0;class#BotListener#0" />
-            <element signature="method#getFollowTime#0;class#BotListener#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/Hi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1180,10 +1206,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="135" selection-start-line="27" selection-start-column="135" selection-end-line="27" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/herbott/webserver/servlets/StreamNoticeCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="1173">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/retrofit/ApiManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="81" column="51" lean-forward="true" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
+          <folding>
+            <element signature="method#BotListener#0;class#BotListener#0" />
+            <element signature="method#viewersList#0;class#BotListener#0" />
+            <element signature="method#mainStop#0;class#BotListener#0" />
+            <element signature="method#mainStart#0;class#BotListener#0" />
+            <element signature="method#guess#0;class#BotListener#0" />
+            <element signature="docComment;method#onPing#0;class#BotListener#0" />
+            <element signature="method#onPing#0;class#BotListener#0" />
+            <element signature="method#getFollowTime#0;class#BotListener#0" />
+          </folding>
         </state>
       </provider>
     </entry>
