@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Main {
 
+    // https://oauth.vk.com/authorize?client_id=6761757&redirect_uri=https://oauth.vk.com/blank.html&display=page&scope=‭73728‬&response_type=token&revoke=1
+
     public static final String BOTNAME = "LifeBot42";
     public static final String CLIENT_ID = "qkgjxy0g275eedgwehwby8irxfrxm1";
     public static final String CLIENT_SECRET = "8l3symtvrrm7g7166mb5bidozus6cu";
@@ -25,7 +27,8 @@ public class Main {
     public static final String SERG_CHANNEL = "serg_heavybeard";
     public static final int VK_GROUP_ID = -169323171;
     public static final int OWNER_VK_ID = 134686051;
-    public static final String VK_ACCESS_TOKEN = "ef96fdde331f8a342d622301b81dea313adc1cbc3f0839026c97fada74edef2c2bd2b668e0ee74f38288e";
+//    public static final String VK_ACCESS_TOKEN = "ef96fdde331f8a342d622301b81dea313adc1cbc3f0839026c97fada74edef2c2bd2b668e0ee74f38288e";
+    public static final String VK_ACCESS_TOKEN = "cbc0efc2946654f729964b83807a583497784516caaf4ae7102b7c402a700e2d4a8f8772bbeee7b2f0eb5";
     public static volatile boolean isActive = false;
     public static ControlFromAppConnector connector;
     public static WakeUpTimer wakeUpTimer;
