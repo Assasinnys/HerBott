@@ -118,7 +118,7 @@ public class BotListener extends ListenerAdapter {
         } else if (message.equalsIgnoreCase("!группа")) {
             event.respondChannel("Наша группа в вк: https://vk.com/roblife42");
         } else if (message.equalsIgnoreCase("!дс")) {
-            event.respondChannel("Наш дискорд: https://discord.gg/pTGw77c");
+            event.respondChannel("Наш дискорд: https://discord.gg/d5KHdQM");
         } else if (message.equals("!трек")) {
             if (event.getTags().get("badges").matches("(.*)subscriber(.*)")) {
                 event.respondChannel("Заказывай, бро: https://twitch-dj.ru/c/RobLife42");
