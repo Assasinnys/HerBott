@@ -26,7 +26,6 @@ public class Test {
 //        changeServer();
 //        change3();
 //        chatSocket();
-        accessGitHub();
         System.out.println("DONE!");
     }
 
@@ -223,21 +222,5 @@ public class Test {
         @POST("chat+frame+data")
         @Headers({"Content-type: application/x-www-form-urlencoded"})
         Call<ResponseBody> get(@Header("Authorization") String head, @Query("ajax") String value);
-    }
-
-
-    public static void accessGitHub() throws IOException {
-        OkHttpClient client = new OkHttpClient();
-//        Request request = new Request.Builder().get().url("https://api.github.com/zen").build();
-//        RequestBody requestBody = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"), "Assasinnys:Dima712042");
-        Request request = new Request.Builder()
-                .url("https://api.github.com/user")
-                .addHeader("Authorization", Base64.getEncoder().encodeToString("Assasinnys:Dima712042".getBytes()))
-                .get()
-                .build();
-        System.out.println(Base64.getEncoder().encodeToString("Assasinnys:Dima712042".getBytes()));
-        okhttp3.Response response = client.newCall(request).execute();
-        System.out.println(response.body().string());
-
     }
 }
