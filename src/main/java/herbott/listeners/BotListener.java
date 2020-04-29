@@ -193,6 +193,7 @@ public class BotListener extends ListenerAdapter {
             if (response != null) {
                 List<FollowJsonModel.Data> followData = response.data;
                 for (FollowJsonModel.Data data : followData) {
+                    System.out.println(data.toString());
                     if (data.toName.equalsIgnoreCase(Main.CHANNEL)) {
                         answer = data.followedAt;
                         break;
