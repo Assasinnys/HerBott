@@ -187,7 +187,7 @@ public class BotListener extends ListenerAdapter {
         try {
             FollowJsonModel response = ApiManager.getApiManager()
                     .getHelixApi()
-                    .getFollowData(userId)
+                    .getFollowData(userId, 50)
                     .execute()
                     .body();
             if (response != null) {
@@ -196,7 +196,8 @@ public class BotListener extends ListenerAdapter {
                     System.out.println(data.toString());
                     if (data.toName.equalsIgnoreCase(Main.CHANNEL)) {
                         answer = data.followedAt;
-                        break;
+                        System.out.println("-------------------TRUE!!!!!!----------------------");
+//                        break;
                     }
                 }
                 if (!answer.equalsIgnoreCase("")) {

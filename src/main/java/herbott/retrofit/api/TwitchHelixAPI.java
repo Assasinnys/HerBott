@@ -15,7 +15,7 @@ public interface TwitchHelixAPI {
 
     @GET("users/follows")
     @Headers({"Client-ID: " + Main.CLIENT_ID})
-    Call<FollowJsonModel> getFollowData(@Query("from_id") String userId);
+    Call<FollowJsonModel> getFollowData(@Query("from_id") String userId, @Query("first") int numOfObjects);
 
     @GET("streams")
     @Headers({"Client-ID: " + Main.CLIENT_ID})
