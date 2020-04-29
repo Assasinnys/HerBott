@@ -24,7 +24,6 @@ public class BotListener extends ListenerAdapter {
     public static List<String> bots = new ArrayList<>();
     private int guess;
     private boolean guessGame;
-    private long timeFollow = 0;
     private static final int DELAY = 30000;
 
     public BotListener() {
@@ -125,8 +124,7 @@ public class BotListener extends ListenerAdapter {
             } else {
                 event.respondChannel("А ты кто такой? Подпишись, тогда и поговорим: https://www.twitch.tv/products/roblife42 MrDestructoid");
             }
-        } else if (message.equalsIgnoreCase("!follow") && (System.currentTimeMillis() - timeFollow) > DELAY) {
-            timeFollow = System.currentTimeMillis();
+        } else if (message.equalsIgnoreCase("!follow")) {
             String result = getFollowTime(getUserId(user));
             if (!result.equals(""))
                 event.respondChannel(String.format("%s , ты подписан на Роба уже %s DxCat", user, result));
