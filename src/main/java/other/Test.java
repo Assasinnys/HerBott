@@ -12,7 +12,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.*;
-import retrofit2.http.Headers;
 
 import java.io.*;
 import java.net.*;
@@ -138,34 +137,6 @@ public class Test {
         return json.getJSONArray("data").getJSONObject(0).getString("id");
     }
 
-    private static void change3() throws Exception {
-//        URL url = new URL("http://109.248.202.101:7688/ServerAdmin/current/chat+frame+data");
-        URL url = new URL("http://80.77.175.107:181/ServerAdmin/current/chat+frame+data?ajax=1");
-
-        String encoding = Base64.getEncoder().encodeToString(("admin:157947").getBytes());
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//        conn.setRequestMethod("GET");
-        conn.setDoOutput(true);
-        conn.setRequestProperty("Authorization", "Basic " + encoding);
-//        conn.getOutputStream().write("ajax=1".getBytes());
-//        conn.getOutputStream().flush();
-        System.out.println(conn.getResponseCode() + " " + conn.getResponseMessage());
-        InputStream content = conn.getInputStream();
-        BufferedReader in =
-                new BufferedReader(new InputStreamReader(content));
-        String line;
-
-        while (true) {
-            System.out.println(in.readLine());
-            System.out.println("---");
-            Thread.sleep(1000);
-        }
-
-//        while ((line = in.readLine()) != null) {
-//            System.out.println(line);
-//        }
-    }
-
     private static void chatSocket() throws Exception {
         Socket socket = new Socket(InetAddress.getByName("http://109.248.202.101/ServerAdmin/current/chat+frame+data"), 7688);
         Scanner scanner = new Scanner(socket.getInputStream());
@@ -177,50 +148,5 @@ public class Test {
     interface Api {
         @POST("token?grant_type=client_credentials")
         Call<ResponseBody> getAppToken(@Query("client_id") String id, @Query("client_secret") String secret);
-    }
-
-    /*&map=KF-Airship&GameLength=1&Difficulty=1&MaxPlayers=6&game=KFGameContent.KFGameInfo_Survival*/
-
-    private static void changeServer() {
-        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("http://109.248.202.101:7688/ServerAdmin/current/")
-                .baseUrl("http://80.77.175.107:181/ServerAdmin/current/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        KillingFloor2 kf = retrofit.create(KillingFloor2.class);
-        try {
-            Response<ResponseBody> res = kf.change(login, "KFGameContent.KFGameInfo_Survival",
-                    "KF-Airship", "0", "?GameLength=1?Difficulty=1?MaxPlayers=6?multihome=80.77.175.107", "change").execute();
-            System.out.println(res.headers().toString());
-            System.out.println("response_code = " + res.code() + " " + res.message());
-
-//            Response<ResponseBody> res = kf.get(login, "1").execute();
-//
-//            System.out.println(res.headers().toString());
-//            System.out.println(res.raw());
-//            System.out.println("response_code = " + res.code() + " " + res.message());
-////            System.out.println(res.body().bytes().toString());
-//            System.out.println(res.body().string());
-        } catch (IOException e) {
-            e.getMessage();
-        }
-    }
-
-    private static final String login = "Basic " + Base64.getEncoder().encodeToString(("admin:157947").getBytes());
-
-    interface KillingFloor2 {
-        @POST("change")
-        @Headers("Content-type: application/x-www-form-urlencoded")
-        Call<ResponseBody> change(@Header("Authorization") String head, @Query("gametype") String gameType, @Query("map") String map,
-                                  @Query("mutatorGroupCount") String count, @Query("urlextra") String extra, @Query("action") String change);
-
-        @POST("chat+frame+data")
-//        @Headers("Content-type: application/x-www-form-urlencoded")
-        Call<ResponseBody> getChat(@Header("Authorization") String head, @Query("ajax") String value, @Query("message") String message,
-                                   @Query("teamsay") String id);
-
-        @POST("chat+frame+data")
-        @Headers({"Content-type: application/x-www-form-urlencoded"})
-        Call<ResponseBody> get(@Header("Authorization") String head, @Query("ajax") String value);
     }
 }
