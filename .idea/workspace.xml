@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="clearing tests">
+    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="refactor: cleanup code">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbott/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/JsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/other/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/other/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -296,13 +298,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
-    </task>
-    <task id="LOCAL-00055" summary="test bugs">
-      <created>1547844168153</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1547844168153</updated>
     </task>
     <task id="LOCAL-00056" summary="test bugs">
       <created>1547845418362</created>
@@ -640,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573478641221</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="refactor: cleanup code">
+      <created>1588245404106</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1588245404106</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -677,7 +679,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="test redirect" />
     <MESSAGE value="add wake up time function" />
     <MESSAGE value="test oauth with twitch" />
     <MESSAGE value="fix wake up bug" />
@@ -702,7 +703,8 @@
     <MESSAGE value="fix automatic sub request" />
     <MESSAGE value="delete unused commands" />
     <MESSAGE value="change discord link" />
-    <option name="LAST_COMMIT_MESSAGE" value="change discord link" />
+    <MESSAGE value="refactor: cleanup code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: cleanup code" />
   </component>
   <component name="masterDetails">
     <states>

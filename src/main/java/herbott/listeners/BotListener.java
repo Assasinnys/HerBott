@@ -200,6 +200,7 @@ public class BotListener extends ListenerAdapter {
 //                        break;
                     }
                 }
+                System.out.println("follow count = " + followData.size());
                 if (!answer.equalsIgnoreCase("")) {
                     answer = answer.replace("T", " ").replace("Z", "");
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
