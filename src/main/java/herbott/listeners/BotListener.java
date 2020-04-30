@@ -93,8 +93,6 @@ public class BotListener extends ListenerAdapter {
         System.out.println(">>>> " + user + ": " + message);
         if (message.equalsIgnoreCase("бот")) {
             event.respondWith("@" + user + " Bot online! Ready to work");
-        } else if (message.equalsIgnoreCase("всем привет")) {
-            event.respondWith(user + ", привет!");
         } else if (message.equalsIgnoreCase("!угадать") && !guessGame) {
             guessGame = true;
             guess = ThreadLocalRandom.current().nextInt(10) + 1;

@@ -6,8 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="fix: console log for command &quot;!follow&quot;">
+    <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="fix: increase count of follows to 100">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/JsonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/JsonUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test$KillingFloor2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -285,13 +298,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527761319842</updated>
-    </task>
-    <task id="LOCAL-00057" summary="test bugs">
-      <created>1547845723818</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1547845723818</updated>
     </task>
     <task id="LOCAL-00058" summary="test bugs">
       <created>1547845864225</created>
@@ -629,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588246288154</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="fix: increase count of follows to 100">
+      <created>1588256994969</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1588256994969</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -666,7 +679,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="test oauth with twitch" />
     <MESSAGE value="fix wake up bug" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="test bugs" />
@@ -691,7 +703,8 @@
     <MESSAGE value="change discord link" />
     <MESSAGE value="refactor: cleanup code" />
     <MESSAGE value="fix: console log for command &quot;!follow&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: console log for command &quot;!follow&quot;" />
+    <MESSAGE value="fix: increase count of follows to 100" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: increase count of follows to 100" />
   </component>
   <component name="masterDetails">
     <states>

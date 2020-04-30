@@ -26,6 +26,10 @@ public class PhrasesListener extends ListenerAdapter {
         }
         else if (message.matches("(.*) умён (.*)") && !message.matches("(.*)я(.*)")) {
             event.respondChannel("Конечно умён, не то, что ты! LUL");
+        } else if (message.matches("(.*)привет(.*)") || message.matches("(.*)здравствуй(.*)") ||
+                message.matches("(.*)здарова(.*)") || message.matches("(.*) ку (.*)")) {
+            if (event.getTags().get("badges").matches("(.*)subscriber(.*)"))
+                event.respondWith(nick + ", привет!");
         }
     }
 }
