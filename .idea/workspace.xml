@@ -7,20 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="254466cf-a70b-439e-a81a-7741ad1fd9c8" name="Default" comment="fix: increase count of follows to 100">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/model/RefreshOrError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/JsonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/JsonUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/herbott/listeners/BotListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test$KillingFloor2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/other/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/TwitchBot-correctJar-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/BotListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/listeners/PhrasesListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/retrofit/api/TwitchOauth2API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbott/utils/Utils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,8 +141,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRequests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="other.TestRequests" />
+    <configuration name="TestBase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="other.TestBase" />
       <module name="TwitchBot_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -272,7 +265,7 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.TestRequests" />
+      <item itemvalue="Application.TestBase" />
       <item itemvalue="Gradle.TwitchBot [fatJar]" />
       <item itemvalue="Gradle.TwitchBot [clean]" />
       <item itemvalue="Gradle.TwitchBot [install]" />
@@ -281,10 +274,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.TwitchBot [fatJar]" />
+        <item itemvalue="Application.TestBase" />
         <item itemvalue="Gradle.TwitchBot [build]" />
         <item itemvalue="Gradle.TwitchBot [install]" />
         <item itemvalue="Gradle.TwitchBot [clean]" />
-        <item itemvalue="Application.TestRequests" />
       </list>
     </recent_temporary>
   </component>

@@ -61,7 +61,7 @@ public class Utils {
         wakeUpTimer.start();
     }
 
-    public static boolean refreshToken(String nick) {
+    /*public static boolean refreshToken(String nick) {
         String refreshToken = Statistics.getStats().getRefreshToken(nick);
         if (!refreshToken.equalsIgnoreCase("")) {
             System.out.println(refreshToken);
@@ -93,7 +93,7 @@ public class Utils {
             }
         }
         return false;
-    }
+    }*/
 
     public static boolean createWallPost(String message) {
         System.out.println("start post");

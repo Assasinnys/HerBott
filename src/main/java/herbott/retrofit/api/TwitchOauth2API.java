@@ -1,5 +1,6 @@
 package herbott.retrofit.api;
 
+import herbott.retrofit.model.RefreshOrError;
 import herbott.retrofit.model.UserAccessTokenJsonModel;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -16,6 +17,7 @@ public interface TwitchOauth2API {
                                                       @Query("code") String code, @Query("redirect_uri") String uri);
 
     @FormUrlEncoded
-    @POST("token")
-    Call<UserAccessTokenJsonModel> refreshUserAccessToken(@FieldMap Map<String, String> params);
+    @POST("token?grant_type=refresh_token")
+    Call<RefreshOrError> refreshUserAccessToken(/*@FieldMap Map<String, String> params*/@Query("client_id") String clientId, @Query("client_secret") String secret,
+                                                                                        @Query("refresh_token") String refreshToken);
 }

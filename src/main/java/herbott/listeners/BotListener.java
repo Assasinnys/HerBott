@@ -2,6 +2,8 @@ package herbott.listeners;
 
 import herbott.retrofit.ApiManager;
 import herbott.retrofit.model.FollowJsonModel;
+import herbott.retrofit.model.RefreshOrError;
+import herbott.retrofit.model.UserAccessTokenJsonModel;
 import herbott.utils.TimeParser;
 import herbott.utils.Utils;
 import org.json.JSONArray;
@@ -9,6 +11,9 @@ import org.json.JSONObject;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.*;
 import herbott.*;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -138,6 +143,32 @@ public class BotListener extends ListenerAdapter {
             if (mainStart()) {
                 event.respondChannel("BOT: MAIN START - isActive = " + Main.isActive);
             }
+        }
+        /* temp */
+        else if (message.equalsIgnoreCase("!refresh") && user.equalsIgnoreCase(Main.CREATOR)) {
+            String refreshToken = Statistics.getStats().getRefreshToken(Main.BOTNAME);
+            ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(Main.CLIENT_ID, Main.CLIENT_SECRET, refreshToken).enqueue(new Callback<RefreshOrError>() {
+                @Override
+                public void onResponse(Call<RefreshOrError> call, Response<RefreshOrError> response) {
+                    if (response.isSuccessful()) {
+                        System.out.println("Refresh successful.");
+                        if (response.body() != null) {
+                            Statistics.getStats().addUserAccessToken(Main.BOTNAME, response.body().accessToken, response.body().refreshToken);
+                            System.out.println("body not null :D");
+                        } else {
+                            System.out.println("Body is null :(");
+                        }
+                    } else {
+                        System.out.println("Refresh failed.");
+                        System.out.println("error = "+response.body().error+" status = "+response.body().status+" message: "+response.body().message);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RefreshOrError> call, Throwable t) {
+                    System.out.println("Failure to connect twitch.tv (refresh)");
+                }
+            });
         }
     }
 
