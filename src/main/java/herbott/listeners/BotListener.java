@@ -2,8 +2,7 @@ package herbott.listeners;
 
 import herbott.retrofit.ApiManager;
 import herbott.retrofit.model.FollowJsonModel;
-import herbott.retrofit.model.RefreshOrError;
-import herbott.retrofit.model.UserAccessTokenJsonModel;
+import herbott.retrofit.model.RefreshToken;
 import herbott.utils.TimeParser;
 import herbott.utils.Utils;
 import org.json.JSONArray;
@@ -146,29 +145,40 @@ public class BotListener extends ListenerAdapter {
         }
         /* temp */
         else if (message.equalsIgnoreCase("!refresh") && user.equalsIgnoreCase(Main.CREATOR)) {
-            String refreshToken = Statistics.getStats().getRefreshToken(Main.BOTNAME);
-            ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(Main.CLIENT_ID, Main.CLIENT_SECRET, refreshToken).enqueue(new Callback<RefreshOrError>() {
-                @Override
-                public void onResponse(Call<RefreshOrError> call, Response<RefreshOrError> response) {
-                    if (response.isSuccessful()) {
-                        System.out.println("Refresh successful.");
-                        if (response.body() != null) {
-                            Statistics.getStats().addUserAccessToken(Main.BOTNAME, response.body().accessToken, response.body().refreshToken);
-                            System.out.println("body not null :D");
+            try {
+                System.out.println("start refresh command");
+                String refreshToken = Statistics.getStats().getRefreshToken(Main.CHANNEL);
+                System.out.println("refresh token = " + refreshToken);
+                Map<String, String> params = new HashMap<>();
+                params.put("grant_type", "refresh_token");
+                params.put("refresh_token", refreshToken);
+                params.put("client_id", Main.CLIENT_ID);
+                params.put("client_secret", Main.CLIENT_SECRET);
+                ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(params).enqueue(new Callback<RefreshToken>() {
+                    @Override
+                    public void onResponse(Call<RefreshToken> call, Response<RefreshToken> response) {
+                        System.out.println("response: "+response.code()+" "+response.message());
+                        if (response.isSuccessful()) {
+                            System.out.println("Refresh successful.");
+                            if (response.body() != null) {
+                                Statistics.getStats().addUserAccessToken(Main.CHANNEL, response.body().accessToken, response.body().refreshToken);
+                                System.out.println("body not null :D");
+                            } else {
+                                System.out.println("Body is null :(");
+                            }
                         } else {
-                            System.out.println("Body is null :(");
+                            System.out.println("Refresh failed.");
                         }
-                    } else {
-                        System.out.println("Refresh failed.");
-                        System.out.println("error = "+response.body().error+" status = "+response.body().status+" message: "+response.body().message);
                     }
-                }
 
-                @Override
-                public void onFailure(Call<RefreshOrError> call, Throwable t) {
-                    System.out.println("Failure to connect twitch.tv (refresh)");
-                }
-            });
+                    @Override
+                    public void onFailure(Call<RefreshToken> call, Throwable t) {
+                        System.out.println("Failure to connect twitch.tv (refresh)");
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -216,7 +226,7 @@ public class BotListener extends ListenerAdapter {
         try {
             FollowJsonModel response = ApiManager.getApiManager()
                     .getHelixApi()
-                    .getFollowData(userId, 100)
+                    .getFollowData(Main.BEARER, userId, 100)
                     .execute()
                     .body();
             if (response != null) {

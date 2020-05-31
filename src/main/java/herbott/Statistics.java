@@ -106,6 +106,14 @@ public class Statistics {
         }
     }
 
+    public String getBearerToken(String nick) {
+        if (nicksForTokens.contains(nick)) {
+            return "Bearer " + DBHelper.getBearerToken(nick);
+        } else {
+            return "";
+        }
+    }
+
     public String getRefreshToken(String nick) {
         if (nicksForTokens.contains(nick)) {
             return DBHelper.getRefreshToken(nick);

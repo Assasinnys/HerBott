@@ -15,6 +15,7 @@ public class Main {
 
     // https://oauth.vk.com/authorize?client_id=6761757&redirect_uri=https://oauth.vk.com/blank.html&display=page&scope=‭73728‬&response_type=token&revoke=1
 
+    public static volatile String BEARER = "";
     public static final String BOTNAME = "LifeBot42";
     public static final String CLIENT_ID = "qkgjxy0g275eedgwehwby8irxfrxm1";
     public static final String CLIENT_SECRET = "8l3symtvrrm7g7166mb5bidozus6cu";
@@ -38,6 +39,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         connector = new ControlFromAppConnector();
         connector.start();
+        BEARER = Statistics.getStats().getBearerToken(CHANNEL);
 
         Configuration config = new Configuration.Builder()
                 .setAutoNickChange(false)

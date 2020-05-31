@@ -45,7 +45,7 @@ public class JsonUtils {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Client-ID", Main.CLIENT_ID);
-//            conn.setRequestProperty("Authorisation", Main.OAUTH);
+            conn.setRequestProperty("Authorization", Main.BEARER);
             reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
             StringBuilder buffer = new StringBuilder();
             int read;

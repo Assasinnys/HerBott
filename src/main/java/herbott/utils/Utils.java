@@ -3,6 +3,7 @@ package herbott.utils;
 import herbott.Main;
 import herbott.Statistics;
 import herbott.retrofit.ApiManager;
+import herbott.retrofit.model.RefreshToken;
 import herbott.retrofit.model.UserAccessTokenJsonModel;
 import okhttp3.ResponseBody;
 import retrofit2.Response;
@@ -23,11 +24,16 @@ public class Utils {
         params.put("hub.mode", "subscribe");
         params.put("hub.topic", "https://api.twitch.tv/helix/streams?user_id=" + Main.CHANNEL_ID);
         params.put("hub.lease_seconds", "864000");
-        Response<ResponseBody> response = getApiManager()
-                .getHelixApi()
-                .subStreamNotice(params)
-                .execute();
-        System.out.println("response = " + response.code() + " " + response.message());
+        try {
+            Response<ResponseBody> response = getApiManager()
+                    .getHelixApi()
+                    .subStreamNotice(Main.BEARER, params)
+                    .execute();
+            System.out.println("response = " + response.code() + " " + response.message());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void activeBot() {
@@ -61,7 +67,7 @@ public class Utils {
         wakeUpTimer.start();
     }
 
-    /*public static boolean refreshToken(String nick) {
+    public static boolean refreshToken(String nick) {
         String refreshToken = Statistics.getStats().getRefreshToken(nick);
         if (!refreshToken.equalsIgnoreCase("")) {
             System.out.println(refreshToken);
@@ -72,12 +78,12 @@ public class Utils {
                 params.put("client_id", Main.CLIENT_ID);
                 params.put("client_secret", Main.CLIENT_SECRET);
 
-                Response<UserAccessTokenJsonModel> response = ApiManager.getApiManager()
+                Response<RefreshToken> response = ApiManager.getApiManager()
                         .getOauth2Api().refreshUserAccessToken(params).execute();
 
                 if (response.isSuccessful()) {
                     System.out.println("response successful");
-                    UserAccessTokenJsonModel json = response.body();
+                    RefreshToken json = response.body();
                     if (json != null) {
                         Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
                         System.out.println("Token refreshed.");
@@ -93,7 +99,7 @@ public class Utils {
             }
         }
         return false;
-    }*/
+    }
 
     public static boolean createWallPost(String message) {
         System.out.println("start post");

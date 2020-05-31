@@ -228,4 +228,18 @@ public class DBHelper {
             e.printStackTrace();
         }
     }
+
+    public static String getBearerToken(String nick) {
+        String token = "";
+        try {
+            Statement st = getConnection().createStatement();
+            ResultSet rs = st.executeQuery(String.format("SELECT * FROM %s WHERE nick = '%s'", TOKENS_TABLE, nick));
+            rs.next();
+            token = rs.getString(ACCESS_TOKEN);
+            st.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return token;
+    }
 }
