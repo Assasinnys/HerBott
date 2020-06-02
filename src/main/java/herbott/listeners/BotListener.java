@@ -21,6 +21,7 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+import static herbott.utils.Utils.refreshToken;
 import static herbott.utils.Utils.sendSubscribeRequest;
 
 public class BotListener extends ListenerAdapter {
@@ -145,40 +146,7 @@ public class BotListener extends ListenerAdapter {
         }
         /* temp */
         else if (message.equalsIgnoreCase("!refresh") && user.equalsIgnoreCase(Main.CREATOR)) {
-            try {
-                System.out.println("start refresh command");
-                String refreshToken = Statistics.getStats().getRefreshToken(Main.CHANNEL);
-                System.out.println("refresh token = " + refreshToken);
-                Map<String, String> params = new HashMap<>();
-                params.put("grant_type", "refresh_token");
-                params.put("refresh_token", refreshToken);
-                params.put("client_id", Main.CLIENT_ID);
-                params.put("client_secret", Main.CLIENT_SECRET);
-                ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(params).enqueue(new Callback<RefreshToken>() {
-                    @Override
-                    public void onResponse(Call<RefreshToken> call, Response<RefreshToken> response) {
-                        System.out.println("response: "+response.code()+" "+response.message());
-                        if (response.isSuccessful()) {
-                            System.out.println("Refresh successful.");
-                            if (response.body() != null) {
-                                Statistics.getStats().addUserAccessToken(Main.CHANNEL, response.body().accessToken, response.body().refreshToken);
-                                System.out.println("body not null :D");
-                            } else {
-                                System.out.println("Body is null :(");
-                            }
-                        } else {
-                            System.out.println("Refresh failed.");
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<RefreshToken> call, Throwable t) {
-                        System.out.println("Failure to connect twitch.tv (refresh)");
-                    }
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            refreshToken(Main.CHANNEL);
         }
     }
 

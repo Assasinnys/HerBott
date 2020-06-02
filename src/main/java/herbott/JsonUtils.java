@@ -1,5 +1,6 @@
 package herbott;
 
+import herbott.utils.Utils;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -56,6 +57,9 @@ public class JsonUtils {
             return buffer.toString();
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("request new bearer token");
+            Utils.refreshToken(Main.CHANNEL);
+            readUrlAuth(urlString);
         } finally {
             if (reader != null) {
                 try {

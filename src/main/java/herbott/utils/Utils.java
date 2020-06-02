@@ -6,6 +6,8 @@ import herbott.retrofit.ApiManager;
 import herbott.retrofit.model.RefreshToken;
 import herbott.retrofit.model.UserAccessTokenJsonModel;
 import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
@@ -32,6 +34,9 @@ public class Utils {
             System.out.println("response = " + response.code() + " " + response.message());
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("request new bearer token");
+            refreshToken(Main.CHANNEL);
+            sendSubscribeRequest();
         }
 
     }
@@ -67,8 +72,8 @@ public class Utils {
         wakeUpTimer.start();
     }
 
-    public static boolean refreshToken(String nick) {
-        String refreshToken = Statistics.getStats().getRefreshToken(nick);
+    public static /*boolean*/void refreshToken(String nick) {
+        /*String refreshToken = Statistics.getStats().getRefreshToken(nick);
         if (!refreshToken.equalsIgnoreCase("")) {
             System.out.println(refreshToken);
             try {
@@ -98,7 +103,42 @@ public class Utils {
                 i.printStackTrace();
             }
         }
-        return false;
+        return false;*/
+        try {
+            System.out.println("start refresh command");
+            String refreshToken = Statistics.getStats().getRefreshToken(nick);
+            System.out.println("refresh token = " + refreshToken);
+            Map<String, String> params = new HashMap<>();
+            params.put("grant_type", "refresh_token");
+            params.put("refresh_token", refreshToken);
+            params.put("client_id", Main.CLIENT_ID);
+            params.put("client_secret", Main.CLIENT_SECRET);
+            ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(params).enqueue(new Callback<RefreshToken>() {
+                @Override
+                public void onResponse(Call<RefreshToken> call, Response<RefreshToken> response) {
+                    System.out.println("response: "+response.code()+" "+response.message());
+                    if (response.isSuccessful()) {
+                        System.out.println("Refresh successful.");
+                        if (response.body() != null) {
+                            Statistics.getStats().addUserAccessToken(nick, response.body().accessToken, response.body().refreshToken);
+                            Main.BEARER = "Bearer " + response.body().accessToken;
+                            System.out.println("body not null :D");
+                        } else {
+                            System.out.println("Body is null :(");
+                        }
+                    } else {
+                        System.out.println("Refresh failed.");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RefreshToken> call, Throwable t) {
+                    System.out.println("Failure to connect twitch.tv (refresh)");
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static boolean createWallPost(String message) {
