@@ -72,38 +72,7 @@ public class Utils {
         wakeUpTimer.start();
     }
 
-    public static /*boolean*/void refreshToken(String nick) {
-        /*String refreshToken = Statistics.getStats().getRefreshToken(nick);
-        if (!refreshToken.equalsIgnoreCase("")) {
-            System.out.println(refreshToken);
-            try {
-                Map<String, String> params = new HashMap<>();
-                params.put("grant_type", "refresh_token");
-                params.put("refresh_token", refreshToken);
-                params.put("client_id", Main.CLIENT_ID);
-                params.put("client_secret", Main.CLIENT_SECRET);
-
-                Response<RefreshToken> response = ApiManager.getApiManager()
-                        .getOauth2Api().refreshUserAccessToken(params).execute();
-
-                if (response.isSuccessful()) {
-                    System.out.println("response successful");
-                    RefreshToken json = response.body();
-                    if (json != null) {
-                        Statistics.getStats().addUserAccessToken(nick, json.accessToken, json.refreshToken);
-                        System.out.println("Token refreshed.");
-                    } else {
-                        System.out.println("response is null");
-                    }
-                } else {
-                    System.out.println("response not successful");
-                }
-                return true;
-            } catch (IOException i) {
-                i.printStackTrace();
-            }
-        }
-        return false;*/
+    public static void refreshToken(String nick) {
         try {
             System.out.println("start refresh command");
             String refreshToken = Statistics.getStats().getRefreshToken(nick);
@@ -113,29 +82,22 @@ public class Utils {
             params.put("refresh_token", refreshToken);
             params.put("client_id", Main.CLIENT_ID);
             params.put("client_secret", Main.CLIENT_SECRET);
-            ApiManager.getApiManager().getOauth2Api().refreshUserAccessToken(params).enqueue(new Callback<RefreshToken>() {
-                @Override
-                public void onResponse(Call<RefreshToken> call, Response<RefreshToken> response) {
-                    System.out.println("response: "+response.code()+" "+response.message());
-                    if (response.isSuccessful()) {
-                        System.out.println("Refresh successful.");
-                        if (response.body() != null) {
-                            Statistics.getStats().addUserAccessToken(nick, response.body().accessToken, response.body().refreshToken);
-                            Main.BEARER = "Bearer " + response.body().accessToken;
-                            System.out.println("body not null :D");
-                        } else {
-                            System.out.println("Body is null :(");
-                        }
-                    } else {
-                        System.out.println("Refresh failed.");
-                    }
-                }
 
-                @Override
-                public void onFailure(Call<RefreshToken> call, Throwable t) {
-                    System.out.println("Failure to connect twitch.tv (refresh)");
+            Response<RefreshToken> tokenResponse = getApiManager().getOauth2Api().refreshUserAccessToken(params).execute();
+            System.out.println("response: "+tokenResponse.code()+" "+tokenResponse.message());
+
+            if (tokenResponse.isSuccessful()) {
+                System.out.println("Refresh successful.");
+                if (tokenResponse.body() != null) {
+                    Statistics.getStats().addUserAccessToken(nick, tokenResponse.body().accessToken, tokenResponse.body().refreshToken);
+                    Main.BEARER = "Bearer " + tokenResponse.body().accessToken;
+                    System.out.println("body not null :D");
+                } else {
+                    System.out.println("Body is null :(");
                 }
-            });
+            } else {
+                System.out.println("Refresh failed.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
